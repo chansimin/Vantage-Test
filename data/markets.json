@@ -1,0 +1,19 @@
+[
+  {"code": "SG",  "name": "Singapore",        "country": "Singapore",     "tier": 1, "region": "SEA"},
+  {"code": "HK",  "name": "Hong Kong",         "country": "HK SAR",        "tier": 1, "region": "NEA"},
+  {"code": "TYO", "name": "Tokyo",             "country": "Japan",         "tier": 1, "region": "NEA"},
+  {"code": "SYD", "name": "Sydney",            "country": "Australia",     "tier": 1, "region": "ANZ"},
+  {"code": "SEO", "name": "Seoul",             "country": "South Korea",   "tier": 2, "region": "NEA"},
+  {"code": "OSA", "name": "Osaka",             "country": "Japan",         "tier": 2, "region": "NEA"},
+  {"code": "MEL", "name": "Melbourne",         "country": "Australia",     "tier": 2, "region": "ANZ"},
+  {"code": "KUL", "name": "Kuala Lumpur",      "country": "Malaysia",      "tier": 2, "region": "SEA"},
+  {"code": "MUM", "name": "Mumbai",            "country": "India",         "tier": 2, "region": "SAS"},
+  {"code": "DEL", "name": "Delhi",             "country": "India",         "tier": 2, "region": "SAS"},
+  {"code": "TWN", "name": "Taipei",            "country": "Taiwan",        "tier": 2, "region": "NEA"},
+  {"code": "JKT", "name": "Jakarta",           "country": "Indonesia",     "tier": 2, "region": "SEA"},
+  {"code": "MNL", "name": "Manila",            "country": "Philippines",   "tier": 3, "region": "SEA"},
+  {"code": "HYD", "name": "Hyderabad",         "country": "India",         "tier": 3, "region": "SAS"},
+  {"code": "BKK", "name": "Bangkok",           "country": "Thailand",      "tier": 3, "region": "SEA"},
+  {"code": "HCM", "name": "Ho Chi Minh City",  "country": "Vietnam",       "tier": 3, "region": "SEA"},
+  {"code": "AKL", "name": "Auckland",          "country": "New Zealand",   "tier": 3, "region": "ANZ"}
+]
