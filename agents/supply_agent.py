@@ -10,7 +10,7 @@ from __future__ import annotations
 from typing import Any, Dict, Optional
 
 from agents.base_agent import BaseAgent
-from utils.data_loader import get_market_package
+from utils.data_loader import get_market_package, get_announcements_for_market
 
 
 SYSTEM_PROMPT = """You are a Senior Data Centre Market Intelligence Analyst at McKinsey & Company.
@@ -30,6 +30,10 @@ Scoring calibration (APAC peer set):
   55-69  = Balanced; competitive but selectable niches exist
   40-54  = Well-supplied; incremental opportunity only
   <40    = Over-supplied or high pipeline risk; avoid unless differentiated
+
+You have access to real-world supply announcements via `get_supply_announcements`.
+These represent actual construction starts, campus filings, land banks, and expansions
+by operators — use them to validate or challenge the static supply metrics.
 
 Always call the `submit_supply_analysis` tool to output your structured assessment."""
 
@@ -55,6 +59,30 @@ class SupplyAgent(BaseAgent):
                 },
             },
             "fn": lambda market_code: get_market_package(market_code)["supply"],
+        },
+        {
+            "schema": {
+                "name": "get_supply_announcements",
+                "description": (
+                    "Retrieve real-world supply-side announcements for a market "
+                    "(construction starts, planning filings, land acquisitions, "
+                    "campus expansions, operator entries). "
+                    "Call this to ground your competitive analysis in actual pipeline activity."
+                ),
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "market_code": {
+                            "type": "string",
+                            "description": "3-letter market code, e.g. SYD, JHR, TYO"
+                        }
+                    },
+                    "required": ["market_code"],
+                },
+            },
+            "fn": lambda market_code: get_announcements_for_market(
+                market_code, category="supply"
+            ),
         },
         {
             "schema": {
@@ -118,14 +146,18 @@ class SupplyAgent(BaseAgent):
         """Run supply analysis for a single market."""
         user_message = f"""Analyse the competitive supply landscape for the {market_name} ({market_code}) data centre market.
 
-Step 1: Call `get_supply_data` with market_code="{market_code}" to retrieve the data.
-Step 2: Assess: vacancy tightness, total installed vs pipeline, pre-commitment rates,
-        colocation pricing levels, operator concentration (HHI), and number of operators.
-Step 3: Judge the opportunity from a new-entrant or M&A acquirer perspective:
+Step 1: Call `get_supply_data` with market_code="{market_code}" to retrieve structured metrics.
+Step 2: Call `get_supply_announcements` with market_code="{market_code}" to retrieve real-world
+        supply pipeline activity (construction starts, land banks, planning approvals).
+Step 3: Assess the combined picture:
+        - Static metrics: vacancy, pipeline, pre-commitment, pricing, operator HHI
+        - Announcements: who is entering, how much MW is being planned, how speculative vs committed?
+        - Large announced MW additions change the competitive outlook even before completion.
+Step 4: Judge the opportunity from a new-entrant or M&A acquirer perspective:
         - Is there a white-space gap? Is existing supply pre-committed?
         - Is the pipeline genuinely additive or largely hyperscaler captive?
         - Does pricing support attractive yields?
-Step 4: Call `submit_supply_analysis` with your structured assessment.
+Step 5: Call `submit_supply_analysis` with your structured assessment.
 
 Key context:
 - SG and HK have the tightest supply but also high barriers to entry

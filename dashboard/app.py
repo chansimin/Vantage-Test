@@ -289,9 +289,9 @@ st.markdown("<br>", unsafe_allow_html=True)
 # ---------------------------------------------------------------------------
 
 tabs_labels = {
-    "📊 Both": ["☁️ Cloud Markets", "🤖 AI Markets", "📡 Hyperscaler Coverage", "🔍 Drill-Down", "ℹ️ Methodology"],
-    "☁️ Cloud": ["☁️ Cloud Markets", "🔍 Drill-Down", "ℹ️ Methodology"],
-    "🤖 AI":    ["🤖 AI Markets", "📡 Hyperscaler Coverage", "🔍 Drill-Down", "ℹ️ Methodology"],
+    "📊 Both": ["☁️ Cloud Markets", "🤖 AI Markets", "📡 Hyperscaler Coverage", "🔍 Drill-Down", "📰 Market Intelligence", "ℹ️ Methodology"],
+    "☁️ Cloud": ["☁️ Cloud Markets", "🔍 Drill-Down", "📰 Market Intelligence", "ℹ️ Methodology"],
+    "🤖 AI":    ["🤖 AI Markets", "📡 Hyperscaler Coverage", "🔍 Drill-Down", "📰 Market Intelligence", "ℹ️ Methodology"],
 }
 
 tab_list = st.tabs(tabs_labels[use_case])
@@ -810,6 +810,148 @@ if drill_tab:
                         st.rerun()
                     except Exception as e:
                         st.error(f"Narrative failed: {e}")
+
+
+# ============================================================
+# MARKET INTELLIGENCE TAB
+# ============================================================
+
+intel_tab = get_tab("📰 Market Intelligence")
+if intel_tab:
+    with intel_tab:
+        from utils.data_loader import get_recent_announcements, load_announcements
+
+        st.markdown(
+            "<div class='section-title'>📰 APAC Market Intelligence — Recent Announcements</div>",
+            unsafe_allow_html=True,
+        )
+
+        all_anns = load_announcements()
+
+        # --- Summary KPIs ---
+        demand_anns = [a for a in all_anns if a.get("category") == "demand"]
+        supply_anns = [a for a in all_anns if a.get("category") == "supply"]
+        total_inv   = sum(
+            a.get("investment_usd_m") or 0 for a in all_anns
+            if a.get("investment_usd_m")
+        )
+        total_mw    = sum(
+            a.get("size_mw") or 0 for a in all_anns if a.get("size_mw")
+        )
+
+        ki1, ki2, ki3, ki4 = st.columns(4)
+        for col, label, val, sub, color in [
+            (ki1, "Total Announcements", len(all_anns), f"{len(demand_anns)} demand · {len(supply_anns)} supply", "#051C2C"),
+            (ki2, "Demand Events", len(demand_anns), "leases, LOIs, pre-leases", "#00B388"),
+            (ki3, "Supply Events", len(supply_anns), "construction, land, campus filings", "#7B2D8B"),
+            (ki4, "Total MW Announced", f"{total_mw:,.0f}", f"USD {total_inv/1000:.1f}B investment tracked", "#00A9CE"),
+        ]:
+            col.markdown(
+                f"""<div class="metric-card" style="border-left-color:{color}">
+                  <div class="lbl">{label}</div>
+                  <div class="val" style="color:{color}">{val}</div>
+                  <div class="sub">{sub}</div>
+                </div>""", unsafe_allow_html=True
+            )
+
+        st.markdown("<br>", unsafe_allow_html=True)
+
+        # --- Filters ---
+        fi1, fi2, fi3 = st.columns(3)
+        with fi1:
+            cat_filter = st.selectbox(
+                "Category", ["All", "demand", "supply"], key="ann_cat"
+            )
+        with fi2:
+            cities = sorted({a.get("city", "") for a in all_anns if a.get("city")})
+            city_filter = st.multiselect("City", cities, default=[], key="ann_city")
+        with fi3:
+            party_types = sorted({a.get("party_type", "") for a in all_anns if a.get("party_type")})
+            pt_filter = st.multiselect("Party type", party_types, default=[], key="ann_pt")
+
+        filtered_anns = [
+            a for a in sorted(all_anns, key=lambda x: x.get("date", ""), reverse=True)
+            if (cat_filter == "All" or a.get("category") == cat_filter)
+            and (not city_filter or a.get("city") in city_filter)
+            and (not pt_filter or a.get("party_type") in pt_filter)
+        ]
+
+        st.caption(f"Showing {len(filtered_anns)} of {len(all_anns)} announcements")
+
+        # --- Bar chart: MW by city ---
+        st.markdown("<div class='section-title'>Announced MW by City</div>",
+                    unsafe_allow_html=True)
+        city_mw = {}
+        for a in filtered_anns:
+            if a.get("size_mw"):
+                city_mw[a.get("city", "Unknown")] = (
+                    city_mw.get(a.get("city", "Unknown"), 0) + a["size_mw"]
+                )
+        if city_mw:
+            mw_df = pd.DataFrame(
+                sorted(city_mw.items(), key=lambda x: x[1], reverse=True),
+                columns=["City", "MW"]
+            )
+            fig_mw = px.bar(
+                mw_df, x="City", y="MW",
+                color="MW",
+                color_continuous_scale=[[0,"#00A9CE"],[1,"#7B2D8B"]],
+                labels={"MW": "Announced MW"},
+            )
+            fig_mw.update_layout(
+                height=280, margin=dict(l=5, r=5, t=10, b=5),
+                showlegend=False, plot_bgcolor="#F5F6F7", paper_bgcolor="white",
+            )
+            st.plotly_chart(fig_mw, use_container_width=True)
+
+        # --- Announcement feed ---
+        st.markdown("<div class='section-title'>Announcement Feed</div>",
+                    unsafe_allow_html=True)
+
+        CAT_COLORS = {"demand": "#00B388", "supply": "#7B2D8B"}
+        EVENT_ICONS = {
+            "lease": "📋", "pre_lease": "🤝", "loi": "📝", "loi_signed": "✍️",
+            "campus_announcement": "🏗️", "construction_start": "⚙️",
+            "land_bank": "🏞️", "planning_approval": "✅", "expansion": "📈",
+            "anchor_tenant": "⚓", "capacity_addition": "➕", "withdrawal": "🚫",
+        }
+        PARTY_TYPE_LABELS = {
+            "hyperscaler": "Hyperscaler", "neocloud": "Neocloud",
+            "dc_operator": "DC Operator", "developer": "Developer",
+            "reit": "REIT", "government": "Government", "telco": "Telco",
+        }
+
+        for ann in filtered_anns:
+            cat   = ann.get("category", "")
+            color = CAT_COLORS.get(cat, "#9CA3AF")
+            icon  = EVENT_ICONS.get(ann.get("event_type", ""), "📌")
+            mw_str = f"**{ann['size_mw']:.0f} MW** · " if ann.get("size_mw") else ""
+            inv_str = f"USD {ann['investment_usd_m']:.0f}M · " if ann.get("investment_usd_m") else ""
+            pt_label = PARTY_TYPE_LABELS.get(ann.get("party_type", ""), ann.get("party_type", ""))
+            verified = "✔" if ann.get("verified") else ""
+
+            with st.container():
+                h1, h2 = st.columns([0.15, 0.85])
+                with h1:
+                    st.markdown(
+                        f"<div style='text-align:center;font-size:1.6rem;padding-top:4px'>{icon}</div>"
+                        f"<div style='text-align:center;background:{color};color:white;"
+                        f"border-radius:8px;padding:2px 6px;font-size:.7rem;font-weight:700'>"
+                        f"{cat.upper()}</div>",
+                        unsafe_allow_html=True,
+                    )
+                with h2:
+                    st.markdown(
+                        f"**{ann.get('party', '—')}** "
+                        f"<span style='color:#4A4F55;font-size:.82rem'>({pt_label}) {verified}</span>  \n"
+                        f"<small style='color:#4A4F55'>{ann.get('date','')} · "
+                        f"{ann.get('city','')} · {ann.get('submarket_name','')}</small>  \n"
+                        f"{mw_str}{inv_str}{ann.get('details','')}",
+                        unsafe_allow_html=True,
+                    )
+                    if ann.get("source_url"):
+                        st.caption(f"Source: [{ann.get('source', ann['source_url'])}]({ann['source_url']})")
+                st.divider()
 
 
 # ============================================================

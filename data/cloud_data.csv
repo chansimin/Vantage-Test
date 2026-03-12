@@ -45,3 +45,6 @@ HCM-BDG,32,2,2,130,30,95,4.0,emerging,0,0,0,0
 HCM-LAN,52,1,0,80,5,0,6.5,greenfield,0,0,0,0
 AKL-ALB,18,3,3,45,65,220,2.2,established,1,1,0,0
 AKL-STA,22,2,2,55,40,190,2.8,emerging,0,0,0,0
+SYD-HNW,44,2,3,220,45,180,5.1,emerging,0,0,0,0
+SYD-ERP,48,2,2,350,20,175,5.5,emerging,0,0,0,0
+TYO-INZ,40,4,5,200,55,265,4.5,established,1,1,0,0

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 import pandas as pd
 
@@ -84,3 +84,70 @@ def get_submarket_package(submarket_code: str) -> Dict[str, Any]:
         "ai":    ai_df.loc[submarket_code].to_dict()    if submarket_code in ai_df.index    else {},
         "macro": macro_df.loc[city_code].to_dict()      if city_code in macro_df.index      else {},
     }
+
+
+# ---------------------------------------------------------------------------
+# Announcements helpers
+# ---------------------------------------------------------------------------
+
+def load_announcements() -> List[Dict[str, Any]]:
+    """Load all announcements from announcements.json."""
+    with open(DATA_DIR / "announcements.json") as f:
+        data = json.load(f)
+    return data.get("announcements", [])
+
+
+def get_announcements_for_city(
+    city_code: str,
+    category: Optional[str] = None,
+    limit: int = 20,
+) -> List[Dict[str, Any]]:
+    """Return announcements for a city, optionally filtered by category.
+
+    Args:
+        city_code: 3-letter city code (e.g. 'SYD', 'JHR', 'TYO')
+        category: 'demand', 'supply', or None for all
+        limit: max records to return (most recent first)
+    """
+    announcements = load_announcements()
+    results = [
+        a for a in announcements
+        if a.get("city_code") == city_code
+        and (category is None or a.get("category") == category)
+    ]
+    # Sort by date descending (string comparison works for YYYY-MM-DD)
+    results.sort(key=lambda x: x.get("date", ""), reverse=True)
+    return results[:limit]
+
+
+def get_announcements_for_market(
+    market_code: str,
+    category: Optional[str] = None,
+    limit: int = 20,
+) -> List[Dict[str, Any]]:
+    """Return announcements for a market code (city_code alias).
+
+    Many markets share city codes with market codes (e.g. SYD, MEL, SG).
+    This function checks both city_code and a market→city mapping.
+    """
+    # Direct match first (most market codes = city codes)
+    results = get_announcements_for_city(market_code, category=category, limit=limit)
+    if results:
+        return results
+
+    # Fallback: check markets.json for a city_code mapping
+    markets = {m["code"]: m for m in load_markets()}
+    city_code = markets.get(market_code, {}).get("city_code", market_code)
+    return get_announcements_for_city(city_code, category=category, limit=limit)
+
+
+def get_recent_announcements(
+    category: Optional[str] = None,
+    limit: int = 50,
+) -> List[Dict[str, Any]]:
+    """Return the most recent announcements across all markets."""
+    announcements = load_announcements()
+    if category:
+        announcements = [a for a in announcements if a.get("category") == category]
+    announcements.sort(key=lambda x: x.get("date", ""), reverse=True)
+    return announcements[:limit]

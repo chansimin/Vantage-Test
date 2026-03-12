@@ -11,7 +11,7 @@ import json
 from typing import Any, Dict, Optional
 
 from agents.base_agent import BaseAgent
-from utils.data_loader import get_market_package
+from utils.data_loader import get_market_package, get_announcements_for_market
 
 
 SYSTEM_PROMPT = """You are a Senior Data Centre Demand Analyst at McKinsey & Company.
@@ -30,6 +30,10 @@ When scoring, calibrate to the APAC peer set:
   60-74  = Moderate-to-strong demand
   45-59  = Emerging demand
   <45    = Early-stage / nascent demand
+
+You have access to real-world market announcements via `get_demand_announcements`.
+These represent actual hyperscaler leases, pre-commitments, and campus announcements
+— weight them heavily as leading demand indicators.
 
 Always call the `submit_demand_analysis` tool to output your structured assessment."""
 
@@ -55,6 +59,29 @@ class DemandAgent(BaseAgent):
                 },
             },
             "fn": lambda market_code: get_market_package(market_code)["demand"],
+        },
+        {
+            "schema": {
+                "name": "get_demand_announcements",
+                "description": (
+                    "Retrieve real-world demand-side announcements for a market "
+                    "(hyperscaler leases, pre-leases, campus commitments, LOIs). "
+                    "Call this to ground your analysis in actual recent market activity."
+                ),
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "market_code": {
+                            "type": "string",
+                            "description": "3-letter market code, e.g. SYD, JHR, TYO"
+                        }
+                    },
+                    "required": ["market_code"],
+                },
+            },
+            "fn": lambda market_code: get_announcements_for_market(
+                market_code, category="demand"
+            ),
         },
         {
             "schema": {
@@ -112,11 +139,14 @@ class DemandAgent(BaseAgent):
         """
         user_message = f"""Analyse the demand signals for the {market_name} ({market_code}) data centre market.
 
-Step 1: Call `get_demand_data` with market_code="{market_code}" to retrieve the data.
-Step 2: Review the metrics carefully — consider hyperscaler activity, AI workload index,
-        cloud adoption growth, enterprise demand, and recent DC absorption.
-Step 3: Cross-reference the metrics against the APAC peer set context below.
-Step 4: Call `submit_demand_analysis` with your structured assessment.
+Step 1: Call `get_demand_data` with market_code="{market_code}" to retrieve the structured metrics.
+Step 2: Call `get_demand_announcements` with market_code="{market_code}" to retrieve real-world
+        demand announcements (hyperscaler leases, campus commitments, pre-leases).
+Step 3: Synthesise: use the structured metrics for baseline calibration, and the announcements
+        as leading indicators. A single 500MW+ hyperscaler commitment can shift the score
+        materially. Weight recency — 2024–2025 announcements carry more signal.
+Step 4: Cross-reference against the APAC peer set.
+Step 5: Call `submit_demand_analysis` with your structured assessment.
 
 APAC peer benchmarks for calibration:
 - SG, TYO, SYD are Tier 1 markets with the strongest demand bases
