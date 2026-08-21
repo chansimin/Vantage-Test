@@ -20,198 +20,113 @@
   --warn: #b4791e;
   --low: #8a5a3f;
   --focus: #2c6e8f;
+  --adjusted: #8a5a3f;
+  --uncertain: #b4791e;
+  --cutoff-line: #14181f;
 }
 :root:not([data-theme="light"]) {
   @media (prefers-color-scheme: dark) {
-    --ink: #e9e6dd;
-    --ink-soft: #c9c5bb;
-    --muted: #9a968c;
-    --paper: #14171b;
-    --surface: #1b1f24;
-    --surface-2: #23282e;
-    --line: rgba(233,230,221,0.12);
-    --line-strong: rgba(233,230,221,0.22);
-    --neutral-bar: #4f8dc6;
-    --neutral-bar-soft: rgba(79,141,198,0.18);
-    --japan: #d9704f;
-    --japan-soft: rgba(217,112,79,0.18);
-    --good: #6fae8c;
-    --warn: #d6a24a;
-    --low: #c08a6c;
-    --focus: #5fa8c9;
+    --ink: #e9e6dd; --ink-soft: #c9c5bb; --muted: #9a968c;
+    --paper: #14171b; --surface: #1b1f24; --surface-2: #23282e;
+    --line: rgba(233,230,221,0.12); --line-strong: rgba(233,230,221,0.22);
+    --neutral-bar: #4f8dc6; --neutral-bar-soft: rgba(79,141,198,0.18);
+    --japan: #d9704f; --japan-soft: rgba(217,112,79,0.18);
+    --good: #6fae8c; --warn: #d6a24a; --low: #c08a6c; --focus: #5fa8c9;
+    --adjusted: #c08a6c; --uncertain: #d6a24a; --cutoff-line: #e9e6dd;
   }
 }
 :root[data-theme="dark"] {
-  --ink: #e9e6dd;
-  --ink-soft: #c9c5bb;
-  --muted: #9a968c;
-  --paper: #14171b;
-  --surface: #1b1f24;
-  --surface-2: #23282e;
-  --line: rgba(233,230,221,0.12);
-  --line-strong: rgba(233,230,221,0.22);
-  --neutral-bar: #4f8dc6;
-  --neutral-bar-soft: rgba(79,141,198,0.18);
-  --japan: #d9704f;
-  --japan-soft: rgba(217,112,79,0.18);
-  --good: #6fae8c;
-  --warn: #d6a24a;
-  --low: #c08a6c;
-  --focus: #5fa8c9;
+  --ink: #e9e6dd; --ink-soft: #c9c5bb; --muted: #9a968c;
+  --paper: #14171b; --surface: #1b1f24; --surface-2: #23282e;
+  --line: rgba(233,230,221,0.12); --line-strong: rgba(233,230,221,0.22);
+  --neutral-bar: #4f8dc6; --neutral-bar-soft: rgba(79,141,198,0.18);
+  --japan: #d9704f; --japan-soft: rgba(217,112,79,0.18);
+  --good: #6fae8c; --warn: #d6a24a; --low: #c08a6c; --focus: #5fa8c9;
+  --adjusted: #c08a6c; --uncertain: #d6a24a; --cutoff-line: #e9e6dd;
 }
 
 * { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif;
-  font-size: 15px;
-  line-height: 1.55;
-}
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif; font-size: 15px; line-height: 1.55; }
 ::selection { background: var(--japan-soft); }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 40px 24px 96px; }
 
 .masthead { display: flex; flex-direction: column; gap: 10px; margin-bottom: 8px; }
-.eyebrow {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11.5px;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-h1 {
-  font-family: "Archivo", sans-serif;
-  font-weight: 800;
-  font-size: clamp(30px, 4.4vw, 46px);
-  line-height: 1.06;
-  letter-spacing: -0.01em;
-  margin: 0;
-  text-wrap: balance;
-}
-.dek {
-  max-width: 62ch;
-  color: var(--ink-soft);
-  font-size: 16.5px;
-  margin: 4px 0 0;
-}
+.eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: "Archivo", sans-serif; font-weight: 800; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.06; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.dek { max-width: 66ch; color: var(--ink-soft); font-size: 16.5px; margin: 4px 0 0; }
 .dek b { color: var(--ink); }
 
-.scope-row {
-  margin: 28px 0 22px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.scope-label {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.scope-toggle {
-  display: inline-flex;
-  border: 1px solid var(--line-strong);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--surface);
-}
-.scope-toggle button {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  color: var(--ink-soft);
-  font-family: "Public Sans", sans-serif;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 8px 14px;
-  cursor: pointer;
-  border-right: 1px solid var(--line);
-  transition: background 0.15s ease, color 0.15s ease;
-}
-.scope-toggle button:last-child { border-right: 0; }
-.scope-toggle button:hover { background: var(--surface-2); }
-.scope-toggle button.active { background: var(--ink); color: var(--paper); }
-.scope-toggle button:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.controls { margin: 28px 0 22px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.control-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.scope-label { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button { appearance: none; border: 0; background: transparent; color: var(--ink-soft); font-family: "Public Sans", sans-serif; font-weight: 600; font-size: 13px; padding: 8px 14px; cursor: pointer; border-right: 1px solid var(--line); }
+.seg button:last-child { border-right: 0; }
+.seg button:hover { background: var(--surface-2); }
+.seg button.active { background: var(--ink); color: var(--paper); }
+.chip-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line-strong); border-radius: 999px; padding: 6px 12px 6px 8px; background: var(--surface); font-size: 12.5px; font-weight: 600; color: var(--ink-soft); cursor: pointer; user-select: none; }
+.chip input { accent-color: var(--japan); width: 14px; height: 14px; margin: 0; }
+.chip.on { background: var(--surface-2); color: var(--ink); border-color: var(--line-strong); }
+button:focus-visible, a:focus-visible, .chip:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
-.tiles {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 36px;
-}
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
 .tile { background: var(--surface); padding: 20px 18px; display: flex; flex-direction: column; gap: 6px; }
-.tile .k {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.tile .v {
-  font-family: "Archivo", sans-serif;
-  font-weight: 700;
-  font-size: 30px;
-  letter-spacing: -0.01em;
-  font-variant-numeric: tabular-nums;
-}
+.tile .k { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.tile .v { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 30px; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
 .tile.jp .v { color: var(--japan); }
 .tile .sub { font-size: 12.5px; color: var(--muted); }
+.view-note { font-size: 12.5px; color: var(--muted); margin: 0 0 32px; }
 
 section { margin: 44px 0; }
-h2 {
-  font-family: "Archivo", sans-serif;
-  font-weight: 700;
-  font-size: 21px;
-  margin: 0 0 4px;
-  letter-spacing: -0.005em;
-}
-.section-note { color: var(--muted); font-size: 13.5px; margin: 0 0 20px; max-width: 68ch; }
+h2 { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 21px; margin: 0 0 4px; letter-spacing: -0.005em; }
+.section-note { color: var(--muted); font-size: 13.5px; margin: 0 0 20px; max-width: 70ch; }
 
-.legend { display: flex; gap: 18px; align-items: center; margin-bottom: 14px; font-size: 13px; color: var(--ink-soft); }
+.legend { display: flex; gap: 18px; align-items: center; margin-bottom: 14px; font-size: 13px; color: var(--ink-soft); flex-wrap: wrap; }
 .legend .sw { display: inline-flex; align-items: center; gap: 7px; }
 .legend .dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.legend .hatch { width: 16px; height: 10px; border-radius: 2px; display: inline-block; background: repeating-linear-gradient(45deg, var(--neutral-bar) 0 3px, transparent 3px 6px); }
+.legend .dash { width: 16px; height: 0; border-top: 2px dashed var(--muted); display: inline-block; }
 
-.panel-title {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11.5px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 26px 0 10px;
-}
 .chart { display: flex; flex-direction: column; gap: 7px; }
-.row { display: grid; grid-template-columns: 168px 1fr 92px; align-items: center; gap: 10px; }
-.row .name { font-size: 13.5px; font-weight: 600; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.row { display: grid; grid-template-columns: 168px 1fr 108px; align-items: center; gap: 10px; }
+.row .name { font-size: 13.5px; font-weight: 600; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; justify-content: flex-end; gap: 5px; align-items: center; }
 .row.jp .name { color: var(--japan); }
 .row .track { position: relative; height: 20px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
 .row .bar { position: absolute; left: 0; top: 0; height: 100%; border-radius: 4px; background: var(--neutral-bar); transition: width 0.5s cubic-bezier(.2,.8,.2,1); }
 .row.jp .bar { background: var(--japan); }
-.row .val { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+.row .val { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; font-variant-numeric: tabular-nums; color: var(--ink-soft); white-space: nowrap; }
 .row.jp .val { color: var(--japan); font-weight: 600; }
-.row.dim .bar { opacity: 0.35; }
+.row.dim .bar { opacity: 0.3; }
 .row.dim .name, .row.dim .val { color: var(--muted); }
 
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tag { font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: 0.02em; padding: 1px 5px; border-radius: 4px; font-weight: 600; }
+.tag.adj { background: rgba(138,90,63,0.16); color: var(--adjusted); }
+.tag.unc { background: rgba(180,121,30,0.16); color: var(--uncertain); }
+
+/* Gantt timeline */
+.gantt { position: relative; }
+.gantt-axis { position: relative; height: 26px; margin-left: 178px; border-bottom: 1px solid var(--line-strong); margin-bottom: 8px; }
+.gantt-axis .yr { position: absolute; bottom: 4px; transform: translateX(-50%); font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--muted); }
+.gantt-axis .cutoff-label { position: absolute; bottom: 4px; transform: translateX(-50%); font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--cutoff-line); font-weight: 700; }
+.gantt-rows { position: relative; display: flex; flex-direction: column; gap: 6px; }
+.gantt-row { display: grid; grid-template-columns: 178px 1fr; align-items: center; gap: 0; height: 24px; }
+.gantt-row .gname { font-size: 12.5px; font-weight: 600; text-align: right; padding-right: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; justify-content: flex-end; gap: 5px; align-items: center; }
+.gantt-row.jp .gname { color: var(--japan); }
+.gantt-track { position: relative; height: 24px; }
+.gantt-cutoff { position: absolute; top: -30px; bottom: -6px; width: 1px; background: var(--cutoff-line); opacity: 0.55; z-index: 1; }
+.gbar { position: absolute; top: 5px; height: 14px; border-radius: 4px; background: var(--neutral-bar); }
+.gantt-row.jp .gbar { background: var(--japan); }
+.gbar.future { background: repeating-linear-gradient(45deg, currentColor 0 3px, transparent 3px 6px); opacity: 0.55; color: var(--neutral-bar); }
+.gantt-row.jp .gbar.future { color: var(--japan); }
+.gbar.undisclosed { background: transparent; border: 1.5px dashed var(--muted); }
+.gpoint { position: absolute; top: 3px; width: 10px; height: 10px; border-radius: 3px; background: var(--neutral-bar); transform: translateX(-50%) rotate(45deg); }
+.gantt-row.jp .gpoint { background: var(--japan); }
+.gend-mark { position: absolute; top: -2px; font-size: 11px; color: var(--muted); }
+
 .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
-thead th {
-  text-align: left;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10.5px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 11px 12px;
-  border-bottom: 1px solid var(--line-strong);
-  background: var(--surface-2);
-  white-space: nowrap;
-}
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead th { text-align: left; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); padding: 11px 12px; border-bottom: 1px solid var(--line-strong); background: var(--surface-2); white-space: nowrap; }
 tbody td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
 tbody tr:last-child td { border-bottom: 0; }
 tbody tr:hover { background: var(--surface-2); }
@@ -219,27 +134,21 @@ tbody tr.jp { background: var(--japan-soft); }
 td.num { font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; white-space: nowrap; }
 td.country { font-weight: 700; white-space: nowrap; }
 tr.jp td.country { color: var(--japan); }
-td.notes { color: var(--ink-soft); font-size: 12.5px; max-width: 340px; }
+td.notes { color: var(--ink-soft); font-size: 12.5px; max-width: 320px; }
 .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 10.5px; font-family: "IBM Plex Mono", monospace; letter-spacing: 0.02em; }
 .pill.high { background: rgba(61,122,92,0.15); color: var(--good); }
 .pill.medium, .pill.medium-high, .pill.low-medium { background: rgba(180,121,30,0.15); color: var(--warn); }
 .pill.low, .pill.n\/a { background: rgba(138,90,63,0.15); color: var(--low); }
 
-.callout {
-  border: 1px solid var(--line-strong);
-  border-radius: 10px;
-  padding: 20px 22px;
-  background: var(--surface);
-}
+.callout { border: 1px solid var(--line-strong); border-radius: 10px; padding: 20px 22px; background: var(--surface); }
 .callout h3 { font-family: "Archivo", sans-serif; font-size: 15px; font-weight: 700; margin: 0 0 8px; }
 .callout p { margin: 0 0 10px; color: var(--ink-soft); font-size: 13.8px; }
-.callout ul { margin: 0; padding-left: 20px; color: var(--ink-soft); font-size: 13.5px; }
-.callout li { margin-bottom: 6px; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 @media (max-width: 760px) {
   .two-col { grid-template-columns: 1fr; }
   .tiles { grid-template-columns: repeat(2, 1fr); }
-  .row { grid-template-columns: 100px 1fr 76px; }
+  .row { grid-template-columns: 100px 1fr 86px; }
+  .gantt-axis, .gantt-row { margin-left: 0; grid-template-columns: 110px 1fr; }
 }
 
 .excl-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 24px; font-size: 12.8px; color: var(--ink-soft); }
@@ -257,15 +166,24 @@ a:hover { border-bottom-color: currentColor; }
   <div class="masthead">
     <div class="eyebrow">Sovereign AI &amp; Data-Center Compute &mdash; Global Tracker</div>
     <h1>Who's funding the sovereign AI build&#8209;out &mdash; and where does Japan rank?</h1>
-    <p class="dek">30 government-led sovereign AI/compute programs across 6 regions, triangulated from <b>announced budgets (USD)</b> and <b>announced capacity (MW / GPUs)</b> collected independently per country. Toggle the scope below &mdash; the three Gulf mega-programs are structurally different (JV-heavy, foreign hardware) and swing Japan's share by roughly 3x.</p>
+    <p class="dek">30 government-led sovereign AI/compute programs across 6 regions, triangulated from <b>announced budgets (USD)</b> and <b>announced capacity (MW / GPUs)</b>. Multi-year commitments that run past 2030 are linearly prorated to a 2030 cutoff and tagged <span class="tag adj">ADJUSTED</span>; commitments with no disclosed completion date are shown at full value but tagged <span class="tag unc">UNCERTAIN</span>.</p>
   </div>
 
-  <div class="scope-row">
-    <span class="scope-label">Global scope</span>
-    <div class="scope-toggle" role="group" aria-label="Global scope scenario">
-      <button data-scope="all" class="active">All 29 countries</button>
-      <button data-scope="excl_eu_uae">Excl. EU pipeline + UAE proxy</button>
-      <button data-scope="excl_gulf">Excl. Gulf states</button>
+  <div class="controls">
+    <div class="control-group">
+      <span class="scope-label">View</span>
+      <div class="seg" id="view-toggle">
+        <button data-view="by_2030" class="active">By 2030</button>
+        <button data-view="full">Full commitment</button>
+      </div>
+    </div>
+    <div class="control-group">
+      <span class="scope-label">Exclude</span>
+      <div class="chip-row" id="excl-chips">
+        <label class="chip" data-excl="gulf"><input type="checkbox">Gulf states (Saudi/UAE/Qatar/Kuwait)</label>
+        <label class="chip" data-excl="euuae"><input type="checkbox">EU pipeline + UAE proxy</label>
+        <label class="chip" data-excl="china"><input type="checkbox">China</label>
+      </div>
     </div>
   </div>
 
@@ -273,7 +191,7 @@ a:hover { border-bottom-color: currentColor; }
     <div class="tile jp">
       <div class="k">Japan share of global MW</div>
       <div class="v" id="tile-jp-mw">&mdash;</div>
-      <div class="sub">triangulated compute capacity</div>
+      <div class="sub" id="sub-jp-mw">triangulated compute capacity</div>
     </div>
     <div class="tile jp">
       <div class="k">Japan share of global budget</div>
@@ -291,10 +209,11 @@ a:hover { border-bottom-color: currentColor; }
       <div class="sub">across scoped countries</div>
     </div>
   </div>
+  <p class="view-note" id="view-note"></p>
 
   <section>
     <h2>Gigawatt-scale programs</h2>
-    <p class="section-note">Four commitments operate on an entirely different scale bracket &mdash; shown on their own axis so the rest of the field remains legible below.</p>
+    <p class="section-note">Four commitments operate on an entirely different scale bracket &mdash; shown on their own axis so the rest of the field remains legible below. Saudi Arabia's bar shrinks by more than half in the "By 2030" view &mdash; its 6.6GW target is an explicit 2025&ndash;2035 decade plan.</p>
     <div class="legend">
       <span class="sw"><span class="dot" style="background:var(--neutral-bar)"></span>Other countries</span>
       <span class="sw"><span class="dot" style="background:var(--japan)"></span>Japan</span>
@@ -304,13 +223,25 @@ a:hover { border-bottom-color: currentColor; }
 
   <section>
     <h2>Everyone else &mdash; sub-gigawatt sovereign programs</h2>
-    <p class="section-note">Japan's identified sovereign compute commitments (&asymp;300MW triangulated, &asymp;$7.1B across METI/GENIAC programs) sit mid-pack here &mdash; ahead of most of Southeast Asia and Latin America, behind Qatar, Kuwait, and the EU's pending Gigafactories allocation.</p>
+    <p class="section-note">Japan's identified sovereign compute commitments hold steady across both views (&asymp;300MW, &asymp;$7.1B) since every Japanese program concludes at or before 2029 &mdash; there's nothing to prorate.</p>
     <div class="chart" id="chart-rest"></div>
   </section>
 
   <section>
+    <h2>Build-out timeline</h2>
+    <p class="section-note">Each bar spans a program's disclosed start&ndash;end window (capacity-side where available, budget-side otherwise). The vertical line marks the 2030 cutoff. Hatched segments fall after 2030 and are excluded from the "By 2030" figures above; dashed, open-ended bars have no disclosed completion date at all.</p>
+    <div class="legend">
+      <span class="sw"><span class="dot" style="background:var(--neutral-bar)"></span>Realized by 2030</span>
+      <span class="sw"><span class="hatch"></span>Beyond 2030 (excluded from "By 2030")</span>
+      <span class="sw"><span class="dash"></span>No disclosed end date</span>
+      <span class="sw">&#9670;&nbsp;Single-date / already-built</span>
+    </div>
+    <div class="gantt" id="gantt"></div>
+  </section>
+
+  <section>
     <h2>Full dataset</h2>
-    <p class="section-note">Every row combines two independently-sourced signals &mdash; announced budget and announced capacity &mdash; per the triangulation method below. Hover a row for the reconciliation note.</p>
+    <p class="section-note">Every row combines two independently-sourced signals &mdash; announced budget and announced capacity &mdash; per the triangulation method below. Values reflect the current view (By 2030 / Full commitment). Hover a row for the reconciliation note.</p>
     <div class="table-scroll">
       <table>
         <thead>
@@ -334,14 +265,14 @@ a:hover { border-bottom-color: currentColor; }
     <h2>Method &amp; caveats</h2>
     <div class="two-col">
       <div class="callout">
-        <h3>Two independent signals, triangulated</h3>
-        <p>Each country contributes a <b>budget</b> figure and a <b>capacity</b> figure exactly as its government announced them &mdash; these are often separate programs, not derived from one another (e.g. Saudi Arabia's $100B HUMAIN commitment and its 6.6GW target are both headline figures for the same push, not a computed pair).</p>
-        <p>Where capacity wasn't stated directly, it's estimated &mdash; in order of preference: (1) direct MW, (2) GPU count &times; a kW/GPU factor (1.5kW for H100-class, 2.1kW for Blackwell-class, both PUE-inclusive), (3) budget &divide; a $/MW capex benchmark ($15&ndash;38M/MW depending on whether the spend is infra-only or all-in).</p>
+        <h3>2030 proration method</h3>
+        <p>For a program with an explicit start&ndash;end window straddling 2030, the by-2030 value is <code>total &times; (2030 &minus; start) / (end &minus; start)</code> &mdash; a straight-line run-rate, e.g. Saudi Arabia's 6.6GW/2025&ndash;2035 implies ~3.3GW by 2030 (5 of 10 years elapsed). This assumes even deployment across the window, which likely understates near-term-heavy build-outs and overstates back-loaded ones &mdash; it's a planning-level estimate, not a schedule.</p>
+        <p>Programs ending at or before 2030, or already-realized single-date announcements, count at full value with no proration. Programs with no disclosed completion date at all are shown at full value but tagged UNCERTAIN &mdash; proration was not possible, not assumed unnecessary.</p>
       </div>
       <div class="callout">
-        <h3>Scope: sovereign &ne; commercial</h3>
-        <p>Only counted if a government body, sovereign wealth fund, or state-owned enterprise is the funder, subsidizer, or explicit sponsor. The &asymp;$500B private &ldquo;Stargate&rdquo; JV, Malaysia's 600MW YTL/Nvidia campus, and similar hyperscaler-only deals are <b>excluded</b> even where politically endorsed.</p>
-        <p>Japan's figure excludes the &yen;10T+/7yr semiconductor-fab umbrella (Rapidus/TSMC subsidies) to keep the comparison to compute/DC spend consistent across countries &mdash; including chip-fab policy would inflate Japan's number against a different asset class than everyone else's.</p>
+        <h3>Two independent signals, triangulated</h3>
+        <p>Each country contributes a <b>budget</b> figure and a <b>capacity</b> figure exactly as its government announced them &mdash; these are often separate programs, not derived from one another. Where capacity wasn't stated directly: (1) direct MW, (2) GPU count &times; kW/GPU (1.5kW H100-class, 2.1kW Blackwell-class), (3) budget &divide; $15&ndash;38M/MW capex benchmark, in that preference order.</p>
+        <p>Only counted as "sovereign" if a government body, sovereign wealth fund, or state-owned enterprise is the funder, subsidizer, or explicit sponsor &mdash; the ~$500B private "Stargate" JV and similar hyperscaler-only deals are excluded even where politically endorsed.</p>
       </div>
     </div>
   </section>
@@ -358,7 +289,8 @@ a:hover { border-bottom-color: currentColor; }
 </div>
 
 <script>
-const DATA = {"countries": [{"country": "Saudi Arabia", "region": "Middle East", "budget": 100000, "mw": 6600, "mw_direct": 6600, "gpu": null, "confidence": "medium", "purity": "state-owned (PIF subsidiary) with foreign JVs/hardware", "notes": "6.6GW is a 10-year plan; ~2.2GW of data centers + several GW-scale JVs (xAI 500MW, AMD/Cisco 1GW, stc-Humain 1GW, Hexagon 480MW) are already committed within that envelope, not additive.", "programs": [{"name": "HUMAIN national AI champion", "url": "https://www.pif.gov.sa/en/our-investments/our-portfolio/humain/", "source": "PIF / SPA"}]}, {"country": "UAE", "region": "Middle East", "budget": 49000, "mw": 5000, "mw_direct": 5000, "gpu": null, "confidence": "low-medium", "purity": "state-backed JV with US hyperscalers (G42/Mubadala + OpenAI/Oracle/NVIDIA/Cisco/SoftBank)", "notes": "Budget (MGX $49B fund) and MW (5GW campus) are DIFFERENT programs/scopes, not 1:1 linked -- MGX invests broadly, not solely into the Abu Dhabi campus. Treat as two independent signals per methodology.", "programs": [{"name": "MGX sovereign AI investment vehicle (Fund I)", "url": "https://www.thenationalnews.com/business/markets/2026/07/01/abu-dhabis-ai-investment-firm-mgx-raises-49bn-for-new-fund/", "source": "The National"}, {"name": "Stargate UAE / UAE-US AI Campus", "url": "https://www.datacenterdynamics.com/en/news/us-and-uae-plan-to-build-5gw-ai-data-center-campus-run-by-g42-and-american-hyperscalers/", "source": "DataCenterDynamics"}]}, {"country": "China", "region": "East Asia", "budget": 61000, "mw": 2836, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "state-funded national hub clusters + fragmented provincial subsidy schemes", "notes": "No MW/GPU figure was found for the $61B figure; MW is a budget-based estimate only (order-of-magnitude, low confidence). A widely-cited $295B aggregate figure exists but is a private-analyst estimate, not a government announcement, and is excluded from the headline number.", "programs": [{"name": "East Data West Computing / national computing hub clusters", "url": "https://www.techradar.com/pro/website-hosting/china-invested-dollar61-billion-in-eight-national-datacenter-hubs-according-to-director-of-national-data-bureau", "source": "TechRadar / National Data Bureau director statement"}]}, {"country": "Japan", "region": "East Asia", "budget": 7080, "mw": 300, "mw_direct": null, "gpu": 10800, "confidence": "low-medium", "purity": "government subsidy/grant co-funding of private cloud/DC operators", "notes": "Excludes Japan's >=Y10T/7yr (~$65B) 'AI-semiconductor industry base reinforcement' umbrella and the FY2026 METI budget (Y3.07T total), since those are chip-fab (Rapidus/TSMC) industrial policy or broad ministry budgets, not compute/DC-specific -- including them would conflate semiconductor manufacturing subsidies with sovereign DC/compute workload and break comparability with other countries. GPU floor (10,800, Sakura only) is a small fraction of the ~$7.1B identified spend across 5 co-funded firms; budget-based MW estimate (range 186-472MW, using $15-38M/MW) is used as the primary signal, with the true figure plausibly at or above the upper end since these are partial subsidies (leverage effect) rather than full capex.", "programs": [{"name": "METI cloud-compute subsidies Round 1 (Economic Security Promotion Act)", "url": "https://www.meti.go.jp/english/press/2024/0419_001.html", "source": "METI press release"}, {"name": "GENIAC (Generative AI Accelerator Challenge)", "url": "https://www.meti.go.jp/english/press/2024/0202_001.html", "source": "METI GENIAC launch"}, {"name": "METI AI-GPU investment grant to Ubitus", "url": "https://ubitus.net/2025-meti-ai-gpu-investment-en/", "source": "Ubitus press release"}]}, {"country": "South Korea", "region": "East Asia", "budget": 2900, "mw": 85, "mw_direct": null, "gpu": 50000, "confidence": "medium", "purity": "public-private SPV (KOACC) + direct MSIT procurement", "notes": "50,000 GPU figure is the officially cited cumulative national target (NAICC 15k->50k by 2030, overlapping with the 13k CSP tranche) -- treated as one target, not additive with the CSP tranche, per source caveats.", "programs": [{"name": "National AI Computing Center (Haenam)", "url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=8025&type=O&insttCode=A110439", "source": "Korea.net / Korea Times"}, {"name": "MSIT GPU procurement (Naver Cloud/NHN Cloud/Kakao)", "url": "https://oecd.ai/en/dashboards/policy-initiatives/south-korea-national-ai-gpu-infrastructure-initiative-1", "source": "OECD.AI Korea GPU initiative"}]}, {"country": "Taiwan", "region": "East Asia", "budget": null, "mw": 15, "mw_direct": 15, "gpu": 1904, "confidence": "medium-high", "purity": "state-owned research computing (NSTC/NCHC)", "notes": "15MW is a verified, primary-sourced direct figure but almost certainly understates Taiwan's total sovereign compute ambition (NSTC's separately stated goal is 480 petaflops of combined national supercomputing capacity by 2029, with no consolidated MW/budget figure available for that broader target).", "programs": [{"name": "NCHC National Grid Cloud Computing Center", "url": "https://asia.nikkei.com/business/technology/taiwan-opens-sovereign-ai-data-center-with-nvidia-powered-supercomputer", "source": "NSTC/NCHC / Nikkei Asia"}]}, {"country": "India", "region": "South Asia", "budget": 550, "mw": 51.5, "mw_direct": null, "gpu": 34333, "confidence": "medium-high", "purity": "government mission with private/CDAC empanelment", "notes": "Budget figure is the compute-specific ~44% share of the total INR 10,372.9 crore (~$1.25B) IndiaAI Mission. GPU count is cumulative and well-documented via an official government tracker.", "programs": [{"name": "IndiaAI Mission (compute pillar)", "url": "https://www.digitalindia.gov.in/press_release/indias-common-compute-capacity-crosses-34000-gpus-3-more-startups-to-develop-and-deploy-indian-foundation-models/", "source": "Digital India / PIB"}]}, {"country": "Singapore", "region": "Southeast Asia", "budget": 1684, "mw": 84, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "government-funded compute ACCESS (cloud/HPC procurement), not owned physical capacity", "notes": "No MW/GPU capacity target was ever announced; this budget mostly buys cloud/HPC compute ACCESS rather than funding a fixed physical build, so the budget-to-MW conversion here is a rough order-of-magnitude proxy only, not a real capacity estimate.", "programs": [{"name": "National AI Strategy 2.0 compute pillar (Budget 2024)", "url": "https://www.mddi.gov.sg/newsroom/ai-initiatives-launched-to-uplift-sg-economic-potential/", "source": "MDDI newsroom"}, {"name": "National Supercomputing Centre boost", "url": "https://www.hpcwire.com/off-the-wire/singapore-national-supercomputing-infrastructure-gets-270m-boost-for-hpc-capabilities-and-talent-development/", "source": "HPCwire"}, {"name": "AI research funding addition 2025-2030", "url": "https://www.cnbc.com/2024/02/19/singapores-ai-ambitions-get-a-boost-with-740-million-investment-plan.html", "source": "CNBC"}]}, {"country": "Malaysia", "region": "Southeast Asia", "budget": 476, "mw": 23.8, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "state-owned/operated cloud (MCMC)", "notes": "Excludes Malaysia's much larger 600MW Johor YTL/Nvidia data center, which is private commercial investment, not government-funded.", "programs": [{"name": "Sovereign AI Cloud", "url": "https://www.nst.com.my/amp/news/nation/2026/04/1428347/rm2bil-sovereign-ai-cloud-safeguard-security-boost-talent-pm", "source": "Bernama / NST"}]}, {"country": "Vietnam", "region": "Southeast Asia", "budget": 639, "mw": 53, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "wholly state-built and state-operated", "notes": "General-purpose sovereign digital infrastructure (not an AI/GPU-specific cluster); MW estimate uses a lower general-DC capex benchmark ($12M/MW) rather than the AI-optimized benchmark, reflecting the facility's broader (non-GPU-heavy) purpose.", "programs": [{"name": "National Data Center No. 1", "url": "https://en.vietnamplus.vn/vietnam-urged-to-develop-sovereign-ai-in-digital-era-post348724.vnp", "source": "VietnamPlus/VNA"}]}, {"country": "Thailand", "region": "Southeast Asia", "budget": 770, "mw": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "workforce/program funding, minimal compute-hardware share", "notes": "Budget is mostly workforce training, Centres of Excellence, and a data bank -- not compute hardware. No credible MW/GPU share could be attributed; excluded from MW total but kept for budget-side completeness. Thailand's higher-profile Siam.AI GPU cluster is privately funded (government MoU support only) and excluded.", "programs": [{"name": "National AI Development Framework FY2026-27", "url": "https://www.bangkokpost.com/business/general/3078438/b25-billion-approved-for-ai-development", "source": "Bangkok Post"}]}, {"country": "Philippines", "region": "Southeast Asia", "budget": 45, "mw": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "research coordination body, project grants", "notes": "No new GPU/MW procurement disclosed; leverages the existing COARE national supercomputing facility.", "programs": [{"name": "NAICRI (National AI Center for Research and Innovation)", "url": "https://pia.gov.ph/news/dost-to-launch-naicri-the-ph-central-hub-for-ai-research-advanced-computing-and-innovation/", "source": "Philippine Information Agency"}]}, {"country": "Qatar", "region": "Middle East", "budget": 20000, "mw": 800, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "sovereign wealth fund (QIA/Qai) direct JV with foreign asset manager (Brookfield)", "notes": "JV explicitly covers 'Qatar and select international markets' -- not all $20B is necessarily Qatar-sited, so the MW estimate likely overstates Qatar-specific capacity.", "programs": [{"name": "Qai / Brookfield AI infrastructure partnership", "url": "https://www.qia.qa/en/Newsroom/Pages/Brookfield-and-Qai-Form-$20-Billion-Strategic-Investment-Partnership-for-AI-Infrastructure.aspx", "source": "QIA press release"}]}, {"country": "Kuwait", "region": "Middle East", "budget": 19000, "mw": 633, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "sovereign wealth fund (KIA) as financial co-investor in multinational JVs, not a dedicated national buildout", "notes": "Most 'financialized' of the Gulf programs -- capacity is not necessarily sited in or dedicated to Kuwait; MW estimate is low-confidence and likely overstated for Kuwait specifically.", "programs": [{"name": "KIA AI/digital sector allocation", "url": "https://timeskuwait.com/kuwait-invests-9bn-in-ai-and-digital-sectors-as-sovereign-fund-tops-1-trillion-in-assets/", "source": "Times Kuwait"}, {"name": "Helix Digital Infrastructure (KIA+KKR+NVIDIA+Vistra)", "url": "https://www.semafor.com/article/06/11/2026/kuwait-joins-ai-infrastructure-race-with-10b-venture", "source": "Semafor"}]}, {"country": "Israel", "region": "Middle East", "budget": 25000, "mw": 200, "mw_direct": null, "gpu": 100000, "confidence": "medium", "purity": "state-directed program, build/operate outsourced to foreign vendor (Nebius)", "notes": "Budget is a press/analyst estimate (ILS 74-111B range) rather than a single stated government figure; GPU target (100,000+ accelerators) is the clearer official figure and is used as the primary MW signal.", "programs": [{"name": "National AI Program", "url": "https://letsdatascience.com/news/israel-commits-30b-to-national-ai-sovereignty-4215c922", "source": "Let's Data Science / Ynet"}]}, {"country": "EU supranational (unallocated)", "region": "Europe", "budget": 21600, "mw": 1400, "mw_direct": null, "gpu": 700000, "confidence": "low (pipeline)", "purity": "EU-level fund, sites not yet awarded to member states", "notes": "NOT allocated to any single country as of data collection -- kept as a separate supranational line. Distinct from (and not double-counted with) the pre-existing EUR7bn EuroHPC 2021-27 budget, whose national co-funding components are captured under Italy/Spain/Netherlands/Poland/Finland below.", "programs": [{"name": "EuroHPC AI Gigafactories Call", "url": "https://www.eurohpc-ju.europa.eu/eurohpc-joint-undertaking-launches-ai-gigafactories-call-2026-07-30_en", "source": "EuroHPC JU"}]}, {"country": "France", "region": "Europe", "budget": 54, "mw": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "state-funded academic supercomputer", "notes": "France's much larger AION consortium bid for EU Gigafactory status (EUR10bn, 200MW) is majority-private (Capgemini/Orange/EDF/Iliad/Scaleway) and not yet confirmed awarded public funding -- excluded from the headline figure, noted for context only.", "programs": [{"name": "Jean Zay supercomputer extension (France 2030)", "url": "https://oecd.ai/en/dashboards/policy-initiatives/jean-zay-supercomputer-extension", "source": "OECD.AI / GENCI"}]}, {"country": "Germany", "region": "Europe", "budget": null, "mw": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "unquantified", "notes": "Targets quadrupling domestic AI/HPC capacity and backing >=1 AI gigafactory on German soil by 2030, but no discrete government budget or MW baseline was found; the cited EUR130bn figure is a broad public+private framing, not an appropriation.", "programs": [{"name": "National Data Centre Strategy", "url": "https://www.morganlewis.com/pubs/2026/04/german-government-adopts-national-data-center-strategy", "source": "Morgan Lewis"}]}, {"country": "UK", "region": "Europe", "budget": 2400, "mw": 120, "mw_direct": null, "gpu": 5448, "confidence": "low-medium", "purity": "government-funded research compute (AIRR) + equity fund", "notes": "Isambard-AI (5,448 GH200 chips, ~8MW) is the only currently-built floor; the GBP1bn AIRR expansion pledge targets a 20x increase by 2030, so the budget-based 120MW estimate should be read as the multi-year target, not today's built capacity. UK's separate 'AI Growth Zones' 6GW-by-2030 national target is EXCLUDED here since that capacity is predominantly private capital in government-designated zones, not government-funded -- it is a useful comparandum, not a sovereign-budget-linked figure.", "programs": [{"name": "AI Research Resource (AIRR) 20x expansion pledge", "url": "https://www.rcrwireless.com/20250722/ai-infrastructure/uk-6-gw-ai-dc", "source": "RCR Wireless"}, {"name": "Sovereign AI Fund", "url": "https://www.hpcwire.com/aiwire/2026/04/20/uk-launches-500m-sovereign-ai-unit-to-back-domestic-startups-and-infrastructure/", "source": "HPCwire/AIwire"}, {"name": "AI chips procurement", "url": "https://www.theregister.com/2026/04/20/ukgov_kicks_off_500m_ai/", "source": "The Register"}]}, {"country": "Italy", "region": "Europe", "budget": 176, "mw": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "EU AI Factory, national co-funding share", "notes": "Figures shown are Italy's national government SHARE only (EU co-funding excluded, to avoid double-counting with the EU-level EuroHPC EUR7bn budget). No new MW/GPU figure disclosed beyond upgrades to the existing Leonardo supercomputer.", "programs": [{"name": "IT4LIA AI Factory (national 50% share)", "url": "https://www.cineca.it/en/press-area/press-releases/eurohpc-ju-signs-contract-boost-ai-capabilities-it4lia-ai-factory", "source": "Cineca"}, {"name": "Leonardo LISA upgrade (national 65% share)", "url": "https://www.sdxcentral.com/news/italys-leonardo-supercomputer-to-get-28m-ai-upgrade/", "source": "SDxCentral"}]}, {"country": "Spain", "region": "Europe", "budget": 76, "mw": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "EU AI Factory, national+regional co-funding share", "notes": "A separately reported EUR90m MareNostrum5 figure may restate the same national contribution -- not added on top to avoid double-counting.", "programs": [{"name": "Barcelona AI Factory / MareNostrum 5 boost (national+Catalan share)", "url": "https://www.lamoncloa.gob.es/lang/en/gobierno/news/paginas/2024/20241210-ai-factory.aspx", "source": "La Moncloa"}]}, {"country": "Netherlands", "region": "Europe", "budget": 145, "mw": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "EU AI Factory, national+regional co-funding share", "notes": "AiNed (EUR276m) and ROBUST AI (EUR84m) National Growth Fund programs are R&D grants, not compute infrastructure, and are excluded from the compute-specific figure.", "programs": [{"name": "Dutch AI Factory, Groningen (national+regional share)", "url": "https://www.surf.nl/en/news/netherlands-gets-ai-factory-european-funding-awarded", "source": "SURF.nl"}, {"name": "GPT-NL sovereign LLM", "url": "https://nldaily.com/tech/gpt-nl-netherlands-ai-model/", "source": "NL Daily"}]}, {"country": "Poland", "region": "Europe", "budget": 49, "mw": 1.5, "mw_direct": null, "gpu": 1000, "confidence": "low", "purity": "EU AI Factory, national co-funding share + fully-national cluster", "notes": "Smallest identified European program; GPU-based MW estimate uses only the disclosed Gaia AI Factory 1,000+ GPU figure.", "programs": [{"name": "Gaia AI Factory, Krakow (national share, est.)", "url": "https://www.hpcwire.com/off-the-wire/polands-nask-unveils-ai-compute-cluster-to-support-government-and-research-workloads/", "source": "HPCwire"}, {"name": "NASK AI compute cluster", "url": "https://www.hpcwire.com/off-the-wire/polands-nask-unveils-ai-compute-cluster-to-support-government-and-research-workloads/", "source": "HPCwire"}]}, {"country": "Finland", "region": "Europe", "budget": 270, "mw": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "national contribution to Nordic consortium", "notes": "Other consortium members' shares not disclosed; no MW figure available for the LUMI AI Factory specifically.", "programs": [{"name": "LUMI AI Factory (Finnish national commitment)", "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories", "source": "Data Center Forum"}]}, {"country": "Switzerland", "region": "Europe", "budget": 294, "mw": 15, "mw_direct": null, "gpu": 10000, "confidence": "medium", "purity": "state-funded (ETH Board) national research compute", "notes": "10,000+ Grace-Hopper superchips is a well-documented figure; used directly for the MW estimate.", "programs": [{"name": "Swiss AI Initiative / Alps supercomputer (CSCS)", "url": "https://www.swissinfo.ch/eng/archive-science/how-switzerlands-alps-supercomputer-aims-to-advance-ai/87659724", "source": "SWI swissinfo / CSCS"}]}, {"country": "USA", "region": "Americas", "budget": 5000, "mw": 231, "mw_direct": null, "gpu": 110000, "confidence": "medium", "purity": "federal (DOE) co-investment at national labs; explicitly excludes the private 'Stargate' JV", "notes": "The ~$500B private 'Stargate' JV (OpenAI/Oracle/SoftBank/MGX) is explicitly EXCLUDED -- it carries no direct federal funding and is politically endorsed only. DOE's exact funding share of the Solstice/Equinox systems (vs. NVIDIA/Oracle in-kind contribution) is not fully disclosed, so attributing the full 110,000-GPU/231MW figure to 'government' capacity may overstate the government-funded share.", "programs": [{"name": "Genesis Mission", "url": "https://www.energy.gov/articles/energy-department-announces-293-million-funding-support-genesis-mission-national-science", "source": "whitehouse.gov / energy.gov"}, {"name": "DOE/Argonne Solstice + Equinox supercomputers", "url": "https://www.anl.gov/article/argonne-expands-nations-ai-infrastructure-with-powerful-new-supercomputers", "source": "anl.gov / nvidianews.nvidia.com"}]}, {"country": "Canada", "region": "Americas", "budget": 1450, "mw": 100, "mw_direct": 100, "gpu": null, "confidence": "low-medium", "purity": "direct federal capital via ISED/Shared Services Canada/National Research Council", "notes": "RFP targets data centres 'exceeding 100MW' each; treated as a conservative single-facility floor since the number of facilities to be awarded is not yet fixed (proposal stage) -- actual total capacity could be materially higher.", "programs": [{"name": "Canadian Sovereign AI Compute Strategy", "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/04/canada-launches-national-initiative-to-build-large-scale-ai-supercomputing-capacity.html", "source": "canada.ca / ISED"}]}, {"country": "Brazil", "region": "Americas", "budget": 380, "mw": 19, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "federal government (MCTI) + state-owned enterprise (Serpro)", "notes": "Brazil's much larger PBIA (Plano Brasileiro de Inteligencia Artificial 2024-2028, R$23.03bn / ~$4.3B) is a broad multi-purpose national AI plan covering workforce, regulation, and ethics as well as infrastructure -- it is noted for budget-side context but excluded from the compute-specific figure and MW conversion here to avoid overstating hardware spend.", "programs": [{"name": "Pacote de Soberania Tecnologica \u2014 national supercomputer purchase", "url": "https://www.datacenterdynamics.com/br/not%C3%ADcias/governo-lan%C3%A7a-pacote-de-soberania-tecnol%C3%B3gica-de-r-22-bilh%C3%B5es/", "source": "DataCenterDynamics / Brasil de Fato"}, {"name": "Nuvem Soberana de Governo (Serpro)", "url": "https://www.brasil247.com/blog/o-papel-das-estatais-brasileiras-na-corrida-por-uma-ia-soberana", "source": "Brasil247"}]}, {"country": "Mexico", "region": "Americas", "budget": 326, "mw": 21.7, "mw_direct": null, "gpu": 14480, "confidence": "medium-high", "purity": "explicitly publicly financed ('supercomputer of the Mexican people')", "notes": "Well-documented, government-confirmed figures; the government explicitly framed this as publicly financed.", "programs": [{"name": "Coatlicue national public supercomputer", "url": "https://cnnespanol.cnn.com/2025/11/27/mexico/mexico-supercomputadora-publica-coatlicue-orix", "source": "CNN Espanol / Xataka Mexico"}]}, {"country": "Chile", "region": "Americas", "budget": 116, "mw": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "facilitation + small grant pool, not a large sovereign buildout", "notes": "Chile's National Data Center Plan 2024-2030 targets ~$2.5B, but that is overwhelmingly private investment attracted via land/permitting/energy facilitation, not government spend -- excluded from the sovereign budget figure.", "programs": [{"name": "AI research funding (10-year) + supercompute-infra grant calls", "url": "https://www.minciencia.gob.cl/noticias/minciencia-y-corfo-anuncian-importante-inversion-estatal-en-capacidad-de-supercomputo-para-inteligencia-artificial/", "source": "Minciencia"}]}], "summary": {"all_countries_included": {"global_budget_usd_m": 320480, "global_mw": 18589.5, "japan_pct_of_budget": 2.21, "japan_pct_of_mw": 1.61}, "sensitivity_excl_eu_pipeline_and_uae_mgx_proxy": {"global_budget_usd_m": 249880, "global_mw": 12189.5, "japan_pct_of_budget": 2.83, "japan_pct_of_mw": 2.46}, "sensitivity_excl_gulf_states": {"global_budget_usd_m": 132480, "global_mw": 5556.5, "japan_pct_of_budget": 5.34, "japan_pct_of_mw": 5.4}, "ranked_by_mw_best_estimate": [{"country": "Saudi Arabia", "mw_best_estimate": 6600, "budget_usd_m_identified": 100000}, {"country": "UAE", "mw_best_estimate": 5000, "budget_usd_m_identified": 49000}, {"country": "China", "mw_best_estimate": 2836, "budget_usd_m_identified": 61000}, {"country": "EU supranational (unallocated)", "mw_best_estimate": 1400, "budget_usd_m_identified": 21600}, {"country": "Qatar", "mw_best_estimate": 800, "budget_usd_m_identified": 20000}, {"country": "Kuwait", "mw_best_estimate": 633, "budget_usd_m_identified": 19000}, {"country": "Japan", "mw_best_estimate": 300, "budget_usd_m_identified": 7080}, {"country": "USA", "mw_best_estimate": 231, "budget_usd_m_identified": 5000}, {"country": "Israel", "mw_best_estimate": 200, "budget_usd_m_identified": 25000}, {"country": "UK", "mw_best_estimate": 120, "budget_usd_m_identified": 2400}, {"country": "Canada", "mw_best_estimate": 100, "budget_usd_m_identified": 1450}, {"country": "South Korea", "mw_best_estimate": 85, "budget_usd_m_identified": 2900}, {"country": "Singapore", "mw_best_estimate": 84, "budget_usd_m_identified": 1684}, {"country": "Vietnam", "mw_best_estimate": 53, "budget_usd_m_identified": 639}, {"country": "India", "mw_best_estimate": 51.5, "budget_usd_m_identified": 550}, {"country": "Malaysia", "mw_best_estimate": 23.8, "budget_usd_m_identified": 476}, {"country": "Mexico", "mw_best_estimate": 21.7, "budget_usd_m_identified": 326}, {"country": "Brazil", "mw_best_estimate": 19, "budget_usd_m_identified": 380}, {"country": "Taiwan", "mw_best_estimate": 15, "budget_usd_m_identified": null}, {"country": "Switzerland", "mw_best_estimate": 15, "budget_usd_m_identified": 294}, {"country": "Poland", "mw_best_estimate": 1.5, "budget_usd_m_identified": 49}], "ranked_by_budget_usd_m": [{"country": "Saudi Arabia", "budget_usd_m_identified": 100000}, {"country": "China", "budget_usd_m_identified": 61000}, {"country": "UAE", "budget_usd_m_identified": 49000}, {"country": "Israel", "budget_usd_m_identified": 25000}, {"country": "EU supranational (unallocated)", "budget_usd_m_identified": 21600}, {"country": "Qatar", "budget_usd_m_identified": 20000}, {"country": "Kuwait", "budget_usd_m_identified": 19000}, {"country": "Japan", "budget_usd_m_identified": 7080}, {"country": "USA", "budget_usd_m_identified": 5000}, {"country": "South Korea", "budget_usd_m_identified": 2900}, {"country": "UK", "budget_usd_m_identified": 2400}, {"country": "Singapore", "budget_usd_m_identified": 1684}, {"country": "Canada", "budget_usd_m_identified": 1450}, {"country": "Thailand", "budget_usd_m_identified": 770}, {"country": "Vietnam", "budget_usd_m_identified": 639}, {"country": "India", "budget_usd_m_identified": 550}, {"country": "Malaysia", "budget_usd_m_identified": 476}, {"country": "Brazil", "budget_usd_m_identified": 380}, {"country": "Mexico", "budget_usd_m_identified": 326}, {"country": "Switzerland", "budget_usd_m_identified": 294}, {"country": "Finland", "budget_usd_m_identified": 270}, {"country": "Italy", "budget_usd_m_identified": 176}, {"country": "Netherlands", "budget_usd_m_identified": 145}, {"country": "Chile", "budget_usd_m_identified": 116}, {"country": "Spain", "budget_usd_m_identified": 76}, {"country": "France", "budget_usd_m_identified": 54}, {"country": "Poland", "budget_usd_m_identified": 49}, {"country": "Philippines", "budget_usd_m_identified": 45}], "headline_takeaway": "Japan's identified sovereign AI/DC commitments (~$7.1B budget, ~300MW triangulated) rank mid-pack globally -- roughly 1.6-2.2% of the ~$130-320B / ~5.6-18.6GW global total depending on scope, and closer to 5% once the three Gulf states' outsized, JV-heavy commitments (Saudi Arabia, UAE, Qatar) are excluded as a sensitivity check. The global total is dominated by Saudi Arabia (HUMAIN, ~$100B / 6.6GW) and UAE (MGX + Stargate UAE, ~5GW), followed by China (~$61B, budget-estimated ~2.8GW); no other country approaches that scale."}, "excluded": [{"country": "New Zealand", "reason": "No government-funded/subsidized/co-invested sovereign AI compute program identified; government role limited to policy facilitation and courting private capital.", "url": "https://thespinoff.co.nz/business/06-07-2026/nz-inc-is-going-all-in-on-ai-data-centres"}, {"country": "Indonesia", "reason": "Sovereign AI data center activity (BDx/IOH/Cisco/Nvidia) is telco/private-consortium funded; no government capex/subsidy/procurement budget for compute hardware found.", "url": "https://introl.com/blog/indonesia-first-sovereign-ai-data-center-market-analysis"}, {"country": "Egypt", "reason": "Draft national data-center/cloud strategy exists but concrete capacity deals are privately funded under NTRA licenses, not government-financed.", "url": "https://developingtelecoms.com/telecom-technology/data-centres-networks/20398-egypt-approves-major-data-centre-project.html"}, {"country": "South Africa", "reason": "Draft National AI Policy 2026 was withdrawn; GPU/data-center deployments are private-sector. The only government-adjacent initiative (AU's $60B fund) is continental, not South-Africa-specific.", "url": "https://en.wikipedia.org/wiki/Draft_South_Africa_National_Artificial_Intelligence_(AI)_Policy_2026"}, {"country": "Argentina", "reason": "'Stargate Argentina' (OpenAI + Sur Energy, 500MW target) is 100% private capex; government role is limited to RIGI tax/customs incentives, not direct capital, land, or subsidy.", "url": "https://www.batimes.com.ar/news/economy/openai-sur-energy-to-build-massive-ai-data-centre-in-patagonia.phtml"}, {"country": "Norway", "reason": "Participates only via LUMI AI Factory consortium membership; no separate national budget or MW figure identified.", "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories"}, {"country": "Denmark", "reason": "Participates only via LUMI AI Factory consortium membership; no separate national budget or MW figure identified.", "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories"}, {"country": "Sweden", "reason": "Mimer AI Factory (NAISS/Linkoping University) announced but no budget or capacity figure disclosed.", "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories"}, {"country": "Australia", "reason": "National AI Plan (Dec 2025) names sovereign digital infrastructure as a priority with a discrete A$1bn National Reconstruction Fund allocation and a concrete A$200m NRFC investment in Macquarie Technology Group, but coverage explicitly notes it lacks binding federal capex commitments or an MW/GPU target -- included qualitatively, excluded from the quantitative MW total pending a concrete build-out figure.", "url": "https://international.austrade.gov.au/en/news-and-analysis/news/australia-launches-national-ai-plan-to-build-a-world-class-ai-industry"}]};
+const DATA = {"countries": [{"country": "Saudi Arabia", "region": "Middle East", "budget": 100000, "budget_2030": 50000, "mw": 6600, "mw_2030": 3300, "mw_direct": 6600, "gpu": null, "confidence": "medium", "purity": "state-owned (PIF subsidiary) with foreign JVs/hardware", "notes": "6.6GW is a 10-year plan; ~2.2GW of data centers + several GW-scale JVs (xAI 500MW, AMD/Cisco 1GW, stc-Humain 1GW, Hexagon 480MW) are already committed within that envelope, not additive.", "adjusted": true, "uncertain": false, "mw_timeline": {"status": "adjusted-2030", "start_year": 2025, "end_year": 2035, "note": "6.6GW is explicitly 'planned over a decade' (2025-2035); linear run-rate implies ~3.3GW online by 2030 (5 of 10 years elapsed). ~2.2GW of near-term data centers are already under construction, so the true 2030 figure could exceed this linear estimate."}, "budget_timeline": {"status": "adjusted-2030", "start_year": 2025, "end_year": 2035, "note": "HUMAIN's ~$100B is explicitly a 5-10yr commitment; using the outer 10yr bound (2025-2035), linear run-rate implies ~$50B deployed by 2030 (5 of 10 years elapsed)."}, "programs": [{"name": "HUMAIN national AI champion", "url": "https://www.pif.gov.sa/en/our-investments/our-portfolio/humain/", "source": "PIF / SPA"}]}, {"country": "UAE", "region": "Middle East", "budget": 49000, "budget_2030": 49000, "mw": 5000, "mw_2030": 5000, "mw_direct": 5000, "gpu": null, "confidence": "low-medium", "purity": "state-backed JV with US hyperscalers (G42/Mubadala + OpenAI/Oracle/NVIDIA/Cisco/SoftBank)", "notes": "Budget (MGX $49B fund) and MW (5GW campus) are DIFFERENT programs/scopes, not 1:1 linked -- MGX invests broadly, not solely into the Abu Dhabi campus. Treat as two independent signals per methodology.", "adjusted": false, "uncertain": true, "mw_timeline": {"status": "undisclosed", "start_year": 2025, "end_year": null, "note": "Stargate UAE's 5GW campus has no disclosed full-completion date (only a 200MW initial phase is dated, 2026); showing the full 5GW target as the 2030 figure is an optimistic assumption, not a computed estimate."}, "budget_timeline": {"status": "bounded", "start_year": 2026, "end_year": 2026, "note": "MGX Fund I is a one-time close (Jul 2026), not a multi-year build-out; full amount counted as of that date."}, "programs": [{"name": "MGX sovereign AI investment vehicle (Fund I)", "url": "https://www.thenationalnews.com/business/markets/2026/07/01/abu-dhabis-ai-investment-firm-mgx-raises-49bn-for-new-fund/", "source": "The National"}, {"name": "Stargate UAE / UAE-US AI Campus", "url": "https://www.datacenterdynamics.com/en/news/us-and-uae-plan-to-build-5gw-ai-data-center-campus-run-by-g42-and-american-hyperscalers/", "source": "DataCenterDynamics"}]}, {"country": "China", "region": "East Asia", "budget": 61000, "budget_2030": 61000, "mw": 2836, "mw_2030": 2836, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "state-funded national hub clusters + fragmented provincial subsidy schemes", "notes": "No MW/GPU figure was found for the $61B figure; MW is a budget-based estimate only (order-of-magnitude, low confidence). A widely-cited $295B aggregate figure exists but is a private-analyst estimate, not a government announcement, and is excluded from the headline number.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2022, "end_year": 2025, "note": "Same basis as budget."}, "budget_timeline": {"status": "bounded", "start_year": 2022, "end_year": 2025, "note": "NDRC's own target was 50 national computing hub clusters by 2025 -- already at/before the 2030 cutoff."}, "programs": [{"name": "East Data West Computing / national computing hub clusters", "url": "https://www.techradar.com/pro/website-hosting/china-invested-dollar61-billion-in-eight-national-datacenter-hubs-according-to-director-of-national-data-bureau", "source": "TechRadar / National Data Bureau director statement"}]}, {"country": "Japan", "region": "East Asia", "budget": 7080, "budget_2030": 7080, "mw": 300, "mw_2030": 300, "mw_direct": null, "gpu": 10800, "confidence": "low-medium", "purity": "government subsidy/grant co-funding of private cloud/DC operators", "notes": "Excludes Japan's >=Y10T/7yr (~$65B) 'AI-semiconductor industry base reinforcement' umbrella and the FY2026 METI budget (Y3.07T total), since those are chip-fab (Rapidus/TSMC) industrial policy or broad ministry budgets, not compute/DC-specific -- including them would conflate semiconductor manufacturing subsidies with sovereign DC/compute workload and break comparability with other countries. GPU floor (10,800, Sakura only) is a small fraction of the ~$7.1B identified spend across 5 co-funded firms; budget-based MW estimate (range 186-472MW, using $15-38M/MW) is used as the primary signal, with the true figure plausibly at or above the upper end since these are partial subsidies (leverage effect) rather than full capex.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2024, "end_year": 2029, "note": "Same basis as budget."}, "budget_timeline": {"status": "bounded", "start_year": 2024, "end_year": 2029, "note": "GENIAC (the largest tranche, $6.5B) is a 5-year program ending 2029; the two smaller one-time grants (2024, 2025) are already spent. All programs conclude before the 2030 cutoff."}, "programs": [{"name": "METI cloud-compute subsidies Round 1 (Economic Security Promotion Act)", "url": "https://www.meti.go.jp/english/press/2024/0419_001.html", "source": "METI press release"}, {"name": "GENIAC (Generative AI Accelerator Challenge)", "url": "https://www.meti.go.jp/english/press/2024/0202_001.html", "source": "METI GENIAC launch"}, {"name": "METI AI-GPU investment grant to Ubitus", "url": "https://ubitus.net/2025-meti-ai-gpu-investment-en/", "source": "Ubitus press release"}]}, {"country": "South Korea", "region": "East Asia", "budget": 2900, "budget_2030": 2900, "mw": 85, "mw_2030": 85, "mw_direct": null, "gpu": 50000, "confidence": "medium", "purity": "public-private SPV (KOACC) + direct MSIT procurement", "notes": "50,000 GPU figure is the officially cited cumulative national target (NAICC 15k->50k by 2030, overlapping with the 13k CSP tranche) -- treated as one target, not additive with the CSP tranche, per source caveats.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2025, "end_year": 2030, "note": "Same basis as budget."}, "budget_timeline": {"status": "bounded", "start_year": 2025, "end_year": 2030, "note": "NAICC's GPU target (15k->50k) is explicitly dated 'by 2030' -- lands exactly at the cutoff, no proration needed."}, "programs": [{"name": "National AI Computing Center (Haenam)", "url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=8025&type=O&insttCode=A110439", "source": "Korea.net / Korea Times"}, {"name": "MSIT GPU procurement (Naver Cloud/NHN Cloud/Kakao)", "url": "https://oecd.ai/en/dashboards/policy-initiatives/south-korea-national-ai-gpu-infrastructure-initiative-1", "source": "OECD.AI Korea GPU initiative"}]}, {"country": "Taiwan", "region": "East Asia", "budget": null, "budget_2030": null, "mw": 15, "mw_2030": 15, "mw_direct": 15, "gpu": 1904, "confidence": "medium-high", "purity": "state-owned research computing (NSTC/NCHC)", "notes": "15MW is a verified, primary-sourced direct figure but almost certainly understates Taiwan's total sovereign compute ambition (NSTC's separately stated goal is 480 petaflops of combined national supercomputing capacity by 2029, with no consolidated MW/budget figure available for that broader target).", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "instant", "start_year": 2025, "end_year": 2025, "note": "NCHC's 15MW facility is already built and inaugurated (Dec 2025)."}, "budget_timeline": {"status": "instant", "start_year": 2025, "end_year": 2025, "note": "Facility-specific budget undisclosed."}, "programs": [{"name": "NCHC National Grid Cloud Computing Center", "url": "https://asia.nikkei.com/business/technology/taiwan-opens-sovereign-ai-data-center-with-nvidia-powered-supercomputer", "source": "NSTC/NCHC / Nikkei Asia"}]}, {"country": "India", "region": "South Asia", "budget": 550, "budget_2030": 550, "mw": 51.5, "mw_2030": 51.5, "mw_direct": null, "gpu": 34333, "confidence": "medium-high", "purity": "government mission with private/CDAC empanelment", "notes": "Budget figure is the compute-specific ~44% share of the total INR 10,372.9 crore (~$1.25B) IndiaAI Mission. GPU count is cumulative and well-documented via an official government tracker.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "instant", "start_year": 2024, "end_year": 2024, "note": "Same basis as budget."}, "budget_timeline": {"status": "instant", "start_year": 2024, "end_year": 2024, "note": "Cumulative current-state figure (empanelment through 2025), not a forward-looking target -- no proration applies."}, "programs": [{"name": "IndiaAI Mission (compute pillar)", "url": "https://www.digitalindia.gov.in/press_release/indias-common-compute-capacity-crosses-34000-gpus-3-more-startups-to-develop-and-deploy-indian-foundation-models/", "source": "Digital India / PIB"}]}, {"country": "Singapore", "region": "Southeast Asia", "budget": 1684, "budget_2030": 1684, "mw": 84, "mw_2030": 84, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "government-funded compute ACCESS (cloud/HPC procurement), not owned physical capacity", "notes": "No MW/GPU capacity target was ever announced; this budget mostly buys cloud/HPC compute ACCESS rather than funding a fixed physical build, so the budget-to-MW conversion here is a rough order-of-magnitude proxy only, not a real capacity estimate.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2024, "end_year": 2030, "note": "Same basis as budget (budget-derived estimate, no capacity target ever announced)."}, "budget_timeline": {"status": "bounded", "start_year": 2024, "end_year": 2030, "note": "Largest tranche runs 2025-2030 explicitly; other items are already spent (2024). All conclude at/before the cutoff."}, "programs": [{"name": "National AI Strategy 2.0 compute pillar (Budget 2024)", "url": "https://www.mddi.gov.sg/newsroom/ai-initiatives-launched-to-uplift-sg-economic-potential/", "source": "MDDI newsroom"}, {"name": "National Supercomputing Centre boost", "url": "https://www.hpcwire.com/off-the-wire/singapore-national-supercomputing-infrastructure-gets-270m-boost-for-hpc-capabilities-and-talent-development/", "source": "HPCwire"}, {"name": "AI research funding addition 2025-2030", "url": "https://www.cnbc.com/2024/02/19/singapores-ai-ambitions-get-a-boost-with-740-million-investment-plan.html", "source": "CNBC"}]}, {"country": "Malaysia", "region": "Southeast Asia", "budget": 476, "budget_2030": 476, "mw": 23.8, "mw_2030": 23.8, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "state-owned/operated cloud (MCMC)", "notes": "Excludes Malaysia's much larger 600MW Johor YTL/Nvidia data center, which is private commercial investment, not government-funded.", "adjusted": false, "uncertain": true, "mw_timeline": {"status": "undisclosed", "start_year": 2025, "end_year": null, "note": "Same basis as budget."}, "budget_timeline": {"status": "undisclosed", "start_year": 2025, "end_year": null, "note": "Sovereign AI Cloud is described as 'still in planning/build-out stage' with no disclosed completion date."}, "programs": [{"name": "Sovereign AI Cloud", "url": "https://www.nst.com.my/amp/news/nation/2026/04/1428347/rm2bil-sovereign-ai-cloud-safeguard-security-boost-talent-pm", "source": "Bernama / NST"}]}, {"country": "Vietnam", "region": "Southeast Asia", "budget": 639, "budget_2030": 639, "mw": 53, "mw_2030": 53, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "wholly state-built and state-operated", "notes": "General-purpose sovereign digital infrastructure (not an AI/GPU-specific cluster); MW estimate uses a lower general-DC capex benchmark ($12M/MW) rather than the AI-optimized benchmark, reflecting the facility's broader (non-GPU-heavy) purpose.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "instant", "start_year": 2025, "end_year": 2025, "note": "Same basis as budget."}, "budget_timeline": {"status": "instant", "start_year": 2025, "end_year": 2025, "note": "National Data Center No. 1 reached full operation in Aug 2025."}, "programs": [{"name": "National Data Center No. 1", "url": "https://en.vietnamplus.vn/vietnam-urged-to-develop-sovereign-ai-in-digital-era-post348724.vnp", "source": "VietnamPlus/VNA"}]}, {"country": "Thailand", "region": "Southeast Asia", "budget": 770, "budget_2030": 770, "mw": null, "mw_2030": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "workforce/program funding, minimal compute-hardware share", "notes": "Budget is mostly workforce training, Centres of Excellence, and a data bank -- not compute hardware. No credible MW/GPU share could be attributed; excluded from MW total but kept for budget-side completeness. Thailand's higher-profile Siam.AI GPU cluster is privately funded (government MoU support only) and excluded.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2025, "end_year": 2027, "note": "No credible compute-hardware share attributable; mw_best_estimate is null regardless."}, "budget_timeline": {"status": "bounded", "start_year": 2025, "end_year": 2027, "note": "FY2026-27 framework concludes 2027, well before the cutoff."}, "programs": [{"name": "National AI Development Framework FY2026-27", "url": "https://www.bangkokpost.com/business/general/3078438/b25-billion-approved-for-ai-development", "source": "Bangkok Post"}]}, {"country": "Philippines", "region": "Southeast Asia", "budget": 45, "budget_2030": 45, "mw": null, "mw_2030": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "research coordination body, project grants", "notes": "No new GPU/MW procurement disclosed; leverages the existing COARE national supercomputing facility.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "instant", "start_year": 2026, "end_year": 2026, "note": "No compute-hardware procurement disclosed; mw_best_estimate is null regardless."}, "budget_timeline": {"status": "instant", "start_year": 2026, "end_year": 2026, "note": "NAICRI launch grant, single tranche."}, "programs": [{"name": "NAICRI (National AI Center for Research and Innovation)", "url": "https://pia.gov.ph/news/dost-to-launch-naicri-the-ph-central-hub-for-ai-research-advanced-computing-and-innovation/", "source": "Philippine Information Agency"}]}, {"country": "Qatar", "region": "Middle East", "budget": 20000, "budget_2030": 20000, "mw": 800, "mw_2030": 800, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "sovereign wealth fund (QIA/Qai) direct JV with foreign asset manager (Brookfield)", "notes": "JV explicitly covers 'Qatar and select international markets' -- not all $20B is necessarily Qatar-sited, so the MW estimate likely overstates Qatar-specific capacity.", "adjusted": false, "uncertain": true, "mw_timeline": {"status": "undisclosed", "start_year": 2025, "end_year": null, "note": "Same basis as budget."}, "budget_timeline": {"status": "undisclosed", "start_year": 2025, "end_year": null, "note": "Qai/Brookfield JV covers 'Qatar and select international markets' with no disclosed build-out completion date."}, "programs": [{"name": "Qai / Brookfield AI infrastructure partnership", "url": "https://www.qia.qa/en/Newsroom/Pages/Brookfield-and-Qai-Form-$20-Billion-Strategic-Investment-Partnership-for-AI-Infrastructure.aspx", "source": "QIA press release"}]}, {"country": "Kuwait", "region": "Middle East", "budget": 19000, "budget_2030": 19000, "mw": 633, "mw_2030": 633, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "sovereign wealth fund (KIA) as financial co-investor in multinational JVs, not a dedicated national buildout", "notes": "Most 'financialized' of the Gulf programs -- capacity is not necessarily sited in or dedicated to Kuwait; MW estimate is low-confidence and likely overstated for Kuwait specifically.", "adjusted": false, "uncertain": true, "mw_timeline": {"status": "undisclosed", "start_year": 2021, "end_year": null, "note": "Same basis as budget."}, "budget_timeline": {"status": "undisclosed", "start_year": 2021, "end_year": null, "note": "KIA's historic $9B (2021-2026, already spent) is bounded, but the newer $10B Helix venture (announced 2026) has no disclosed completion date -- the combined figure is treated as undisclosed/optimistic."}, "programs": [{"name": "KIA AI/digital sector allocation", "url": "https://timeskuwait.com/kuwait-invests-9bn-in-ai-and-digital-sectors-as-sovereign-fund-tops-1-trillion-in-assets/", "source": "Times Kuwait"}, {"name": "Helix Digital Infrastructure (KIA+KKR+NVIDIA+Vistra)", "url": "https://www.semafor.com/article/06/11/2026/kuwait-joins-ai-infrastructure-race-with-10b-venture", "source": "Semafor"}]}, {"country": "Israel", "region": "Middle East", "budget": 25000, "budget_2030": 15000, "mw": 200, "mw_2030": 120, "mw_direct": null, "gpu": 100000, "confidence": "medium", "purity": "state-directed program, build/operate outsourced to foreign vendor (Nebius)", "notes": "Budget is a press/analyst estimate (ILS 74-111B range) rather than a single stated government figure; GPU target (100,000+ accelerators) is the clearer official figure and is used as the primary MW signal.", "adjusted": true, "uncertain": false, "mw_timeline": {"status": "adjusted-2030", "start_year": 2027, "end_year": 2032, "note": "100,000-accelerator target spans 2027-2032; linear run-rate implies ~60,000 GPUs (~120MW) online by 2030 (3 of 5 years elapsed). Note: press also cites a '5,000 GPUs/year' rate, which is inconsistent with the stated 100k/5yr total -- the total/span method is used here for consistency with the rest of the dataset."}, "budget_timeline": {"status": "adjusted-2030", "start_year": 2027, "end_year": 2032, "note": "National AI Program budget is explicitly tied to the 2027-2032 program window; linear run-rate implies ~$15B deployed by 2030 (3 of 5 years elapsed)."}, "programs": [{"name": "National AI Program", "url": "https://letsdatascience.com/news/israel-commits-30b-to-national-ai-sovereignty-4215c922", "source": "Let's Data Science / Ynet"}]}, {"country": "EU supranational (unallocated)", "region": "Europe", "budget": 21600, "budget_2030": 21600, "mw": 1400, "mw_2030": 1400, "mw_direct": null, "gpu": 700000, "confidence": "low (pipeline)", "purity": "EU-level fund, sites not yet awarded to member states", "notes": "NOT allocated to any single country as of data collection -- kept as a separate supranational line. Distinct from (and not double-counted with) the pre-existing EUR7bn EuroHPC 2021-27 budget, whose national co-funding components are captured under Italy/Spain/Netherlands/Poland/Finland below.", "adjusted": false, "uncertain": true, "mw_timeline": {"status": "undisclosed", "start_year": 2027, "end_year": null, "note": "Same basis as budget; 700,000-accelerator figure is the pipeline ceiling if all 7 facilities are awarded and fully built, not a dated target."}, "budget_timeline": {"status": "undisclosed", "start_year": 2027, "end_year": null, "note": "EuroHPC Gigafactories call awards ~early 2027; no disclosed date for when all 'up to 7' facilities reach full capacity."}, "programs": [{"name": "EuroHPC AI Gigafactories Call", "url": "https://www.eurohpc-ju.europa.eu/eurohpc-joint-undertaking-launches-ai-gigafactories-call-2026-07-30_en", "source": "EuroHPC JU"}]}, {"country": "France", "region": "Europe", "budget": 54, "budget_2030": 54, "mw": null, "mw_2030": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "state-funded academic supercomputer", "notes": "France's much larger AION consortium bid for EU Gigafactory status (EUR10bn, 200MW) is majority-private (Capgemini/Orange/EDF/Iliad/Scaleway) and not yet confirmed awarded public funding -- excluded from the headline figure, noted for context only.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "instant", "start_year": 2023, "end_year": 2023, "note": "No MW figure attributable; mw_best_estimate is null regardless."}, "budget_timeline": {"status": "instant", "start_year": 2023, "end_year": 2023, "note": "Jean Zay extension, one-time capex."}, "programs": [{"name": "Jean Zay supercomputer extension (France 2030)", "url": "https://oecd.ai/en/dashboards/policy-initiatives/jean-zay-supercomputer-extension", "source": "OECD.AI / GENCI"}]}, {"country": "Germany", "region": "Europe", "budget": null, "budget_2030": null, "mw": null, "mw_2030": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "unquantified", "notes": "Targets quadrupling domestic AI/HPC capacity and backing >=1 AI gigafactory on German soil by 2030, but no discrete government budget or MW baseline was found; the cited EUR130bn figure is a broad public+private framing, not an appropriation.", "adjusted": false, "uncertain": true, "mw_timeline": {"status": "undisclosed", "start_year": 2026, "end_year": null, "note": "No MW baseline was found; nothing to prorate."}, "budget_timeline": {"status": "undisclosed", "start_year": 2026, "end_year": null, "note": "No discrete government compute budget was found at all; nothing to prorate."}, "programs": [{"name": "National Data Centre Strategy", "url": "https://www.morganlewis.com/pubs/2026/04/german-government-adopts-national-data-center-strategy", "source": "Morgan Lewis"}]}, {"country": "UK", "region": "Europe", "budget": 2400, "budget_2030": 2400, "mw": 120, "mw_2030": 120, "mw_direct": null, "gpu": 5448, "confidence": "low-medium", "purity": "government-funded research compute (AIRR) + equity fund", "notes": "Isambard-AI (5,448 GH200 chips, ~8MW) is the only currently-built floor; the GBP1bn AIRR expansion pledge targets a 20x increase by 2030, so the budget-based 120MW estimate should be read as the multi-year target, not today's built capacity. UK's separate 'AI Growth Zones' 6GW-by-2030 national target is EXCLUDED here since that capacity is predominantly private capital in government-designated zones, not government-funded -- it is a useful comparandum, not a sovereign-budget-linked figure.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2025, "end_year": 2030, "note": "Budget-derived estimate tracks the same 2030-dated AIRR pledge."}, "budget_timeline": {"status": "bounded", "start_year": 2025, "end_year": 2030, "note": "AIRR's '20x expansion' pledge is explicitly dated 'by 2030'; the Sovereign AI Fund and chip procurement (2026) are already-committed near-term tranches."}, "programs": [{"name": "AI Research Resource (AIRR) 20x expansion pledge", "url": "https://www.rcrwireless.com/20250722/ai-infrastructure/uk-6-gw-ai-dc", "source": "RCR Wireless"}, {"name": "Sovereign AI Fund", "url": "https://www.hpcwire.com/aiwire/2026/04/20/uk-launches-500m-sovereign-ai-unit-to-back-domestic-startups-and-infrastructure/", "source": "HPCwire/AIwire"}, {"name": "AI chips procurement", "url": "https://www.theregister.com/2026/04/20/ukgov_kicks_off_500m_ai/", "source": "The Register"}]}, {"country": "Italy", "region": "Europe", "budget": 176, "budget_2030": 176, "mw": null, "mw_2030": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "EU AI Factory, national co-funding share", "notes": "Figures shown are Italy's national government SHARE only (EU co-funding excluded, to avoid double-counting with the EU-level EuroHPC EUR7bn budget). No new MW/GPU figure disclosed beyond upgrades to the existing Leonardo supercomputer.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "instant", "start_year": 2025, "end_year": 2025, "note": "No new MW figure attributable; mw_best_estimate is null regardless."}, "budget_timeline": {"status": "instant", "start_year": 2025, "end_year": 2025, "note": "IT4LIA and Leonardo LISA upgrade, both already operational/contracted in 2025."}, "programs": [{"name": "IT4LIA AI Factory (national 50% share)", "url": "https://www.cineca.it/en/press-area/press-releases/eurohpc-ju-signs-contract-boost-ai-capabilities-it4lia-ai-factory", "source": "Cineca"}, {"name": "Leonardo LISA upgrade (national 65% share)", "url": "https://www.sdxcentral.com/news/italys-leonardo-supercomputer-to-get-28m-ai-upgrade/", "source": "SDxCentral"}]}, {"country": "Spain", "region": "Europe", "budget": 76, "budget_2030": 76, "mw": null, "mw_2030": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "EU AI Factory, national+regional co-funding share", "notes": "A separately reported EUR90m MareNostrum5 figure may restate the same national contribution -- not added on top to avoid double-counting.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "instant", "start_year": 2024, "end_year": 2024, "note": "No new MW figure attributable; mw_best_estimate is null regardless."}, "budget_timeline": {"status": "instant", "start_year": 2024, "end_year": 2024, "note": "Barcelona AI Factory / MareNostrum 5 boost, announced Dec 2024."}, "programs": [{"name": "Barcelona AI Factory / MareNostrum 5 boost (national+Catalan share)", "url": "https://www.lamoncloa.gob.es/lang/en/gobierno/news/paginas/2024/20241210-ai-factory.aspx", "source": "La Moncloa"}]}, {"country": "Netherlands", "region": "Europe", "budget": 145, "budget_2030": 145, "mw": null, "mw_2030": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "EU AI Factory, national+regional co-funding share", "notes": "AiNed (EUR276m) and ROBUST AI (EUR84m) National Growth Fund programs are R&D grants, not compute infrastructure, and are excluded from the compute-specific figure.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2026, "end_year": 2027, "note": "No MW figure attributable; mw_best_estimate is null regardless."}, "budget_timeline": {"status": "bounded", "start_year": 2026, "end_year": 2027, "note": "Dutch AI Factory reaches full capacity 2027."}, "programs": [{"name": "Dutch AI Factory, Groningen (national+regional share)", "url": "https://www.surf.nl/en/news/netherlands-gets-ai-factory-european-funding-awarded", "source": "SURF.nl"}, {"name": "GPT-NL sovereign LLM", "url": "https://nldaily.com/tech/gpt-nl-netherlands-ai-model/", "source": "NL Daily"}]}, {"country": "Poland", "region": "Europe", "budget": 49, "budget_2030": 49, "mw": 1.5, "mw_2030": 1.5, "mw_direct": null, "gpu": 1000, "confidence": "low", "purity": "EU AI Factory, national co-funding share + fully-national cluster", "notes": "Smallest identified European program; GPU-based MW estimate uses only the disclosed Gaia AI Factory 1,000+ GPU figure.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2026, "end_year": 2027, "note": "1,000+ GPU figure is Gaia's disclosed spec, same timeline."}, "budget_timeline": {"status": "bounded", "start_year": 2026, "end_year": 2027, "note": "Gaia AI Factory operational 2027; NASK cluster already launched 2026."}, "programs": [{"name": "Gaia AI Factory, Krakow (national share, est.)", "url": "https://www.hpcwire.com/off-the-wire/polands-nask-unveils-ai-compute-cluster-to-support-government-and-research-workloads/", "source": "HPCwire"}, {"name": "NASK AI compute cluster", "url": "https://www.hpcwire.com/off-the-wire/polands-nask-unveils-ai-compute-cluster-to-support-government-and-research-workloads/", "source": "HPCwire"}]}, {"country": "Finland", "region": "Europe", "budget": 270, "budget_2030": 270, "mw": null, "mw_2030": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "national contribution to Nordic consortium", "notes": "Other consortium members' shares not disclosed; no MW figure available for the LUMI AI Factory specifically.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2023, "end_year": 2027, "note": "No MW figure attributable; mw_best_estimate is null regardless."}, "budget_timeline": {"status": "bounded", "start_year": 2023, "end_year": 2027, "note": "LUMI AI Factory operational 2027."}, "programs": [{"name": "LUMI AI Factory (Finnish national commitment)", "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories", "source": "Data Center Forum"}]}, {"country": "Switzerland", "region": "Europe", "budget": 294, "budget_2030": 294, "mw": 15, "mw_2030": 15, "mw_direct": null, "gpu": 10000, "confidence": "medium", "purity": "state-funded (ETH Board) national research compute", "notes": "10,000+ Grace-Hopper superchips is a well-documented figure; used directly for the MW estimate.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "instant", "start_year": 2023, "end_year": 2023, "note": "10,000+ Grace-Hopper superchips already procured under the initiative."}, "budget_timeline": {"status": "bounded", "start_year": 2023, "end_year": 2028, "note": "Capex (2023) + 4 years opex (2025-2028) already summed into the total; concludes before the cutoff."}, "programs": [{"name": "Swiss AI Initiative / Alps supercomputer (CSCS)", "url": "https://www.swissinfo.ch/eng/archive-science/how-switzerlands-alps-supercomputer-aims-to-advance-ai/87659724", "source": "SWI swissinfo / CSCS"}]}, {"country": "USA", "region": "Americas", "budget": 5000, "budget_2030": 5000, "mw": 231, "mw_2030": 231, "mw_direct": null, "gpu": 110000, "confidence": "medium", "purity": "federal (DOE) co-investment at national labs; explicitly excludes the private 'Stargate' JV", "notes": "The ~$500B private 'Stargate' JV (OpenAI/Oracle/SoftBank/MGX) is explicitly EXCLUDED -- it carries no direct federal funding and is politically endorsed only. DOE's exact funding share of the Solstice/Equinox systems (vs. NVIDIA/Oracle in-kind contribution) is not fully disclosed, so attributing the full 110,000-GPU/231MW figure to 'government' capacity may overstate the government-funded share.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2025, "end_year": 2026, "note": "Solstice/Equinox GPU deployment at Argonne targets 2025-2026."}, "budget_timeline": {"status": "bounded", "start_year": 2025, "end_year": 2026, "note": "Genesis Mission EO (Nov 2025) and DOE awards (Jul 2026) are near-term; no multi-year completion date beyond 2026 disclosed."}, "programs": [{"name": "Genesis Mission", "url": "https://www.energy.gov/articles/energy-department-announces-293-million-funding-support-genesis-mission-national-science", "source": "whitehouse.gov / energy.gov"}, {"name": "DOE/Argonne Solstice + Equinox supercomputers", "url": "https://www.anl.gov/article/argonne-expands-nations-ai-infrastructure-with-powerful-new-supercomputers", "source": "anl.gov / nvidianews.nvidia.com"}]}, {"country": "Canada", "region": "Americas", "budget": 1450, "budget_2030": 1450, "mw": 100, "mw_2030": 100, "mw_direct": 100, "gpu": null, "confidence": "low-medium", "purity": "direct federal capital via ISED/Shared Services Canada/National Research Council", "notes": "RFP targets data centres 'exceeding 100MW' each; treated as a conservative single-facility floor since the number of facilities to be awarded is not yet fixed (proposal stage) -- actual total capacity could be materially higher.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2024, "end_year": 2029, "note": "RFP-stage 100MW+ floor tracks the same 5-year program."}, "budget_timeline": {"status": "bounded", "start_year": 2024, "end_year": 2029, "note": "CAD$2B is explicitly a 5-year program (Budget 2024, 2024-2029)."}, "programs": [{"name": "Canadian Sovereign AI Compute Strategy", "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/04/canada-launches-national-initiative-to-build-large-scale-ai-supercomputing-capacity.html", "source": "canada.ca / ISED"}]}, {"country": "Brazil", "region": "Americas", "budget": 380, "budget_2030": 380, "mw": 19, "mw_2030": 19, "mw_direct": null, "gpu": null, "confidence": "low", "purity": "federal government (MCTI) + state-owned enterprise (Serpro)", "notes": "Brazil's much larger PBIA (Plano Brasileiro de Inteligencia Artificial 2024-2028, R$23.03bn / ~$4.3B) is a broad multi-purpose national AI plan covering workforce, regulation, and ethics as well as infrastructure -- it is noted for budget-side context but excluded from the compute-specific figure and MW conversion here to avoid overstating hardware spend.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2025, "end_year": 2026, "note": "Same basis as budget."}, "budget_timeline": {"status": "bounded", "start_year": 2025, "end_year": 2026, "note": "Both the Aug 2026 supercomputer purchase and Nuvem Soberana (2025-2026) are near-term; PBIA's broader 2024-2028 plan is excluded from this compute-specific figure."}, "programs": [{"name": "Pacote de Soberania Tecnologica \u2014 national supercomputer purchase", "url": "https://www.datacenterdynamics.com/br/not%C3%ADcias/governo-lan%C3%A7a-pacote-de-soberania-tecnol%C3%B3gica-de-r-22-bilh%C3%B5es/", "source": "DataCenterDynamics / Brasil de Fato"}, {"name": "Nuvem Soberana de Governo (Serpro)", "url": "https://www.brasil247.com/blog/o-papel-das-estatais-brasileiras-na-corrida-por-uma-ia-soberana", "source": "Brasil247"}]}, {"country": "Mexico", "region": "Americas", "budget": 326, "budget_2030": 326, "mw": 21.7, "mw_2030": 21.7, "mw_direct": null, "gpu": 14480, "confidence": "medium-high", "purity": "explicitly publicly financed ('supercomputer of the Mexican people')", "notes": "Well-documented, government-confirmed figures; the government explicitly framed this as publicly financed.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2026, "end_year": 2028, "note": "Same basis as budget."}, "budget_timeline": {"status": "bounded", "start_year": 2026, "end_year": 2028, "note": "Coatlicue is an explicit 24-month build (Jan 2026 - ~Jan 2028)."}, "programs": [{"name": "Coatlicue national public supercomputer", "url": "https://cnnespanol.cnn.com/2025/11/27/mexico/mexico-supercomputadora-publica-coatlicue-orix", "source": "CNN Espanol / Xataka Mexico"}]}, {"country": "Chile", "region": "Americas", "budget": 116, "budget_2030": 116, "mw": null, "mw_2030": null, "mw_direct": null, "gpu": null, "confidence": "n/a", "purity": "facilitation + small grant pool, not a large sovereign buildout", "notes": "Chile's National Data Center Plan 2024-2030 targets ~$2.5B, but that is overwhelmingly private investment attracted via land/permitting/energy facilitation, not government spend -- excluded from the sovereign budget figure.", "adjusted": false, "uncertain": false, "mw_timeline": {"status": "bounded", "start_year": 2024, "end_year": 2030, "note": "No compute-hardware share attributable; mw_best_estimate is null regardless."}, "budget_timeline": {"status": "bounded", "start_year": 2024, "end_year": 2030, "note": "Research-funding window explicitly dated 2024-2030."}, "programs": [{"name": "AI research funding (10-year) + supercompute-infra grant calls", "url": "https://www.minciencia.gob.cl/noticias/minciencia-y-corfo-anuncian-importante-inversion-estatal-en-capacidad-de-supercomputo-para-inteligencia-artificial/", "source": "Minciencia"}]}], "excluded": [{"country": "New Zealand", "reason": "No government-funded/subsidized/co-invested sovereign AI compute program identified; government role limited to policy facilitation and courting private capital.", "url": "https://thespinoff.co.nz/business/06-07-2026/nz-inc-is-going-all-in-on-ai-data-centres"}, {"country": "Indonesia", "reason": "Sovereign AI data center activity (BDx/IOH/Cisco/Nvidia) is telco/private-consortium funded; no government capex/subsidy/procurement budget for compute hardware found.", "url": "https://introl.com/blog/indonesia-first-sovereign-ai-data-center-market-analysis"}, {"country": "Egypt", "reason": "Draft national data-center/cloud strategy exists but concrete capacity deals are privately funded under NTRA licenses, not government-financed.", "url": "https://developingtelecoms.com/telecom-technology/data-centres-networks/20398-egypt-approves-major-data-centre-project.html"}, {"country": "South Africa", "reason": "Draft National AI Policy 2026 was withdrawn; GPU/data-center deployments are private-sector. The only government-adjacent initiative (AU's $60B fund) is continental, not South-Africa-specific.", "url": "https://en.wikipedia.org/wiki/Draft_South_Africa_National_Artificial_Intelligence_(AI)_Policy_2026"}, {"country": "Argentina", "reason": "'Stargate Argentina' (OpenAI + Sur Energy, 500MW target) is 100% private capex; government role is limited to RIGI tax/customs incentives, not direct capital, land, or subsidy.", "url": "https://www.batimes.com.ar/news/economy/openai-sur-energy-to-build-massive-ai-data-centre-in-patagonia.phtml"}, {"country": "Norway", "reason": "Participates only via LUMI AI Factory consortium membership; no separate national budget or MW figure identified.", "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories"}, {"country": "Denmark", "reason": "Participates only via LUMI AI Factory consortium membership; no separate national budget or MW figure identified.", "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories"}, {"country": "Sweden", "reason": "Mimer AI Factory (NAISS/Linkoping University) announced but no budget or capacity figure disclosed.", "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories"}, {"country": "Australia", "reason": "National AI Plan (Dec 2025) names sovereign digital infrastructure as a priority with a discrete A$1bn National Reconstruction Fund allocation and a concrete A$200m NRFC investment in Macquarie Technology Group, but coverage explicitly notes it lacks binding federal capex commitments or an MW/GPU target -- included qualitatively, excluded from the quantitative MW total pending a concrete build-out figure.", "url": "https://international.austrade.gov.au/en/news-and-analysis/news/australia-launches-national-ai-plan-to-build-a-world-class-ai-industry"}]};
+const CUTOFF = 2030;
 
 function fmtUSD(m) {
   if (m == null) return "&mdash;";
@@ -372,98 +304,196 @@ function fmtMW(v) {
 }
 function fmtInt(v) { return v == null ? "&mdash;" : v.toLocaleString(); }
 
-const SCOPE_EXCLUDE = {
-  all: new Set(),
-  excl_eu_uae: new Set(["EU supranational (unallocated)", "UAE"]),
-  excl_gulf: new Set(["Saudi Arabia", "UAE", "Qatar", "Kuwait"]),
+const EXCLUDE_SETS = {
+  gulf: new Set(["Saudi Arabia", "UAE", "Qatar", "Kuwait"]),
+  euuae: new Set(["EU supranational (unallocated)", "UAE"]),
+  china: new Set(["China"]),
 };
 
-function computeScope(key) {
-  const excl = SCOPE_EXCLUDE[key];
+let state = { view: "by_2030", excl: new Set() };
+
+function activeExcludeSet() {
+  const s = new Set();
+  state.excl.forEach(key => EXCLUDE_SETS[key].forEach(c => s.add(c)));
+  return s;
+}
+
+function fieldNames() {
+  return state.view === "by_2030"
+    ? { budget: "budget_2030", mw: "mw_2030" }
+    : { budget: "budget", mw: "mw" };
+}
+
+function computeTotals() {
+  const excl = activeExcludeSet();
+  const f = fieldNames();
   let budget = 0, mw = 0;
   DATA.countries.forEach(c => {
     if (excl.has(c.country)) return;
-    if (c.budget) budget += c.budget;
-    if (c.mw) mw += c.mw;
+    if (c[f.budget]) budget += c[f.budget];
+    if (c[f.mw]) mw += c[f.mw];
   });
   const jp = DATA.countries.find(c => c.country === "Japan");
-  return {
-    budget, mw,
-    jpBudgetPct: (jp.budget / budget * 100),
-    jpMwPct: (jp.mw / mw * 100),
-  };
+  return { budget, mw, jpBudgetPct: jp[f.budget] / budget * 100, jpMwPct: jp[f.mw] / mw * 100 };
 }
 
-function renderTiles(key) {
-  const s = computeScope(key);
+function renderTiles() {
+  const s = computeTotals();
   document.getElementById("tile-jp-mw").textContent = s.jpMwPct.toFixed(2) + "%";
   document.getElementById("tile-jp-budget").textContent = s.jpBudgetPct.toFixed(2) + "%";
   document.getElementById("tile-global-mw").textContent = fmtMW(s.mw).replace("&mdash;","-");
   document.getElementById("tile-global-budget").textContent = fmtUSD(s.budget).replace("&mdash;","-");
+  document.getElementById("view-note").textContent = state.view === "by_2030"
+    ? "\u201cBy 2030\u201d view: multi-year commitments running past 2030 are prorated to their straight-line run-rate at the 2030 cutoff (see Method below)."
+    : "\u201cFull commitment\u201d view: every program at its ultimate announced value, regardless of completion date.";
 }
 
-document.querySelectorAll(".scope-toggle button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".scope-toggle button").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    const key = btn.dataset.scope;
-    renderTiles(key);
-    highlightDimmed(SCOPE_EXCLUDE[key]);
-  });
-});
-
 function highlightDimmed(excludeSet) {
-  document.querySelectorAll(".row[data-country]").forEach(row => {
+  document.querySelectorAll(".row[data-country], .gantt-row[data-country]").forEach(row => {
     row.classList.toggle("dim", excludeSet.has(row.dataset.country));
   });
 }
 
-function buildChart(containerId, rows, maxOverride) {
-  const el = document.getElementById(containerId);
-  const max = maxOverride || Math.max(...rows.map(r => r.mw));
-  el.innerHTML = rows.map(r => {
-    const pct = Math.max((r.mw / max) * 100, 1.2);
-    const isJp = r.country === "Japan";
-    return `<div class="row ${isJp ? "jp" : ""}" data-country="${r.country.replace(/"/g,'&quot;')}" title="${r.notes ? r.notes.replace(/"/g,'&quot;') : ""}">
-      <div class="name">${r.country}</div>
-      <div class="track"><div class="bar" style="width:0%" data-w="${pct}"></div></div>
-      <div class="val">${fmtMW(r.mw)}</div>
-    </div>`;
-  }).join("");
-  requestAnimationFrame(() => {
-    el.querySelectorAll(".bar").forEach(b => { b.style.width = b.dataset.w + "%"; });
+document.getElementById("view-toggle").addEventListener("click", e => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+  document.querySelectorAll("#view-toggle button").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  state.view = btn.dataset.view;
+  renderTiles();
+  buildCharts();
+  buildTable();
+});
+
+document.querySelectorAll("#excl-chips .chip").forEach(chip => {
+  chip.addEventListener("change", () => {
+    const key = chip.dataset.excl;
+    const on = chip.querySelector("input").checked;
+    chip.classList.toggle("on", on);
+    if (on) state.excl.add(key); else state.excl.delete(key);
+    renderTiles();
+    highlightDimmed(activeExcludeSet());
   });
+});
+
+function tagsFor(c) {
+  let t = "";
+  if (c.adjusted) t += '<span class="tag adj" title="Prorated to a 2030 straight-line run-rate">ADJUSTED</span>';
+  if (c.uncertain) t += '<span class="tag unc" title="No disclosed completion date; full value shown as-is">UNCERTAIN</span>';
+  return t;
 }
 
-const ranked = DATA.summary.ranked_by_mw_best_estimate;
-const ghiRows = ranked.filter(r => r.mw_best_estimate >= 1000).map(r => ({country: r.country, mw: r.mw_best_estimate, notes: (DATA.countries.find(c=>c.country===r.country)||{}).notes}));
-const restRows = ranked.filter(r => r.mw_best_estimate < 1000).map(r => ({country: r.country, mw: r.mw_best_estimate, notes: (DATA.countries.find(c=>c.country===r.country)||{}).notes}));
+function buildChart(containerId, rows) {
+  const el = document.getElementById(containerId);
+  const max = Math.max(...rows.map(r => r.v));
+  el.innerHTML = rows.map(r => {
+    const pct = Math.max((r.v / max) * 100, 1.2);
+    const isJp = r.country === "Japan";
+    return `<div class="row ${isJp ? "jp" : ""}" data-country="${r.country.replace(/"/g,'&quot;')}" title="${(r.notes||"").replace(/"/g,'&quot;')}">
+      <div class="name">${r.country}${tagsFor(r)}</div>
+      <div class="track"><div class="bar" style="width:0%" data-w="${pct}"></div></div>
+      <div class="val">${fmtMW(r.v)}</div>
+    </div>`;
+  }).join("");
+  requestAnimationFrame(() => { el.querySelectorAll(".bar").forEach(b => { b.style.width = b.dataset.w + "%"; }); });
+}
 
-buildChart("chart-ghi", ghiRows);
-buildChart("chart-rest", restRows);
+function buildCharts() {
+  const f = fieldNames();
+  const rows = DATA.countries
+    .filter(c => c[f.mw] != null)
+    .map(c => ({ country: c.country, v: c[f.mw], notes: c.notes, adjusted: c.adjusted, uncertain: c.uncertain }))
+    .sort((a,b) => b.v - a.v);
+  buildChart("chart-ghi", rows.filter(r => r.v >= 1000));
+  buildChart("chart-rest", rows.filter(r => r.v < 1000));
+  highlightDimmed(activeExcludeSet());
+}
 
+// ---- Gantt timeline ----
+const YEAR_MIN = 2021, YEAR_MAX = 2036;
+function yearToPct(y) { return (y - YEAR_MIN) / (YEAR_MAX - YEAR_MIN) * 100; }
+
+function buildGantt() {
+  const el = document.getElementById("gantt");
+  const rows = DATA.countries
+    .map(c => {
+      const useMw = c.mw != null;
+      const tl = useMw ? c.mw_timeline : c.budget_timeline;
+      const value = useMw ? c.mw : c.budget;
+      const value2030 = useMw ? c.mw_2030 : c.budget_2030;
+      if (!tl || value == null) return null;
+      return { country: c.country, tl, value, value2030, useMw, adjusted: c.adjusted, uncertain: c.uncertain, notes: c.notes };
+    })
+    .filter(Boolean)
+    .sort((a,b) => b.value - a.value);
+
+  const axisYears = [];
+  for (let y = 2022; y <= 2035; y += 1) axisYears.push(y);
+
+  const axisHtml = axisYears.filter(y => y % 2 === 0).map(y =>
+    `<span class="yr" style="left:${yearToPct(y)}%">${y}</span>`
+  ).join("") + `<span class="cutoff-label" style="left:${yearToPct(CUTOFF)}%">2030</span>`;
+  document.getElementById("gantt").innerHTML =
+    `<div class="gantt-axis">${axisHtml}</div><div class="gantt-rows" id="gantt-rows"></div>`;
+
+  document.getElementById("gantt-rows").innerHTML = rows.map(r => {
+    const { status, start_year, end_year } = r.tl;
+    const isJp = r.country === "Japan";
+    const startPct = yearToPct(start_year);
+    const cutoffPct = yearToPct(CUTOFF);
+    let bars = `<div class="gantt-cutoff" style="left:${cutoffPct}%"></div>`;
+
+    if (status === "instant") {
+      bars += `<div class="gpoint" style="left:${startPct}%"></div>`;
+    } else if (status === "undisclosed") {
+      const endPct = yearToPct(YEAR_MAX - 1);
+      bars += `<div class="gbar undisclosed" style="left:${startPct}%;width:${endPct-startPct}%"></div>`;
+      bars += `<div class="gpoint" style="left:${startPct}%"></div>`;
+    } else {
+      const endPct = yearToPct(end_year);
+      if (status === "adjusted-2030") {
+        bars += `<div class="gbar" style="left:${startPct}%;width:${cutoffPct-startPct}%"></div>`;
+        bars += `<div class="gbar future" style="left:${cutoffPct}%;width:${endPct-cutoffPct}%"></div>`;
+      } else {
+        bars += `<div class="gbar" style="left:${startPct}%;width:${Math.max(endPct-startPct,0.8)}%"></div>`;
+      }
+    }
+
+    const valLabel = r.useMw ? fmtMW(r.value2030 ?? r.value) : fmtUSD(r.value2030 ?? r.value);
+    return `<div class="gantt-row ${isJp ? "jp" : ""}" data-country="${r.country.replace(/"/g,'&quot;')}" title="${r.tl.note.replace(/"/g,'&quot;')}">
+      <div class="gname">${r.country}${tagsFor(r)}</div>
+      <div class="gantt-track">${bars}</div>
+    </div>`;
+  }).join("");
+}
+
+function buildTable() {
+  const f = fieldNames();
+  document.getElementById("table-body").innerHTML = DATA.countries
+    .slice()
+    .sort((a,b) => (b[f.mw]||0) - (a[f.mw]||0) || (b[f.budget]||0) - (a[f.budget]||0))
+    .map(c => `<tr class="${c.country === "Japan" ? "jp" : ""}">
+        <td class="country">${c.country} ${tagsFor(c)}</td>
+        <td>${c.region}</td>
+        <td class="num">${fmtUSD(c[f.budget])}</td>
+        <td class="num">${fmtMW(c.mw_direct)}</td>
+        <td class="num">${fmtInt(c.gpu)}</td>
+        <td class="num">${fmtMW(c[f.mw])}</td>
+        <td>${pill(c.confidence)}</td>
+        <td class="notes">${c.notes || ""}</td>
+      </tr>`).join("");
+}
 function pill(conf) {
   const cls = (conf || "n/a").toLowerCase().replace(/\s+/g,"-");
   return `<span class="pill ${cls}">${conf || "n/a"}</span>`;
 }
 
-document.getElementById("table-body").innerHTML = DATA.countries
-  .slice()
-  .sort((a,b) => (b.mw||0) - (a.mw||0) || (b.budget||0) - (a.budget||0))
-  .map(c => `<tr class="${c.country === "Japan" ? "jp" : ""}">
-      <td class="country">${c.country}</td>
-      <td>${c.region}</td>
-      <td class="num">${fmtUSD(c.budget)}</td>
-      <td class="num">${fmtMW(c.mw_direct)}</td>
-      <td class="num">${fmtInt(c.gpu)}</td>
-      <td class="num">${fmtMW(c.mw)}</td>
-      <td>${pill(c.confidence)}</td>
-      <td class="notes">${c.notes || ""}</td>
-    </tr>`).join("");
-
 document.getElementById("excl-list").innerHTML = DATA.excluded.map(e =>
   `<div><b>${e.country}</b> &mdash; ${e.reason}</div>`
 ).join("");
 
-renderTiles("all");
+renderTiles();
+buildCharts();
+buildGantt();
+buildTable();
 </script>

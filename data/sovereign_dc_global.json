@@ -58,7 +58,23 @@
           "url": "https://www.pif.gov.sa/en/our-investments/our-portfolio/humain/"
         }
       ],
-      "notes": "6.6GW is a 10-year plan; ~2.2GW of data centers + several GW-scale JVs (xAI 500MW, AMD/Cisco 1GW, stc-Humain 1GW, Hexagon 480MW) are already committed within that envelope, not additive."
+      "notes": "6.6GW is a 10-year plan; ~2.2GW of data centers + several GW-scale JVs (xAI 500MW, AMD/Cisco 1GW, stc-Humain 1GW, Hexagon 480MW) are already committed within that envelope, not additive.",
+      "budget_timeline": {
+        "status": "adjusted-2030",
+        "start_year": 2025,
+        "end_year": 2035,
+        "note": "HUMAIN's ~$100B is explicitly a 5-10yr commitment; using the outer 10yr bound (2025-2035), linear run-rate implies ~$50B deployed by 2030 (5 of 10 years elapsed)."
+      },
+      "mw_timeline": {
+        "status": "adjusted-2030",
+        "start_year": 2025,
+        "end_year": 2035,
+        "note": "6.6GW is explicitly 'planned over a decade' (2025-2035); linear run-rate implies ~3.3GW online by 2030 (5 of 10 years elapsed). ~2.2GW of near-term data centers are already under construction, so the true 2030 figure could exceed this linear estimate."
+      },
+      "budget_usd_m_by_2030": 50000,
+      "mw_by_2030": 3300,
+      "adjusted_for_2030": true,
+      "timeline_uncertain": false
     },
     {
       "country": "UAE",
@@ -94,7 +110,23 @@
           "url": "https://www.datacenterdynamics.com/en/news/us-and-uae-plan-to-build-5gw-ai-data-center-campus-run-by-g42-and-american-hyperscalers/"
         }
       ],
-      "notes": "Budget (MGX $49B fund) and MW (5GW campus) are DIFFERENT programs/scopes, not 1:1 linked -- MGX invests broadly, not solely into the Abu Dhabi campus. Treat as two independent signals per methodology."
+      "notes": "Budget (MGX $49B fund) and MW (5GW campus) are DIFFERENT programs/scopes, not 1:1 linked -- MGX invests broadly, not solely into the Abu Dhabi campus. Treat as two independent signals per methodology.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2026,
+        "end_year": 2026,
+        "note": "MGX Fund I is a one-time close (Jul 2026), not a multi-year build-out; full amount counted as of that date."
+      },
+      "mw_timeline": {
+        "status": "undisclosed",
+        "start_year": 2025,
+        "end_year": null,
+        "note": "Stargate UAE's 5GW campus has no disclosed full-completion date (only a 200MW initial phase is dated, 2026); showing the full 5GW target as the 2030 figure is an optimistic assumption, not a computed estimate."
+      },
+      "budget_usd_m_by_2030": 49000,
+      "mw_by_2030": 5000,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": true
     },
     {
       "country": "China",
@@ -119,7 +151,23 @@
           "url": "https://www.techradar.com/pro/website-hosting/china-invested-dollar61-billion-in-eight-national-datacenter-hubs-according-to-director-of-national-data-bureau"
         }
       ],
-      "notes": "No MW/GPU figure was found for the $61B figure; MW is a budget-based estimate only (order-of-magnitude, low confidence). A widely-cited $295B aggregate figure exists but is a private-analyst estimate, not a government announcement, and is excluded from the headline number."
+      "notes": "No MW/GPU figure was found for the $61B figure; MW is a budget-based estimate only (order-of-magnitude, low confidence). A widely-cited $295B aggregate figure exists but is a private-analyst estimate, not a government announcement, and is excluded from the headline number.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2022,
+        "end_year": 2025,
+        "note": "NDRC's own target was 50 national computing hub clusters by 2025 -- already at/before the 2030 cutoff."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2022,
+        "end_year": 2025,
+        "note": "Same basis as budget."
+      },
+      "budget_usd_m_by_2030": 61000,
+      "mw_by_2030": 2836,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Japan",
@@ -166,7 +214,23 @@
           "url": "https://ubitus.net/2025-meti-ai-gpu-investment-en/"
         }
       ],
-      "notes": "Excludes Japan's >=Y10T/7yr (~$65B) 'AI-semiconductor industry base reinforcement' umbrella and the FY2026 METI budget (Y3.07T total), since those are chip-fab (Rapidus/TSMC) industrial policy or broad ministry budgets, not compute/DC-specific -- including them would conflate semiconductor manufacturing subsidies with sovereign DC/compute workload and break comparability with other countries. GPU floor (10,800, Sakura only) is a small fraction of the ~$7.1B identified spend across 5 co-funded firms; budget-based MW estimate (range 186-472MW, using $15-38M/MW) is used as the primary signal, with the true figure plausibly at or above the upper end since these are partial subsidies (leverage effect) rather than full capex."
+      "notes": "Excludes Japan's >=Y10T/7yr (~$65B) 'AI-semiconductor industry base reinforcement' umbrella and the FY2026 METI budget (Y3.07T total), since those are chip-fab (Rapidus/TSMC) industrial policy or broad ministry budgets, not compute/DC-specific -- including them would conflate semiconductor manufacturing subsidies with sovereign DC/compute workload and break comparability with other countries. GPU floor (10,800, Sakura only) is a small fraction of the ~$7.1B identified spend across 5 co-funded firms; budget-based MW estimate (range 186-472MW, using $15-38M/MW) is used as the primary signal, with the true figure plausibly at or above the upper end since these are partial subsidies (leverage effect) rather than full capex.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2024,
+        "end_year": 2029,
+        "note": "GENIAC (the largest tranche, $6.5B) is a 5-year program ending 2029; the two smaller one-time grants (2024, 2025) are already spent. All programs conclude before the 2030 cutoff."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2024,
+        "end_year": 2029,
+        "note": "Same basis as budget."
+      },
+      "budget_usd_m_by_2030": 7080,
+      "mw_by_2030": 300,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "South Korea",
@@ -202,7 +266,23 @@
           "url": "https://oecd.ai/en/dashboards/policy-initiatives/south-korea-national-ai-gpu-infrastructure-initiative-1"
         }
       ],
-      "notes": "50,000 GPU figure is the officially cited cumulative national target (NAICC 15k->50k by 2030, overlapping with the 13k CSP tranche) -- treated as one target, not additive with the CSP tranche, per source caveats."
+      "notes": "50,000 GPU figure is the officially cited cumulative national target (NAICC 15k->50k by 2030, overlapping with the 13k CSP tranche) -- treated as one target, not additive with the CSP tranche, per source caveats.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2025,
+        "end_year": 2030,
+        "note": "NAICC's GPU target (15k->50k) is explicitly dated 'by 2030' -- lands exactly at the cutoff, no proration needed."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2025,
+        "end_year": 2030,
+        "note": "Same basis as budget."
+      },
+      "budget_usd_m_by_2030": 2900,
+      "mw_by_2030": 85,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Taiwan",
@@ -227,7 +307,23 @@
           "url": "https://asia.nikkei.com/business/technology/taiwan-opens-sovereign-ai-data-center-with-nvidia-powered-supercomputer"
         }
       ],
-      "notes": "15MW is a verified, primary-sourced direct figure but almost certainly understates Taiwan's total sovereign compute ambition (NSTC's separately stated goal is 480 petaflops of combined national supercomputing capacity by 2029, with no consolidated MW/budget figure available for that broader target)."
+      "notes": "15MW is a verified, primary-sourced direct figure but almost certainly understates Taiwan's total sovereign compute ambition (NSTC's separately stated goal is 480 petaflops of combined national supercomputing capacity by 2029, with no consolidated MW/budget figure available for that broader target).",
+      "budget_timeline": {
+        "status": "instant",
+        "start_year": 2025,
+        "end_year": 2025,
+        "note": "Facility-specific budget undisclosed."
+      },
+      "mw_timeline": {
+        "status": "instant",
+        "start_year": 2025,
+        "end_year": 2025,
+        "note": "NCHC's 15MW facility is already built and inaugurated (Dec 2025)."
+      },
+      "budget_usd_m_by_2030": null,
+      "mw_by_2030": 15,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "India",
@@ -252,7 +348,23 @@
           "url": "https://www.digitalindia.gov.in/press_release/indias-common-compute-capacity-crosses-34000-gpus-3-more-startups-to-develop-and-deploy-indian-foundation-models/"
         }
       ],
-      "notes": "Budget figure is the compute-specific ~44% share of the total INR 10,372.9 crore (~$1.25B) IndiaAI Mission. GPU count is cumulative and well-documented via an official government tracker."
+      "notes": "Budget figure is the compute-specific ~44% share of the total INR 10,372.9 crore (~$1.25B) IndiaAI Mission. GPU count is cumulative and well-documented via an official government tracker.",
+      "budget_timeline": {
+        "status": "instant",
+        "start_year": 2024,
+        "end_year": 2024,
+        "note": "Cumulative current-state figure (empanelment through 2025), not a forward-looking target -- no proration applies."
+      },
+      "mw_timeline": {
+        "status": "instant",
+        "start_year": 2024,
+        "end_year": 2024,
+        "note": "Same basis as budget."
+      },
+      "budget_usd_m_by_2030": 550,
+      "mw_by_2030": 51.5,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Singapore",
@@ -299,7 +411,23 @@
           "url": "https://www.cnbc.com/2024/02/19/singapores-ai-ambitions-get-a-boost-with-740-million-investment-plan.html"
         }
       ],
-      "notes": "No MW/GPU capacity target was ever announced; this budget mostly buys cloud/HPC compute ACCESS rather than funding a fixed physical build, so the budget-to-MW conversion here is a rough order-of-magnitude proxy only, not a real capacity estimate."
+      "notes": "No MW/GPU capacity target was ever announced; this budget mostly buys cloud/HPC compute ACCESS rather than funding a fixed physical build, so the budget-to-MW conversion here is a rough order-of-magnitude proxy only, not a real capacity estimate.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2024,
+        "end_year": 2030,
+        "note": "Largest tranche runs 2025-2030 explicitly; other items are already spent (2024). All conclude at/before the cutoff."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2024,
+        "end_year": 2030,
+        "note": "Same basis as budget (budget-derived estimate, no capacity target ever announced)."
+      },
+      "budget_usd_m_by_2030": 1684,
+      "mw_by_2030": 84,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Malaysia",
@@ -324,7 +452,23 @@
           "url": "https://www.nst.com.my/amp/news/nation/2026/04/1428347/rm2bil-sovereign-ai-cloud-safeguard-security-boost-talent-pm"
         }
       ],
-      "notes": "Excludes Malaysia's much larger 600MW Johor YTL/Nvidia data center, which is private commercial investment, not government-funded."
+      "notes": "Excludes Malaysia's much larger 600MW Johor YTL/Nvidia data center, which is private commercial investment, not government-funded.",
+      "budget_timeline": {
+        "status": "undisclosed",
+        "start_year": 2025,
+        "end_year": null,
+        "note": "Sovereign AI Cloud is described as 'still in planning/build-out stage' with no disclosed completion date."
+      },
+      "mw_timeline": {
+        "status": "undisclosed",
+        "start_year": 2025,
+        "end_year": null,
+        "note": "Same basis as budget."
+      },
+      "budget_usd_m_by_2030": 476,
+      "mw_by_2030": 23.8,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": true
     },
     {
       "country": "Vietnam",
@@ -349,7 +493,23 @@
           "url": "https://en.vietnamplus.vn/vietnam-urged-to-develop-sovereign-ai-in-digital-era-post348724.vnp"
         }
       ],
-      "notes": "General-purpose sovereign digital infrastructure (not an AI/GPU-specific cluster); MW estimate uses a lower general-DC capex benchmark ($12M/MW) rather than the AI-optimized benchmark, reflecting the facility's broader (non-GPU-heavy) purpose."
+      "notes": "General-purpose sovereign digital infrastructure (not an AI/GPU-specific cluster); MW estimate uses a lower general-DC capex benchmark ($12M/MW) rather than the AI-optimized benchmark, reflecting the facility's broader (non-GPU-heavy) purpose.",
+      "budget_timeline": {
+        "status": "instant",
+        "start_year": 2025,
+        "end_year": 2025,
+        "note": "National Data Center No. 1 reached full operation in Aug 2025."
+      },
+      "mw_timeline": {
+        "status": "instant",
+        "start_year": 2025,
+        "end_year": 2025,
+        "note": "Same basis as budget."
+      },
+      "budget_usd_m_by_2030": 639,
+      "mw_by_2030": 53,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Thailand",
@@ -374,7 +534,23 @@
           "url": "https://www.bangkokpost.com/business/general/3078438/b25-billion-approved-for-ai-development"
         }
       ],
-      "notes": "Budget is mostly workforce training, Centres of Excellence, and a data bank -- not compute hardware. No credible MW/GPU share could be attributed; excluded from MW total but kept for budget-side completeness. Thailand's higher-profile Siam.AI GPU cluster is privately funded (government MoU support only) and excluded."
+      "notes": "Budget is mostly workforce training, Centres of Excellence, and a data bank -- not compute hardware. No credible MW/GPU share could be attributed; excluded from MW total but kept for budget-side completeness. Thailand's higher-profile Siam.AI GPU cluster is privately funded (government MoU support only) and excluded.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2025,
+        "end_year": 2027,
+        "note": "FY2026-27 framework concludes 2027, well before the cutoff."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2025,
+        "end_year": 2027,
+        "note": "No credible compute-hardware share attributable; mw_best_estimate is null regardless."
+      },
+      "budget_usd_m_by_2030": 770,
+      "mw_by_2030": null,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Philippines",
@@ -399,7 +575,23 @@
           "url": "https://pia.gov.ph/news/dost-to-launch-naicri-the-ph-central-hub-for-ai-research-advanced-computing-and-innovation/"
         }
       ],
-      "notes": "No new GPU/MW procurement disclosed; leverages the existing COARE national supercomputing facility."
+      "notes": "No new GPU/MW procurement disclosed; leverages the existing COARE national supercomputing facility.",
+      "budget_timeline": {
+        "status": "instant",
+        "start_year": 2026,
+        "end_year": 2026,
+        "note": "NAICRI launch grant, single tranche."
+      },
+      "mw_timeline": {
+        "status": "instant",
+        "start_year": 2026,
+        "end_year": 2026,
+        "note": "No compute-hardware procurement disclosed; mw_best_estimate is null regardless."
+      },
+      "budget_usd_m_by_2030": 45,
+      "mw_by_2030": null,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Qatar",
@@ -424,7 +616,23 @@
           "url": "https://www.qia.qa/en/Newsroom/Pages/Brookfield-and-Qai-Form-$20-Billion-Strategic-Investment-Partnership-for-AI-Infrastructure.aspx"
         }
       ],
-      "notes": "JV explicitly covers 'Qatar and select international markets' -- not all $20B is necessarily Qatar-sited, so the MW estimate likely overstates Qatar-specific capacity."
+      "notes": "JV explicitly covers 'Qatar and select international markets' -- not all $20B is necessarily Qatar-sited, so the MW estimate likely overstates Qatar-specific capacity.",
+      "budget_timeline": {
+        "status": "undisclosed",
+        "start_year": 2025,
+        "end_year": null,
+        "note": "Qai/Brookfield JV covers 'Qatar and select international markets' with no disclosed build-out completion date."
+      },
+      "mw_timeline": {
+        "status": "undisclosed",
+        "start_year": 2025,
+        "end_year": null,
+        "note": "Same basis as budget."
+      },
+      "budget_usd_m_by_2030": 20000,
+      "mw_by_2030": 800,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": true
     },
     {
       "country": "Kuwait",
@@ -460,7 +668,23 @@
           "url": "https://www.semafor.com/article/06/11/2026/kuwait-joins-ai-infrastructure-race-with-10b-venture"
         }
       ],
-      "notes": "Most 'financialized' of the Gulf programs -- capacity is not necessarily sited in or dedicated to Kuwait; MW estimate is low-confidence and likely overstated for Kuwait specifically."
+      "notes": "Most 'financialized' of the Gulf programs -- capacity is not necessarily sited in or dedicated to Kuwait; MW estimate is low-confidence and likely overstated for Kuwait specifically.",
+      "budget_timeline": {
+        "status": "undisclosed",
+        "start_year": 2021,
+        "end_year": null,
+        "note": "KIA's historic $9B (2021-2026, already spent) is bounded, but the newer $10B Helix venture (announced 2026) has no disclosed completion date -- the combined figure is treated as undisclosed/optimistic."
+      },
+      "mw_timeline": {
+        "status": "undisclosed",
+        "start_year": 2021,
+        "end_year": null,
+        "note": "Same basis as budget."
+      },
+      "budget_usd_m_by_2030": 19000,
+      "mw_by_2030": 633,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": true
     },
     {
       "country": "Israel",
@@ -485,7 +709,23 @@
           "url": "https://letsdatascience.com/news/israel-commits-30b-to-national-ai-sovereignty-4215c922"
         }
       ],
-      "notes": "Budget is a press/analyst estimate (ILS 74-111B range) rather than a single stated government figure; GPU target (100,000+ accelerators) is the clearer official figure and is used as the primary MW signal."
+      "notes": "Budget is a press/analyst estimate (ILS 74-111B range) rather than a single stated government figure; GPU target (100,000+ accelerators) is the clearer official figure and is used as the primary MW signal.",
+      "budget_timeline": {
+        "status": "adjusted-2030",
+        "start_year": 2027,
+        "end_year": 2032,
+        "note": "National AI Program budget is explicitly tied to the 2027-2032 program window; linear run-rate implies ~$15B deployed by 2030 (3 of 5 years elapsed)."
+      },
+      "mw_timeline": {
+        "status": "adjusted-2030",
+        "start_year": 2027,
+        "end_year": 2032,
+        "note": "100,000-accelerator target spans 2027-2032; linear run-rate implies ~60,000 GPUs (~120MW) online by 2030 (3 of 5 years elapsed). Note: press also cites a '5,000 GPUs/year' rate, which is inconsistent with the stated 100k/5yr total -- the total/span method is used here for consistency with the rest of the dataset."
+      },
+      "budget_usd_m_by_2030": 15000,
+      "mw_by_2030": 120,
+      "adjusted_for_2030": true,
+      "timeline_uncertain": false
     },
     {
       "country": "EU supranational (unallocated)",
@@ -510,7 +750,23 @@
           "url": "https://www.eurohpc-ju.europa.eu/eurohpc-joint-undertaking-launches-ai-gigafactories-call-2026-07-30_en"
         }
       ],
-      "notes": "NOT allocated to any single country as of data collection -- kept as a separate supranational line. Distinct from (and not double-counted with) the pre-existing EUR7bn EuroHPC 2021-27 budget, whose national co-funding components are captured under Italy/Spain/Netherlands/Poland/Finland below."
+      "notes": "NOT allocated to any single country as of data collection -- kept as a separate supranational line. Distinct from (and not double-counted with) the pre-existing EUR7bn EuroHPC 2021-27 budget, whose national co-funding components are captured under Italy/Spain/Netherlands/Poland/Finland below.",
+      "budget_timeline": {
+        "status": "undisclosed",
+        "start_year": 2027,
+        "end_year": null,
+        "note": "EuroHPC Gigafactories call awards ~early 2027; no disclosed date for when all 'up to 7' facilities reach full capacity."
+      },
+      "mw_timeline": {
+        "status": "undisclosed",
+        "start_year": 2027,
+        "end_year": null,
+        "note": "Same basis as budget; 700,000-accelerator figure is the pipeline ceiling if all 7 facilities are awarded and fully built, not a dated target."
+      },
+      "budget_usd_m_by_2030": 21600,
+      "mw_by_2030": 1400,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": true
     },
     {
       "country": "France",
@@ -535,7 +791,23 @@
           "url": "https://oecd.ai/en/dashboards/policy-initiatives/jean-zay-supercomputer-extension"
         }
       ],
-      "notes": "France's much larger AION consortium bid for EU Gigafactory status (EUR10bn, 200MW) is majority-private (Capgemini/Orange/EDF/Iliad/Scaleway) and not yet confirmed awarded public funding -- excluded from the headline figure, noted for context only."
+      "notes": "France's much larger AION consortium bid for EU Gigafactory status (EUR10bn, 200MW) is majority-private (Capgemini/Orange/EDF/Iliad/Scaleway) and not yet confirmed awarded public funding -- excluded from the headline figure, noted for context only.",
+      "budget_timeline": {
+        "status": "instant",
+        "start_year": 2023,
+        "end_year": 2023,
+        "note": "Jean Zay extension, one-time capex."
+      },
+      "mw_timeline": {
+        "status": "instant",
+        "start_year": 2023,
+        "end_year": 2023,
+        "note": "No MW figure attributable; mw_best_estimate is null regardless."
+      },
+      "budget_usd_m_by_2030": 54,
+      "mw_by_2030": null,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Germany",
@@ -560,7 +832,23 @@
           "url": "https://www.morganlewis.com/pubs/2026/04/german-government-adopts-national-data-center-strategy"
         }
       ],
-      "notes": "Targets quadrupling domestic AI/HPC capacity and backing >=1 AI gigafactory on German soil by 2030, but no discrete government budget or MW baseline was found; the cited EUR130bn figure is a broad public+private framing, not an appropriation."
+      "notes": "Targets quadrupling domestic AI/HPC capacity and backing >=1 AI gigafactory on German soil by 2030, but no discrete government budget or MW baseline was found; the cited EUR130bn figure is a broad public+private framing, not an appropriation.",
+      "budget_timeline": {
+        "status": "undisclosed",
+        "start_year": 2026,
+        "end_year": null,
+        "note": "No discrete government compute budget was found at all; nothing to prorate."
+      },
+      "mw_timeline": {
+        "status": "undisclosed",
+        "start_year": 2026,
+        "end_year": null,
+        "note": "No MW baseline was found; nothing to prorate."
+      },
+      "budget_usd_m_by_2030": null,
+      "mw_by_2030": null,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": true
     },
     {
       "country": "UK",
@@ -607,7 +895,23 @@
           "url": "https://www.theregister.com/2026/04/20/ukgov_kicks_off_500m_ai/"
         }
       ],
-      "notes": "Isambard-AI (5,448 GH200 chips, ~8MW) is the only currently-built floor; the GBP1bn AIRR expansion pledge targets a 20x increase by 2030, so the budget-based 120MW estimate should be read as the multi-year target, not today's built capacity. UK's separate 'AI Growth Zones' 6GW-by-2030 national target is EXCLUDED here since that capacity is predominantly private capital in government-designated zones, not government-funded -- it is a useful comparandum, not a sovereign-budget-linked figure."
+      "notes": "Isambard-AI (5,448 GH200 chips, ~8MW) is the only currently-built floor; the GBP1bn AIRR expansion pledge targets a 20x increase by 2030, so the budget-based 120MW estimate should be read as the multi-year target, not today's built capacity. UK's separate 'AI Growth Zones' 6GW-by-2030 national target is EXCLUDED here since that capacity is predominantly private capital in government-designated zones, not government-funded -- it is a useful comparandum, not a sovereign-budget-linked figure.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2025,
+        "end_year": 2030,
+        "note": "AIRR's '20x expansion' pledge is explicitly dated 'by 2030'; the Sovereign AI Fund and chip procurement (2026) are already-committed near-term tranches."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2025,
+        "end_year": 2030,
+        "note": "Budget-derived estimate tracks the same 2030-dated AIRR pledge."
+      },
+      "budget_usd_m_by_2030": 2400,
+      "mw_by_2030": 120,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Italy",
@@ -643,7 +947,23 @@
           "url": "https://www.sdxcentral.com/news/italys-leonardo-supercomputer-to-get-28m-ai-upgrade/"
         }
       ],
-      "notes": "Figures shown are Italy's national government SHARE only (EU co-funding excluded, to avoid double-counting with the EU-level EuroHPC EUR7bn budget). No new MW/GPU figure disclosed beyond upgrades to the existing Leonardo supercomputer."
+      "notes": "Figures shown are Italy's national government SHARE only (EU co-funding excluded, to avoid double-counting with the EU-level EuroHPC EUR7bn budget). No new MW/GPU figure disclosed beyond upgrades to the existing Leonardo supercomputer.",
+      "budget_timeline": {
+        "status": "instant",
+        "start_year": 2025,
+        "end_year": 2025,
+        "note": "IT4LIA and Leonardo LISA upgrade, both already operational/contracted in 2025."
+      },
+      "mw_timeline": {
+        "status": "instant",
+        "start_year": 2025,
+        "end_year": 2025,
+        "note": "No new MW figure attributable; mw_best_estimate is null regardless."
+      },
+      "budget_usd_m_by_2030": 176,
+      "mw_by_2030": null,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Spain",
@@ -668,7 +988,23 @@
           "url": "https://www.lamoncloa.gob.es/lang/en/gobierno/news/paginas/2024/20241210-ai-factory.aspx"
         }
       ],
-      "notes": "A separately reported EUR90m MareNostrum5 figure may restate the same national contribution -- not added on top to avoid double-counting."
+      "notes": "A separately reported EUR90m MareNostrum5 figure may restate the same national contribution -- not added on top to avoid double-counting.",
+      "budget_timeline": {
+        "status": "instant",
+        "start_year": 2024,
+        "end_year": 2024,
+        "note": "Barcelona AI Factory / MareNostrum 5 boost, announced Dec 2024."
+      },
+      "mw_timeline": {
+        "status": "instant",
+        "start_year": 2024,
+        "end_year": 2024,
+        "note": "No new MW figure attributable; mw_best_estimate is null regardless."
+      },
+      "budget_usd_m_by_2030": 76,
+      "mw_by_2030": null,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Netherlands",
@@ -704,7 +1040,23 @@
           "url": "https://nldaily.com/tech/gpt-nl-netherlands-ai-model/"
         }
       ],
-      "notes": "AiNed (EUR276m) and ROBUST AI (EUR84m) National Growth Fund programs are R&D grants, not compute infrastructure, and are excluded from the compute-specific figure."
+      "notes": "AiNed (EUR276m) and ROBUST AI (EUR84m) National Growth Fund programs are R&D grants, not compute infrastructure, and are excluded from the compute-specific figure.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2026,
+        "end_year": 2027,
+        "note": "Dutch AI Factory reaches full capacity 2027."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2026,
+        "end_year": 2027,
+        "note": "No MW figure attributable; mw_best_estimate is null regardless."
+      },
+      "budget_usd_m_by_2030": 145,
+      "mw_by_2030": null,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Poland",
@@ -740,7 +1092,23 @@
           "url": "https://www.hpcwire.com/off-the-wire/polands-nask-unveils-ai-compute-cluster-to-support-government-and-research-workloads/"
         }
       ],
-      "notes": "Smallest identified European program; GPU-based MW estimate uses only the disclosed Gaia AI Factory 1,000+ GPU figure."
+      "notes": "Smallest identified European program; GPU-based MW estimate uses only the disclosed Gaia AI Factory 1,000+ GPU figure.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2026,
+        "end_year": 2027,
+        "note": "Gaia AI Factory operational 2027; NASK cluster already launched 2026."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2026,
+        "end_year": 2027,
+        "note": "1,000+ GPU figure is Gaia's disclosed spec, same timeline."
+      },
+      "budget_usd_m_by_2030": 49,
+      "mw_by_2030": 1.5,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Finland",
@@ -765,7 +1133,23 @@
           "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories"
         }
       ],
-      "notes": "Other consortium members' shares not disclosed; no MW figure available for the LUMI AI Factory specifically."
+      "notes": "Other consortium members' shares not disclosed; no MW figure available for the LUMI AI Factory specifically.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2023,
+        "end_year": 2027,
+        "note": "LUMI AI Factory operational 2027."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2023,
+        "end_year": 2027,
+        "note": "No MW figure attributable; mw_best_estimate is null regardless."
+      },
+      "budget_usd_m_by_2030": 270,
+      "mw_by_2030": null,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Switzerland",
@@ -790,7 +1174,23 @@
           "url": "https://www.swissinfo.ch/eng/archive-science/how-switzerlands-alps-supercomputer-aims-to-advance-ai/87659724"
         }
       ],
-      "notes": "10,000+ Grace-Hopper superchips is a well-documented figure; used directly for the MW estimate."
+      "notes": "10,000+ Grace-Hopper superchips is a well-documented figure; used directly for the MW estimate.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2023,
+        "end_year": 2028,
+        "note": "Capex (2023) + 4 years opex (2025-2028) already summed into the total; concludes before the cutoff."
+      },
+      "mw_timeline": {
+        "status": "instant",
+        "start_year": 2023,
+        "end_year": 2023,
+        "note": "10,000+ Grace-Hopper superchips already procured under the initiative."
+      },
+      "budget_usd_m_by_2030": 294,
+      "mw_by_2030": 15,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "USA",
@@ -826,7 +1226,23 @@
           "url": "https://www.anl.gov/article/argonne-expands-nations-ai-infrastructure-with-powerful-new-supercomputers"
         }
       ],
-      "notes": "The ~$500B private 'Stargate' JV (OpenAI/Oracle/SoftBank/MGX) is explicitly EXCLUDED -- it carries no direct federal funding and is politically endorsed only. DOE's exact funding share of the Solstice/Equinox systems (vs. NVIDIA/Oracle in-kind contribution) is not fully disclosed, so attributing the full 110,000-GPU/231MW figure to 'government' capacity may overstate the government-funded share."
+      "notes": "The ~$500B private 'Stargate' JV (OpenAI/Oracle/SoftBank/MGX) is explicitly EXCLUDED -- it carries no direct federal funding and is politically endorsed only. DOE's exact funding share of the Solstice/Equinox systems (vs. NVIDIA/Oracle in-kind contribution) is not fully disclosed, so attributing the full 110,000-GPU/231MW figure to 'government' capacity may overstate the government-funded share.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2025,
+        "end_year": 2026,
+        "note": "Genesis Mission EO (Nov 2025) and DOE awards (Jul 2026) are near-term; no multi-year completion date beyond 2026 disclosed."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2025,
+        "end_year": 2026,
+        "note": "Solstice/Equinox GPU deployment at Argonne targets 2025-2026."
+      },
+      "budget_usd_m_by_2030": 5000,
+      "mw_by_2030": 231,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Canada",
@@ -851,7 +1267,23 @@
           "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/04/canada-launches-national-initiative-to-build-large-scale-ai-supercomputing-capacity.html"
         }
       ],
-      "notes": "RFP targets data centres 'exceeding 100MW' each; treated as a conservative single-facility floor since the number of facilities to be awarded is not yet fixed (proposal stage) -- actual total capacity could be materially higher."
+      "notes": "RFP targets data centres 'exceeding 100MW' each; treated as a conservative single-facility floor since the number of facilities to be awarded is not yet fixed (proposal stage) -- actual total capacity could be materially higher.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2024,
+        "end_year": 2029,
+        "note": "CAD$2B is explicitly a 5-year program (Budget 2024, 2024-2029)."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2024,
+        "end_year": 2029,
+        "note": "RFP-stage 100MW+ floor tracks the same 5-year program."
+      },
+      "budget_usd_m_by_2030": 1450,
+      "mw_by_2030": 100,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Brazil",
@@ -887,7 +1319,23 @@
           "url": "https://www.brasil247.com/blog/o-papel-das-estatais-brasileiras-na-corrida-por-uma-ia-soberana"
         }
       ],
-      "notes": "Brazil's much larger PBIA (Plano Brasileiro de Inteligencia Artificial 2024-2028, R$23.03bn / ~$4.3B) is a broad multi-purpose national AI plan covering workforce, regulation, and ethics as well as infrastructure -- it is noted for budget-side context but excluded from the compute-specific figure and MW conversion here to avoid overstating hardware spend."
+      "notes": "Brazil's much larger PBIA (Plano Brasileiro de Inteligencia Artificial 2024-2028, R$23.03bn / ~$4.3B) is a broad multi-purpose national AI plan covering workforce, regulation, and ethics as well as infrastructure -- it is noted for budget-side context but excluded from the compute-specific figure and MW conversion here to avoid overstating hardware spend.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2025,
+        "end_year": 2026,
+        "note": "Both the Aug 2026 supercomputer purchase and Nuvem Soberana (2025-2026) are near-term; PBIA's broader 2024-2028 plan is excluded from this compute-specific figure."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2025,
+        "end_year": 2026,
+        "note": "Same basis as budget."
+      },
+      "budget_usd_m_by_2030": 380,
+      "mw_by_2030": 19,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Mexico",
@@ -912,7 +1360,23 @@
           "url": "https://cnnespanol.cnn.com/2025/11/27/mexico/mexico-supercomputadora-publica-coatlicue-orix"
         }
       ],
-      "notes": "Well-documented, government-confirmed figures; the government explicitly framed this as publicly financed."
+      "notes": "Well-documented, government-confirmed figures; the government explicitly framed this as publicly financed.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2026,
+        "end_year": 2028,
+        "note": "Coatlicue is an explicit 24-month build (Jan 2026 - ~Jan 2028)."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2026,
+        "end_year": 2028,
+        "note": "Same basis as budget."
+      },
+      "budget_usd_m_by_2030": 326,
+      "mw_by_2030": 21.7,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     },
     {
       "country": "Chile",
@@ -937,7 +1401,23 @@
           "url": "https://www.minciencia.gob.cl/noticias/minciencia-y-corfo-anuncian-importante-inversion-estatal-en-capacidad-de-supercomputo-para-inteligencia-artificial/"
         }
       ],
-      "notes": "Chile's National Data Center Plan 2024-2030 targets ~$2.5B, but that is overwhelmingly private investment attracted via land/permitting/energy facilitation, not government spend -- excluded from the sovereign budget figure."
+      "notes": "Chile's National Data Center Plan 2024-2030 targets ~$2.5B, but that is overwhelmingly private investment attracted via land/permitting/energy facilitation, not government spend -- excluded from the sovereign budget figure.",
+      "budget_timeline": {
+        "status": "bounded",
+        "start_year": 2024,
+        "end_year": 2030,
+        "note": "Research-funding window explicitly dated 2024-2030."
+      },
+      "mw_timeline": {
+        "status": "bounded",
+        "start_year": 2024,
+        "end_year": 2030,
+        "note": "No compute-hardware share attributable; mw_best_estimate is null regardless."
+      },
+      "budget_usd_m_by_2030": 116,
+      "mw_by_2030": null,
+      "adjusted_for_2030": false,
+      "timeline_uncertain": false
     }
   ],
   "countries_assessed_with_no_qualifying_program": [
@@ -988,245 +1468,564 @@
     }
   ],
   "summary": {
-    "all_countries_included": {
-      "global_budget_usd_m": 320480,
-      "global_mw": 18589.5,
-      "japan_pct_of_budget": 2.21,
-      "japan_pct_of_mw": 1.61
+    "scopes_available": [
+      "all",
+      "excl_eu_uae",
+      "excl_gulf",
+      "excl_china"
+    ],
+    "views_available": [
+      "full",
+      "by_2030"
+    ],
+    "scenarios": {
+      "all__full": {
+        "global_budget_usd_m": 320480,
+        "global_mw": 18589.5,
+        "japan_pct_of_budget": 2.21,
+        "japan_pct_of_mw": 1.61
+      },
+      "all__by_2030": {
+        "global_budget_usd_m": 260480,
+        "global_mw": 15209.5,
+        "japan_pct_of_budget": 2.72,
+        "japan_pct_of_mw": 1.97
+      },
+      "excl_eu_uae__full": {
+        "global_budget_usd_m": 249880,
+        "global_mw": 12189.5,
+        "japan_pct_of_budget": 2.83,
+        "japan_pct_of_mw": 2.46
+      },
+      "excl_eu_uae__by_2030": {
+        "global_budget_usd_m": 189880,
+        "global_mw": 8809.5,
+        "japan_pct_of_budget": 3.73,
+        "japan_pct_of_mw": 3.41
+      },
+      "excl_gulf__full": {
+        "global_budget_usd_m": 132480,
+        "global_mw": 5556.5,
+        "japan_pct_of_budget": 5.34,
+        "japan_pct_of_mw": 5.4
+      },
+      "excl_gulf__by_2030": {
+        "global_budget_usd_m": 122480,
+        "global_mw": 5476.5,
+        "japan_pct_of_budget": 5.78,
+        "japan_pct_of_mw": 5.48
+      },
+      "excl_china__full": {
+        "global_budget_usd_m": 259480,
+        "global_mw": 15753.5,
+        "japan_pct_of_budget": 2.73,
+        "japan_pct_of_mw": 1.9
+      },
+      "excl_china__by_2030": {
+        "global_budget_usd_m": 199480,
+        "global_mw": 12373.5,
+        "japan_pct_of_budget": 3.55,
+        "japan_pct_of_mw": 2.42
+      }
     },
-    "sensitivity_excl_eu_pipeline_and_uae_mgx_proxy": {
-      "global_budget_usd_m": 249880,
-      "global_mw": 12189.5,
-      "japan_pct_of_budget": 2.83,
-      "japan_pct_of_mw": 2.46
-    },
-    "sensitivity_excl_gulf_states": {
-      "global_budget_usd_m": 132480,
-      "global_mw": 5556.5,
-      "japan_pct_of_budget": 5.34,
-      "japan_pct_of_mw": 5.4
-    },
-    "ranked_by_mw_best_estimate": [
+    "ranked_by_mw_full": [
       {
         "country": "Saudi Arabia",
-        "mw_best_estimate": 6600,
+        "value": 6600,
         "budget_usd_m_identified": 100000
       },
       {
         "country": "UAE",
-        "mw_best_estimate": 5000,
+        "value": 5000,
         "budget_usd_m_identified": 49000
       },
       {
         "country": "China",
-        "mw_best_estimate": 2836,
+        "value": 2836,
         "budget_usd_m_identified": 61000
       },
       {
         "country": "EU supranational (unallocated)",
-        "mw_best_estimate": 1400,
+        "value": 1400,
         "budget_usd_m_identified": 21600
       },
       {
         "country": "Qatar",
-        "mw_best_estimate": 800,
+        "value": 800,
         "budget_usd_m_identified": 20000
       },
       {
         "country": "Kuwait",
-        "mw_best_estimate": 633,
+        "value": 633,
         "budget_usd_m_identified": 19000
       },
       {
         "country": "Japan",
-        "mw_best_estimate": 300,
+        "value": 300,
         "budget_usd_m_identified": 7080
       },
       {
         "country": "USA",
-        "mw_best_estimate": 231,
+        "value": 231,
         "budget_usd_m_identified": 5000
       },
       {
         "country": "Israel",
-        "mw_best_estimate": 200,
+        "value": 200,
         "budget_usd_m_identified": 25000
       },
       {
         "country": "UK",
-        "mw_best_estimate": 120,
+        "value": 120,
         "budget_usd_m_identified": 2400
       },
       {
         "country": "Canada",
-        "mw_best_estimate": 100,
+        "value": 100,
         "budget_usd_m_identified": 1450
       },
       {
         "country": "South Korea",
-        "mw_best_estimate": 85,
+        "value": 85,
         "budget_usd_m_identified": 2900
       },
       {
         "country": "Singapore",
-        "mw_best_estimate": 84,
+        "value": 84,
         "budget_usd_m_identified": 1684
       },
       {
         "country": "Vietnam",
-        "mw_best_estimate": 53,
+        "value": 53,
         "budget_usd_m_identified": 639
       },
       {
         "country": "India",
-        "mw_best_estimate": 51.5,
+        "value": 51.5,
         "budget_usd_m_identified": 550
       },
       {
         "country": "Malaysia",
-        "mw_best_estimate": 23.8,
+        "value": 23.8,
         "budget_usd_m_identified": 476
       },
       {
         "country": "Mexico",
-        "mw_best_estimate": 21.7,
+        "value": 21.7,
         "budget_usd_m_identified": 326
       },
       {
         "country": "Brazil",
-        "mw_best_estimate": 19,
+        "value": 19,
         "budget_usd_m_identified": 380
       },
       {
         "country": "Taiwan",
-        "mw_best_estimate": 15,
+        "value": 15,
         "budget_usd_m_identified": null
       },
       {
         "country": "Switzerland",
-        "mw_best_estimate": 15,
+        "value": 15,
         "budget_usd_m_identified": 294
       },
       {
         "country": "Poland",
-        "mw_best_estimate": 1.5,
+        "value": 1.5,
         "budget_usd_m_identified": 49
       }
     ],
-    "ranked_by_budget_usd_m": [
+    "ranked_by_mw_by_2030": [
+      {
+        "country": "UAE",
+        "value": 5000,
+        "budget_usd_m_identified": 49000
+      },
       {
         "country": "Saudi Arabia",
+        "value": 3300,
         "budget_usd_m_identified": 100000
       },
       {
         "country": "China",
+        "value": 2836,
         "budget_usd_m_identified": 61000
       },
       {
-        "country": "UAE",
-        "budget_usd_m_identified": 49000
-      },
-      {
-        "country": "Israel",
-        "budget_usd_m_identified": 25000
-      },
-      {
         "country": "EU supranational (unallocated)",
+        "value": 1400,
         "budget_usd_m_identified": 21600
       },
       {
         "country": "Qatar",
+        "value": 800,
         "budget_usd_m_identified": 20000
       },
       {
         "country": "Kuwait",
+        "value": 633,
         "budget_usd_m_identified": 19000
       },
       {
         "country": "Japan",
+        "value": 300,
         "budget_usd_m_identified": 7080
       },
       {
         "country": "USA",
+        "value": 231,
         "budget_usd_m_identified": 5000
       },
       {
-        "country": "South Korea",
-        "budget_usd_m_identified": 2900
+        "country": "Israel",
+        "value": 120,
+        "budget_usd_m_identified": 25000
       },
       {
         "country": "UK",
+        "value": 120,
         "budget_usd_m_identified": 2400
       },
       {
-        "country": "Singapore",
-        "budget_usd_m_identified": 1684
-      },
-      {
         "country": "Canada",
+        "value": 100,
         "budget_usd_m_identified": 1450
       },
       {
-        "country": "Thailand",
-        "budget_usd_m_identified": 770
+        "country": "South Korea",
+        "value": 85,
+        "budget_usd_m_identified": 2900
+      },
+      {
+        "country": "Singapore",
+        "value": 84,
+        "budget_usd_m_identified": 1684
       },
       {
         "country": "Vietnam",
+        "value": 53,
         "budget_usd_m_identified": 639
       },
       {
         "country": "India",
+        "value": 51.5,
         "budget_usd_m_identified": 550
       },
       {
         "country": "Malaysia",
+        "value": 23.8,
+        "budget_usd_m_identified": 476
+      },
+      {
+        "country": "Mexico",
+        "value": 21.7,
+        "budget_usd_m_identified": 326
+      },
+      {
+        "country": "Brazil",
+        "value": 19,
+        "budget_usd_m_identified": 380
+      },
+      {
+        "country": "Taiwan",
+        "value": 15,
+        "budget_usd_m_identified": null
+      },
+      {
+        "country": "Switzerland",
+        "value": 15,
+        "budget_usd_m_identified": 294
+      },
+      {
+        "country": "Poland",
+        "value": 1.5,
+        "budget_usd_m_identified": 49
+      }
+    ],
+    "ranked_by_budget_full": [
+      {
+        "country": "Saudi Arabia",
+        "value": 100000,
+        "budget_usd_m_identified": 100000
+      },
+      {
+        "country": "China",
+        "value": 61000,
+        "budget_usd_m_identified": 61000
+      },
+      {
+        "country": "UAE",
+        "value": 49000,
+        "budget_usd_m_identified": 49000
+      },
+      {
+        "country": "Israel",
+        "value": 25000,
+        "budget_usd_m_identified": 25000
+      },
+      {
+        "country": "EU supranational (unallocated)",
+        "value": 21600,
+        "budget_usd_m_identified": 21600
+      },
+      {
+        "country": "Qatar",
+        "value": 20000,
+        "budget_usd_m_identified": 20000
+      },
+      {
+        "country": "Kuwait",
+        "value": 19000,
+        "budget_usd_m_identified": 19000
+      },
+      {
+        "country": "Japan",
+        "value": 7080,
+        "budget_usd_m_identified": 7080
+      },
+      {
+        "country": "USA",
+        "value": 5000,
+        "budget_usd_m_identified": 5000
+      },
+      {
+        "country": "South Korea",
+        "value": 2900,
+        "budget_usd_m_identified": 2900
+      },
+      {
+        "country": "UK",
+        "value": 2400,
+        "budget_usd_m_identified": 2400
+      },
+      {
+        "country": "Singapore",
+        "value": 1684,
+        "budget_usd_m_identified": 1684
+      },
+      {
+        "country": "Canada",
+        "value": 1450,
+        "budget_usd_m_identified": 1450
+      },
+      {
+        "country": "Thailand",
+        "value": 770,
+        "budget_usd_m_identified": 770
+      },
+      {
+        "country": "Vietnam",
+        "value": 639,
+        "budget_usd_m_identified": 639
+      },
+      {
+        "country": "India",
+        "value": 550,
+        "budget_usd_m_identified": 550
+      },
+      {
+        "country": "Malaysia",
+        "value": 476,
         "budget_usd_m_identified": 476
       },
       {
         "country": "Brazil",
+        "value": 380,
         "budget_usd_m_identified": 380
       },
       {
         "country": "Mexico",
+        "value": 326,
         "budget_usd_m_identified": 326
       },
       {
         "country": "Switzerland",
+        "value": 294,
         "budget_usd_m_identified": 294
       },
       {
         "country": "Finland",
+        "value": 270,
         "budget_usd_m_identified": 270
       },
       {
         "country": "Italy",
+        "value": 176,
         "budget_usd_m_identified": 176
       },
       {
         "country": "Netherlands",
+        "value": 145,
         "budget_usd_m_identified": 145
       },
       {
         "country": "Chile",
+        "value": 116,
         "budget_usd_m_identified": 116
       },
       {
         "country": "Spain",
+        "value": 76,
         "budget_usd_m_identified": 76
       },
       {
         "country": "France",
+        "value": 54,
         "budget_usd_m_identified": 54
       },
       {
         "country": "Poland",
+        "value": 49,
         "budget_usd_m_identified": 49
       },
       {
         "country": "Philippines",
+        "value": 45,
         "budget_usd_m_identified": 45
       }
     ],
-    "headline_takeaway": "Japan's identified sovereign AI/DC commitments (~$7.1B budget, ~300MW triangulated) rank mid-pack globally -- roughly 1.6-2.2% of the ~$130-320B / ~5.6-18.6GW global total depending on scope, and closer to 5% once the three Gulf states' outsized, JV-heavy commitments (Saudi Arabia, UAE, Qatar) are excluded as a sensitivity check. The global total is dominated by Saudi Arabia (HUMAIN, ~$100B / 6.6GW) and UAE (MGX + Stargate UAE, ~5GW), followed by China (~$61B, budget-estimated ~2.8GW); no other country approaches that scale."
+    "ranked_by_budget_by_2030": [
+      {
+        "country": "China",
+        "value": 61000,
+        "budget_usd_m_identified": 61000
+      },
+      {
+        "country": "Saudi Arabia",
+        "value": 50000,
+        "budget_usd_m_identified": 100000
+      },
+      {
+        "country": "UAE",
+        "value": 49000,
+        "budget_usd_m_identified": 49000
+      },
+      {
+        "country": "EU supranational (unallocated)",
+        "value": 21600,
+        "budget_usd_m_identified": 21600
+      },
+      {
+        "country": "Qatar",
+        "value": 20000,
+        "budget_usd_m_identified": 20000
+      },
+      {
+        "country": "Kuwait",
+        "value": 19000,
+        "budget_usd_m_identified": 19000
+      },
+      {
+        "country": "Israel",
+        "value": 15000,
+        "budget_usd_m_identified": 25000
+      },
+      {
+        "country": "Japan",
+        "value": 7080,
+        "budget_usd_m_identified": 7080
+      },
+      {
+        "country": "USA",
+        "value": 5000,
+        "budget_usd_m_identified": 5000
+      },
+      {
+        "country": "South Korea",
+        "value": 2900,
+        "budget_usd_m_identified": 2900
+      },
+      {
+        "country": "UK",
+        "value": 2400,
+        "budget_usd_m_identified": 2400
+      },
+      {
+        "country": "Singapore",
+        "value": 1684,
+        "budget_usd_m_identified": 1684
+      },
+      {
+        "country": "Canada",
+        "value": 1450,
+        "budget_usd_m_identified": 1450
+      },
+      {
+        "country": "Thailand",
+        "value": 770,
+        "budget_usd_m_identified": 770
+      },
+      {
+        "country": "Vietnam",
+        "value": 639,
+        "budget_usd_m_identified": 639
+      },
+      {
+        "country": "India",
+        "value": 550,
+        "budget_usd_m_identified": 550
+      },
+      {
+        "country": "Malaysia",
+        "value": 476,
+        "budget_usd_m_identified": 476
+      },
+      {
+        "country": "Brazil",
+        "value": 380,
+        "budget_usd_m_identified": 380
+      },
+      {
+        "country": "Mexico",
+        "value": 326,
+        "budget_usd_m_identified": 326
+      },
+      {
+        "country": "Switzerland",
+        "value": 294,
+        "budget_usd_m_identified": 294
+      },
+      {
+        "country": "Finland",
+        "value": 270,
+        "budget_usd_m_identified": 270
+      },
+      {
+        "country": "Italy",
+        "value": 176,
+        "budget_usd_m_identified": 176
+      },
+      {
+        "country": "Netherlands",
+        "value": 145,
+        "budget_usd_m_identified": 145
+      },
+      {
+        "country": "Chile",
+        "value": 116,
+        "budget_usd_m_identified": 116
+      },
+      {
+        "country": "Spain",
+        "value": 76,
+        "budget_usd_m_identified": 76
+      },
+      {
+        "country": "France",
+        "value": 54,
+        "budget_usd_m_identified": 54
+      },
+      {
+        "country": "Poland",
+        "value": 49,
+        "budget_usd_m_identified": 49
+      },
+      {
+        "country": "Philippines",
+        "value": 45,
+        "budget_usd_m_identified": 45
+      }
+    ],
+    "headline_takeaway": "Japan's identified sovereign AI/DC commitments (~$7.1B budget, ~300MW) don't shift under a 2030 lens -- every Japanese program concludes at or before 2029. Saudi Arabia and Israel do shift: Saudi Arabia's 6.6GW/$100B is an explicit 2025-2035 decade plan (linear run-rate: ~3.3GW/$50B by 2030), and Israel's 100,000-GPU/$25-30B program is an explicit 2027-2032 window (linear run-rate: ~60,000 GPUs (~120MW)/~$15B by 2030). Since Japan's figure is fixed while the two largest 'far-future' commitments shrink under the 2030 lens, Japan's global share is slightly HIGHER by 2030 (~2.0% of MW) than on an all-time-horizon basis (~1.6%). Several Gulf-adjacent programs (UAE's Stargate campus, Qatar, Kuwait's Helix venture, the EU's pending Gigafactories) have no disclosed completion date at all -- their 'by 2030' figures are shown at full value but flagged UNCERTAIN, since real-world buildout could plausibly land short of that by 2030."
   }
 }
