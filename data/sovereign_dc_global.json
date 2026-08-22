@@ -55,7 +55,8 @@
           "gpu": null,
           "funding_type": "sovereign wealth fund equity, multi-year (5-10yr)",
           "source": "PIF / SPA",
-          "url": "https://www.pif.gov.sa/en/our-investments/our-portfolio/humain/"
+          "url": "https://www.pif.gov.sa/en/our-investments/our-portfolio/humain/",
+          "operator": "HUMAIN (PIF subsidiary)"
         }
       ],
       "notes": "6.6GW is a 10-year plan; ~2.2GW of data centers + several GW-scale JVs (xAI 500MW, AMD/Cisco 1GW, stc-Humain 1GW, Hexagon 480MW) are already committed within that envelope, not additive.",
@@ -74,7 +75,42 @@
       "budget_usd_m_by_2030": 50000,
       "mw_by_2030": 3300,
       "adjusted_for_2030": true,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "HUMAIN (PIF)",
+          "facility": "National sovereign AI compute buildout (multiple sites)",
+          "location": "Saudi Arabia",
+          "mw": 6600,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": "PIF / SPA",
+          "url": "https://www.pif.gov.sa/en/our-investments/our-portfolio/humain/",
+          "note": "Headline 6.6GW/decade target (2025-2035); drives the country total."
+        },
+        {
+          "operator": "stc + HUMAIN (JV)",
+          "facility": "stc-Humain 1GW data centre capacity",
+          "location": "Saudi Arabia",
+          "mw": 1000,
+          "gpu": null,
+          "counts_toward_total": false,
+          "source": "AGBI",
+          "url": "https://www.agbi.com/ai/2025/12/stc-and-humain-to-build-1gw-of-data-centre-capacity/",
+          "note": "Named sub-component already included within the 6.6GW headline above -- not additive."
+        },
+        {
+          "operator": "HUMAIN + Infra (financing JV)",
+          "facility": "250MW data center space",
+          "location": "Saudi Arabia",
+          "mw": 250,
+          "gpu": null,
+          "counts_toward_total": false,
+          "source": "DataCenterDynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/humain-and-infra-set-up-12bn-financing-package-to-fund-250mw-of-data-center-space-in-saudi-arabia/",
+          "note": "Named sub-component already included within the 6.6GW headline above -- not additive."
+        }
+      ]
     },
     {
       "country": "UAE",
@@ -96,7 +132,8 @@
           "gpu": null,
           "funding_type": "sovereign investment fund AUM",
           "source": "The National",
-          "url": "https://www.thenationalnews.com/business/markets/2026/07/01/abu-dhabis-ai-investment-firm-mgx-raises-49bn-for-new-fund/"
+          "url": "https://www.thenationalnews.com/business/markets/2026/07/01/abu-dhabis-ai-investment-firm-mgx-raises-49bn-for-new-fund/",
+          "operator": "MGX (Mubadala/G42 investment vehicle)"
         },
         {
           "name": "Stargate UAE / UAE-US AI Campus",
@@ -107,7 +144,8 @@
           "gpu": null,
           "funding_type": "state-backed JV, project cost not disclosed separately",
           "source": "DataCenterDynamics",
-          "url": "https://www.datacenterdynamics.com/en/news/us-and-uae-plan-to-build-5gw-ai-data-center-campus-run-by-g42-and-american-hyperscalers/"
+          "url": "https://www.datacenterdynamics.com/en/news/us-and-uae-plan-to-build-5gw-ai-data-center-campus-run-by-g42-and-american-hyperscalers/",
+          "operator": "G42 with OpenAI/Oracle/NVIDIA/Cisco/SoftBank"
         }
       ],
       "notes": "Budget (MGX $49B fund) and MW (5GW campus) are DIFFERENT programs/scopes, not 1:1 linked -- MGX invests broadly, not solely into the Abu Dhabi campus. Treat as two independent signals per methodology.",
@@ -126,7 +164,20 @@
       "budget_usd_m_by_2030": 49000,
       "mw_by_2030": 5000,
       "adjusted_for_2030": false,
-      "timeline_uncertain": true
+      "timeline_uncertain": true,
+      "capacity_items": [
+        {
+          "operator": "G42 with OpenAI/Oracle/NVIDIA/Cisco/SoftBank",
+          "facility": "UAE-US AI Campus, Abu Dhabi",
+          "location": "Abu Dhabi, UAE",
+          "mw": 5000,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": "DataCenterDynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/us-and-uae-plan-to-build-5gw-ai-data-center-campus-run-by-g42-and-american-hyperscalers/",
+          "note": "5GW planned campus; only a 200MW initial phase (target 2026) is dated. Drives the country total; no disclosed full-completion date (UNCERTAIN tag)."
+        }
+      ]
     },
     {
       "country": "China",
@@ -148,7 +199,8 @@
           "gpu": null,
           "funding_type": "national infrastructure capex",
           "source": "TechRadar / National Data Bureau director statement",
-          "url": "https://www.techradar.com/pro/website-hosting/china-invested-dollar61-billion-in-eight-national-datacenter-hubs-according-to-director-of-national-data-bureau"
+          "url": "https://www.techradar.com/pro/website-hosting/china-invested-dollar61-billion-in-eight-national-datacenter-hubs-according-to-director-of-national-data-bureau",
+          "operator": "Not disclosed by name (8 national hub clusters, NDRC-directed)"
         }
       ],
       "notes": "No MW/GPU figure was found for the $61B figure; MW is a budget-based estimate only (order-of-magnitude, low confidence). A widely-cited $295B aggregate figure exists but is a private-analyst estimate, not a government announcement, and is excluded from the headline number.",
@@ -167,13 +219,26 @@
       "budget_usd_m_by_2030": 61000,
       "mw_by_2030": 2836,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "Not disclosed by name (NDRC-directed)",
+          "facility": "8 national computing hub clusters (East Data West Computing)",
+          "location": "China (multiple provinces)",
+          "mw": 2836,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": "TechRadar / National Data Bureau statement",
+          "url": "https://www.techradar.com/pro/website-hosting/china-invested-dollar61-billion-in-eight-national-datacenter-hubs-according-to-director-of-national-data-bureau",
+          "note": "No MW/GPU figure or named operator was found for the $61B figure; MW shown is a budget-derived estimate only."
+        }
+      ]
     },
     {
       "country": "Japan",
       "region": "East Asia",
       "sovereignty_purity": "government subsidy/grant co-funding of private cloud/DC operators",
-      "budget_usd_m_identified": 7080,
+      "budget_usd_m_identified": 7079.1,
       "mw_announced_direct": null,
       "gpu_count_disclosed": 10800,
       "gpu_class": "H100-class (Sakura Internet only; other co-funded firms undisclosed)",
@@ -181,15 +246,69 @@
       "confidence": "low-medium",
       "programs": [
         {
-          "name": "METI cloud-compute subsidies Round 1 (Economic Security Promotion Act)",
+          "name": "METI cloud-compute subsidy Round 1 -> Sakura Internet",
           "body": "METI",
           "date": "2024-04-19",
-          "budget_usd_m": 470,
+          "budget_usd_m": 324,
           "mw": null,
           "gpu": 10800,
-          "funding_type": "one-time capex subsidy to Sakura/KDDI/Highreso/GMO/RUTILEA",
+          "funding_type": "one-time capex subsidy (Economic Security Promotion Act)",
+          "operator": "Sakura Internet",
           "source": "METI press release",
-          "url": "https://www.meti.go.jp/english/press/2024/0419_001.html"
+          "url": "https://www.meti.go.jp/english/press/2024/0419_001.html",
+          "detail": "GPU cloud scaling 2,000 -> 10,800 H100-class GPUs"
+        },
+        {
+          "name": "METI cloud-compute subsidy Round 1 -> KDDI",
+          "body": "METI",
+          "date": "2024-04-19",
+          "budget_usd_m": 66,
+          "mw": null,
+          "gpu": null,
+          "funding_type": "one-time capex subsidy (Economic Security Promotion Act)",
+          "operator": "KDDI",
+          "source": "METI press release",
+          "url": "https://www.meti.go.jp/english/press/2024/0419_001.html",
+          "detail": "GPU cloud capacity, GPU count undisclosed"
+        },
+        {
+          "name": "METI cloud-compute subsidy Round 1 -> Highreso",
+          "body": "METI",
+          "date": "2024-04-19",
+          "budget_usd_m": 50,
+          "mw": null,
+          "gpu": null,
+          "funding_type": "one-time capex subsidy (Economic Security Promotion Act)",
+          "operator": "Highreso",
+          "source": "METI press release",
+          "url": "https://www.meti.go.jp/english/press/2024/0419_001.html",
+          "detail": "GPU cloud capacity, GPU count undisclosed"
+        },
+        {
+          "name": "METI cloud-compute subsidy Round 1 -> GMO Internet Group",
+          "body": "METI",
+          "date": "2024-04-19",
+          "budget_usd_m": 12.5,
+          "mw": null,
+          "gpu": null,
+          "funding_type": "one-time capex subsidy (Economic Security Promotion Act)",
+          "operator": "GMO Internet Group",
+          "source": "METI press release",
+          "url": "https://www.meti.go.jp/english/press/2024/0419_001.html",
+          "detail": "GPU cloud capacity, GPU count undisclosed"
+        },
+        {
+          "name": "METI cloud-compute subsidy Round 1 -> RUTILEA / AI Fukushima",
+          "body": "METI",
+          "date": "2024-04-19",
+          "budget_usd_m": 16.6,
+          "mw": null,
+          "gpu": null,
+          "funding_type": "one-time capex subsidy (Economic Security Promotion Act)",
+          "operator": "RUTILEA / AI Fukushima",
+          "source": "METI press release",
+          "url": "https://www.meti.go.jp/english/press/2024/0419_001.html",
+          "detail": "GPU cloud capacity, GPU count undisclosed"
         },
         {
           "name": "GENIAC (Generative AI Accelerator Challenge)",
@@ -200,7 +319,8 @@
           "gpu": null,
           "funding_type": "multi-year (5yr) compute-credit/subsidy program",
           "source": "METI GENIAC launch",
-          "url": "https://www.meti.go.jp/english/press/2024/0202_001.html"
+          "url": "https://www.meti.go.jp/english/press/2024/0202_001.html",
+          "operator": "Multiple GENIAC-selected firms (compute-credit allocations, no single named recipient)"
         },
         {
           "name": "METI AI-GPU investment grant to Ubitus",
@@ -211,7 +331,8 @@
           "gpu": null,
           "funding_type": "one-time capex grant",
           "source": "Ubitus press release",
-          "url": "https://ubitus.net/2025-meti-ai-gpu-investment-en/"
+          "url": "https://ubitus.net/2025-meti-ai-gpu-investment-en/",
+          "operator": "Ubitus"
         }
       ],
       "notes": "Excludes Japan's >=Y10T/7yr (~$65B) 'AI-semiconductor industry base reinforcement' umbrella and the FY2026 METI budget (Y3.07T total), since those are chip-fab (Rapidus/TSMC) industrial policy or broad ministry budgets, not compute/DC-specific -- including them would conflate semiconductor manufacturing subsidies with sovereign DC/compute workload and break comparability with other countries. GPU floor (10,800, Sakura only) is a small fraction of the ~$7.1B identified spend across 5 co-funded firms; budget-based MW estimate (range 186-472MW, using $15-38M/MW) is used as the primary signal, with the true figure plausibly at or above the upper end since these are partial subsidies (leverage effect) rather than full capex.",
@@ -227,10 +348,57 @@
         "end_year": 2029,
         "note": "Same basis as budget."
       },
-      "budget_usd_m_by_2030": 7080,
+      "budget_usd_m_by_2030": 7079.1,
       "mw_by_2030": 300,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "Sakura Internet",
+          "facility": "Sakura Internet GPU cloud (Ishikari/Osaka)",
+          "location": "Japan",
+          "mw": 16.2,
+          "gpu": 10800,
+          "gpu_class": "H100-class",
+          "counts_toward_total": true,
+          "source": "METI press release",
+          "url": "https://www.meti.go.jp/english/press/2024/0419_001.html",
+          "note": "10,800 H100-class GPUs is the only per-operator GPU count disclosed; converted at 1.5kW/GPU. Drives the country's mw_best_estimate floor -- the remaining $7.1B budget likely funds materially more capacity across the other 4 recipients + GENIAC firms, whose GPU counts are undisclosed."
+        },
+        {
+          "operator": "KDDI / Highreso / GMO / RUTILEA-AI Fukushima",
+          "facility": "GPU cloud capacity (4 separate operators)",
+          "location": "Japan",
+          "mw": null,
+          "gpu": null,
+          "counts_toward_total": false,
+          "source": "METI press release",
+          "url": "https://www.meti.go.jp/english/press/2024/0419_001.html",
+          "note": "Received $66M / $50M / $12.5M / $16.6M respectively in the same subsidy round; individual GPU/MW counts not disclosed. Not counted toward the MW total to avoid guessing -- see budget table for the funding amounts."
+        },
+        {
+          "operator": "Ubitus",
+          "facility": "Ubitus GPU data center",
+          "location": "Japan",
+          "mw": null,
+          "gpu": null,
+          "counts_toward_total": false,
+          "source": "Ubitus press release",
+          "url": "https://ubitus.net/2025-meti-ai-gpu-investment-en/",
+          "note": "$110M METI grant funds a GPU data center build; no MW/GPU spec disclosed."
+        },
+        {
+          "operator": "Budget-derived residual (not attributable to a named operator)",
+          "facility": "KDDI / Highreso / GMO / RUTILEA-AI Fukushima + GENIAC-funded firms (aggregate)",
+          "location": "Japan",
+          "mw": 283.8,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": null,
+          "url": null,
+          "note": "The only operator-level GPU count disclosed is Sakura Internet's (16.2MW). The remaining ~$6.9B across the other 4 subsidy recipients and GENIAC's compute-credit allocations has no published GPU/MW figure -- this residual (300MW total minus Sakura's 16.2MW) is a budget/$-per-MW estimate, not a disclosed capacity figure. Included so the operator rows above and the country total reconcile transparently rather than silently mismatch."
+        }
+      ]
     },
     {
       "country": "South Korea",
@@ -252,7 +420,8 @@
           "gpu": 50000,
           "funding_type": "blended public (National Growth Fund) + Samsung SDS consortium",
           "source": "Korea.net / Korea Times",
-          "url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=8025&type=O&insttCode=A110439"
+          "url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=8025&type=O&insttCode=A110439",
+          "operator": "KOACC (public-private SPV: National Growth Fund + Samsung SDS consortium)"
         },
         {
           "name": "MSIT GPU procurement (Naver Cloud/NHN Cloud/Kakao)",
@@ -263,7 +432,8 @@
           "gpu": 13000,
           "funding_type": "direct government procurement, distributed to 3 CSPs",
           "source": "OECD.AI Korea GPU initiative",
-          "url": "https://oecd.ai/en/dashboards/policy-initiatives/south-korea-national-ai-gpu-infrastructure-initiative-1"
+          "url": "https://oecd.ai/en/dashboards/policy-initiatives/south-korea-national-ai-gpu-infrastructure-initiative-1",
+          "operator": "Naver Cloud / NHN Cloud / Kakao"
         }
       ],
       "notes": "50,000 GPU figure is the officially cited cumulative national target (NAICC 15k->50k by 2030, overlapping with the 13k CSP tranche) -- treated as one target, not additive with the CSP tranche, per source caveats.",
@@ -282,7 +452,32 @@
       "budget_usd_m_by_2030": 2900,
       "mw_by_2030": 85,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "KOACC (National Growth Fund + Samsung SDS consortium)",
+          "facility": "National AI Computing Center, Haenam",
+          "location": "Haenam, South Korea",
+          "mw": 85,
+          "gpu": 50000,
+          "gpu_class": "blended",
+          "counts_toward_total": true,
+          "source": "Korea.net / Korea Times",
+          "url": "https://www.korea.net/Government/Briefing-Room/Press-Releases/view?articleId=8025&type=O&insttCode=A110439",
+          "note": "Officially cited cumulative national GPU target (15k by 2028 -> 50k by 2030)."
+        },
+        {
+          "operator": "Naver Cloud / NHN Cloud / Kakao",
+          "facility": "Distributed cloud GPU capacity (3 CSPs)",
+          "location": "South Korea",
+          "mw": null,
+          "gpu": 13000,
+          "counts_toward_total": false,
+          "source": "OECD.AI",
+          "url": "https://oecd.ai/en/dashboards/policy-initiatives/south-korea-national-ai-gpu-infrastructure-initiative-1",
+          "note": "Overlaps with the 50,000 cumulative target above -- not additive."
+        }
+      ]
     },
     {
       "country": "Taiwan",
@@ -304,7 +499,8 @@
           "gpu": 1904,
           "funding_type": "state capex (facility-specific budget undisclosed)",
           "source": "NSTC/NCHC / Nikkei Asia",
-          "url": "https://asia.nikkei.com/business/technology/taiwan-opens-sovereign-ai-data-center-with-nvidia-powered-supercomputer"
+          "url": "https://asia.nikkei.com/business/technology/taiwan-opens-sovereign-ai-data-center-with-nvidia-powered-supercomputer",
+          "operator": "NSTC / NCHC"
         }
       ],
       "notes": "15MW is a verified, primary-sourced direct figure but almost certainly understates Taiwan's total sovereign compute ambition (NSTC's separately stated goal is 480 petaflops of combined national supercomputing capacity by 2029, with no consolidated MW/budget figure available for that broader target).",
@@ -323,7 +519,21 @@
       "budget_usd_m_by_2030": null,
       "mw_by_2030": 15,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "NSTC / NCHC",
+          "facility": "NCHC National Grid Cloud Computing Center",
+          "location": "Taiwan",
+          "mw": 15,
+          "gpu": 1904,
+          "gpu_class": "1,760 H200 + 144 Blackwell",
+          "counts_toward_total": true,
+          "source": "NSTC/NCHC / Nikkei Asia",
+          "url": "https://asia.nikkei.com/business/technology/taiwan-opens-sovereign-ai-data-center-with-nvidia-powered-supercomputer",
+          "note": "Already built and inaugurated (Dec 2025); verified primary-sourced figure."
+        }
+      ]
     },
     {
       "country": "India",
@@ -345,7 +555,8 @@
           "gpu": 34333,
           "funding_type": "~40% government subsidy of GPU compute cost via empanelled providers",
           "source": "Digital India / PIB",
-          "url": "https://www.digitalindia.gov.in/press_release/indias-common-compute-capacity-crosses-34000-gpus-3-more-startups-to-develop-and-deploy-indian-foundation-models/"
+          "url": "https://www.digitalindia.gov.in/press_release/indias-common-compute-capacity-crosses-34000-gpus-3-more-startups-to-develop-and-deploy-indian-foundation-models/",
+          "operator": "Multiple empanelled providers via C-DAC/MeitY (incl. Yotta Data Services)"
         }
       ],
       "notes": "Budget figure is the compute-specific ~44% share of the total INR 10,372.9 crore (~$1.25B) IndiaAI Mission. GPU count is cumulative and well-documented via an official government tracker.",
@@ -364,7 +575,21 @@
       "budget_usd_m_by_2030": 550,
       "mw_by_2030": 51.5,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "Multiple empanelled providers (e.g. Yotta Data Services: 8,192 of its 9,216 GPUs are H100)",
+          "facility": "National common compute pool (distributed)",
+          "location": "India",
+          "mw": 51.5,
+          "gpu": 34333,
+          "gpu_class": "~70% H100-class",
+          "counts_toward_total": true,
+          "source": "Digital India / PIB",
+          "url": "https://www.digitalindia.gov.in/press_release/indias-common-compute-capacity-crosses-34000-gpus-3-more-startups-to-develop-and-deploy-indian-foundation-models/",
+          "note": "Cumulative empanelled GPU count via an official government tracker; individual-provider breakdown beyond Yotta not fully published."
+        }
+      ]
     },
     {
       "country": "Singapore",
@@ -386,7 +611,8 @@
           "gpu": null,
           "funding_type": "5-year budget appropriation (compute/talent/industry)",
           "source": "MDDI newsroom",
-          "url": "https://www.mddi.gov.sg/newsroom/ai-initiatives-launched-to-uplift-sg-economic-potential/"
+          "url": "https://www.mddi.gov.sg/newsroom/ai-initiatives-launched-to-uplift-sg-economic-potential/",
+          "operator": "Smart Nation / multiple agencies"
         },
         {
           "name": "National Supercomputing Centre boost",
@@ -397,7 +623,8 @@
           "gpu": null,
           "funding_type": "capex boost to NSCC (ASPIRE-2A+, Nvidia H100s)",
           "source": "HPCwire",
-          "url": "https://www.hpcwire.com/off-the-wire/singapore-national-supercomputing-infrastructure-gets-270m-boost-for-hpc-capabilities-and-talent-development/"
+          "url": "https://www.hpcwire.com/off-the-wire/singapore-national-supercomputing-infrastructure-gets-270m-boost-for-hpc-capabilities-and-talent-development/",
+          "operator": "National Supercomputing Centre (NSCC)"
         },
         {
           "name": "AI research funding addition 2025-2030",
@@ -408,7 +635,8 @@
           "gpu": null,
           "funding_type": "multi-year budget appropriation",
           "source": "CNBC",
-          "url": "https://www.cnbc.com/2024/02/19/singapores-ai-ambitions-get-a-boost-with-740-million-investment-plan.html"
+          "url": "https://www.cnbc.com/2024/02/19/singapores-ai-ambitions-get-a-boost-with-740-million-investment-plan.html",
+          "operator": "Multiple agencies (unallocated)"
         }
       ],
       "notes": "No MW/GPU capacity target was ever announced; this budget mostly buys cloud/HPC compute ACCESS rather than funding a fixed physical build, so the budget-to-MW conversion here is a rough order-of-magnitude proxy only, not a real capacity estimate.",
@@ -427,7 +655,31 @@
       "budget_usd_m_by_2030": 1684,
       "mw_by_2030": 84,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "National Supercomputing Centre (NSCC)",
+          "facility": "ASPIRE-2A+ supercomputer",
+          "location": "Singapore",
+          "mw": null,
+          "gpu": null,
+          "counts_toward_total": false,
+          "source": "HPCwire",
+          "url": "https://www.hpcwire.com/off-the-wire/singapore-national-supercomputing-infrastructure-gets-270m-boost-for-hpc-capabilities-and-talent-development/",
+          "note": "Disclosed spec is 20 petaFLOPS (Nvidia H100s), not MW/GPU count; no capacity target was ever announced."
+        },
+        {
+          "operator": "Budget-derived estimate (no capacity target disclosed)",
+          "facility": "N/A -- not tied to a named facility",
+          "location": "Singapore",
+          "mw": 84,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": null,
+          "url": null,
+          "note": "Singapore has never announced an MW/GPU capacity target; this figure converts the $1.68B budget total via the $/MW capex benchmark (see Method) as a rough order-of-magnitude proxy, not a disclosed fact."
+        }
+      ]
     },
     {
       "country": "Malaysia",
@@ -449,7 +701,8 @@
           "gpu": null,
           "funding_type": "multi-year capex, government-owned/operated",
           "source": "Bernama / NST",
-          "url": "https://www.nst.com.my/amp/news/nation/2026/04/1428347/rm2bil-sovereign-ai-cloud-safeguard-security-boost-talent-pm"
+          "url": "https://www.nst.com.my/amp/news/nation/2026/04/1428347/rm2bil-sovereign-ai-cloud-safeguard-security-boost-talent-pm",
+          "operator": "MCMC (Malaysian Communications and Multimedia Commission)"
         }
       ],
       "notes": "Excludes Malaysia's much larger 600MW Johor YTL/Nvidia data center, which is private commercial investment, not government-funded.",
@@ -468,7 +721,31 @@
       "budget_usd_m_by_2030": 476,
       "mw_by_2030": 23.8,
       "adjusted_for_2030": false,
-      "timeline_uncertain": true
+      "timeline_uncertain": true,
+      "capacity_items": [
+        {
+          "operator": "MCMC (Malaysian Communications and Multimedia Commission)",
+          "facility": "Sovereign AI Cloud (site not yet announced)",
+          "location": "Malaysia",
+          "mw": null,
+          "gpu": null,
+          "counts_toward_total": false,
+          "source": "Bernama / NST",
+          "url": "https://www.nst.com.my/amp/news/nation/2026/04/1428347/rm2bil-sovereign-ai-cloud-safeguard-security-boost-talent-pm",
+          "note": "Still in planning/build-out stage; no MW/GPU spec published."
+        },
+        {
+          "operator": "Budget-derived estimate (no capacity target disclosed)",
+          "facility": "N/A -- not tied to a named facility",
+          "location": "Malaysia",
+          "mw": 23.8,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": null,
+          "url": null,
+          "note": "Converts the RM2B/$476M sovereign cloud budget via the $/MW capex benchmark (see Method) as a rough order-of-magnitude proxy, not a disclosed fact."
+        }
+      ]
     },
     {
       "country": "Vietnam",
@@ -490,7 +767,8 @@
           "gpu": null,
           "funding_type": "direct state capex",
           "source": "VietnamPlus/VNA",
-          "url": "https://en.vietnamplus.vn/vietnam-urged-to-develop-sovereign-ai-in-digital-era-post348724.vnp"
+          "url": "https://en.vietnamplus.vn/vietnam-urged-to-develop-sovereign-ai-in-digital-era-post348724.vnp",
+          "operator": "Ministry of Public Security (state-operated)"
         }
       ],
       "notes": "General-purpose sovereign digital infrastructure (not an AI/GPU-specific cluster); MW estimate uses a lower general-DC capex benchmark ($12M/MW) rather than the AI-optimized benchmark, reflecting the facility's broader (non-GPU-heavy) purpose.",
@@ -509,7 +787,31 @@
       "budget_usd_m_by_2030": 639,
       "mw_by_2030": 53,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "Ministry of Public Security (state-operated)",
+          "facility": "National Data Center No. 1",
+          "location": "Vietnam",
+          "mw": null,
+          "gpu": null,
+          "counts_toward_total": false,
+          "source": "VietnamPlus/VNA",
+          "url": "https://en.vietnamplus.vn/vietnam-urged-to-develop-sovereign-ai-in-digital-era-post348724.vnp",
+          "note": "General-purpose sovereign digital infrastructure, fully operational Aug 2025; no GPU-specific MW published."
+        },
+        {
+          "operator": "Budget-derived estimate (no capacity target disclosed)",
+          "facility": "N/A -- not tied to a named facility",
+          "location": "Vietnam",
+          "mw": 53,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": null,
+          "url": null,
+          "note": "Converts the $639M state capex via a general-purpose (non-AI-optimized) DC benchmark, since National Data Center No. 1 is not GPU-specific. Rough order-of-magnitude proxy, not a disclosed fact."
+        }
+      ]
     },
     {
       "country": "Thailand",
@@ -531,7 +833,8 @@
           "gpu": null,
           "funding_type": "multi-year program budget (workforce, 9 CoEs, data bank)",
           "source": "Bangkok Post",
-          "url": "https://www.bangkokpost.com/business/general/3078438/b25-billion-approved-for-ai-development"
+          "url": "https://www.bangkokpost.com/business/general/3078438/b25-billion-approved-for-ai-development",
+          "operator": "National AI Board / MDES (workforce & program funding, no single operator)"
         }
       ],
       "notes": "Budget is mostly workforce training, Centres of Excellence, and a data bank -- not compute hardware. No credible MW/GPU share could be attributed; excluded from MW total but kept for budget-side completeness. Thailand's higher-profile Siam.AI GPU cluster is privately funded (government MoU support only) and excluded.",
@@ -572,7 +875,8 @@
           "gpu": null,
           "funding_type": "project grants, not compute procurement",
           "source": "Philippine Information Agency",
-          "url": "https://pia.gov.ph/news/dost-to-launch-naicri-the-ph-central-hub-for-ai-research-advanced-computing-and-innovation/"
+          "url": "https://pia.gov.ph/news/dost-to-launch-naicri-the-ph-central-hub-for-ai-research-advanced-computing-and-innovation/",
+          "operator": "DOST (coordinating body, leverages existing COARE facility)"
         }
       ],
       "notes": "No new GPU/MW procurement disclosed; leverages the existing COARE national supercomputing facility.",
@@ -613,7 +917,8 @@
           "gpu": null,
           "funding_type": "sovereign wealth fund JV",
           "source": "QIA press release",
-          "url": "https://www.qia.qa/en/Newsroom/Pages/Brookfield-and-Qai-Form-$20-Billion-Strategic-Investment-Partnership-for-AI-Infrastructure.aspx"
+          "url": "https://www.qia.qa/en/Newsroom/Pages/Brookfield-and-Qai-Form-$20-Billion-Strategic-Investment-Partnership-for-AI-Infrastructure.aspx",
+          "operator": "Qai (QIA subsidiary) + Brookfield Asset Management"
         }
       ],
       "notes": "JV explicitly covers 'Qatar and select international markets' -- not all $20B is necessarily Qatar-sited, so the MW estimate likely overstates Qatar-specific capacity.",
@@ -632,7 +937,20 @@
       "budget_usd_m_by_2030": 20000,
       "mw_by_2030": 800,
       "adjusted_for_2030": false,
-      "timeline_uncertain": true
+      "timeline_uncertain": true,
+      "capacity_items": [
+        {
+          "operator": "Qai (QIA subsidiary) + Brookfield Asset Management",
+          "facility": "Integrated Compute Center(s) -- sites not yet named",
+          "location": "Qatar + select international markets",
+          "mw": 800,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": "QIA press release",
+          "url": "https://www.qia.qa/en/Newsroom/Pages/Brookfield-and-Qai-Form-$20-Billion-Strategic-Investment-Partnership-for-AI-Infrastructure.aspx",
+          "note": "JV explicitly covers Qatar AND international markets -- not all capacity is necessarily Qatar-sited; MW is a budget-derived estimate."
+        }
+      ]
     },
     {
       "country": "Kuwait",
@@ -654,7 +972,8 @@
           "gpu": null,
           "funding_type": "sovereign wealth fund portfolio allocation",
           "source": "Times Kuwait",
-          "url": "https://timeskuwait.com/kuwait-invests-9bn-in-ai-and-digital-sectors-as-sovereign-fund-tops-1-trillion-in-assets/"
+          "url": "https://timeskuwait.com/kuwait-invests-9bn-in-ai-and-digital-sectors-as-sovereign-fund-tops-1-trillion-in-assets/",
+          "operator": "Kuwait Investment Authority (portfolio allocation, no single operator)"
         },
         {
           "name": "Helix Digital Infrastructure (KIA+KKR+NVIDIA+Vistra)",
@@ -665,7 +984,8 @@
           "gpu": null,
           "funding_type": "multinational JV co-investment",
           "source": "Semafor",
-          "url": "https://www.semafor.com/article/06/11/2026/kuwait-joins-ai-infrastructure-race-with-10b-venture"
+          "url": "https://www.semafor.com/article/06/11/2026/kuwait-joins-ai-infrastructure-race-with-10b-venture",
+          "operator": "KIA + KKR + NVIDIA + Vistra (Helix JV)"
         }
       ],
       "notes": "Most 'financialized' of the Gulf programs -- capacity is not necessarily sited in or dedicated to Kuwait; MW estimate is low-confidence and likely overstated for Kuwait specifically.",
@@ -684,7 +1004,20 @@
       "budget_usd_m_by_2030": 19000,
       "mw_by_2030": 633,
       "adjusted_for_2030": false,
-      "timeline_uncertain": true
+      "timeline_uncertain": true,
+      "capacity_items": [
+        {
+          "operator": "KIA + KKR + NVIDIA + Vistra (Helix JV)",
+          "facility": "Helix Digital Infrastructure (sites not yet named)",
+          "location": "Not yet disclosed",
+          "mw": 633,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": "Semafor",
+          "url": "https://www.semafor.com/article/06/11/2026/kuwait-joins-ai-infrastructure-race-with-10b-venture",
+          "note": "Portfolio-style multinational co-investment; capacity not confirmed as sited in Kuwait specifically. MW is a budget-derived estimate."
+        }
+      ]
     },
     {
       "country": "Israel",
@@ -706,7 +1039,8 @@
           "gpu": 100000,
           "funding_type": "state-funded 5-year program (2027-2032)",
           "source": "Let's Data Science / Ynet",
-          "url": "https://letsdatascience.com/news/israel-commits-30b-to-national-ai-sovereignty-4215c922"
+          "url": "https://letsdatascience.com/news/israel-commits-30b-to-national-ai-sovereignty-4215c922",
+          "operator": "National AI Directorate (program); Nebius (build/operate contractor for the national supercomputer)"
         }
       ],
       "notes": "Budget is a press/analyst estimate (ILS 74-111B range) rather than a single stated government figure; GPU target (100,000+ accelerators) is the clearer official figure and is used as the primary MW signal.",
@@ -725,7 +1059,21 @@
       "budget_usd_m_by_2030": 15000,
       "mw_by_2030": 120,
       "adjusted_for_2030": true,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "Nebius (build/operate contractor)",
+          "facility": "Israeli national supercomputer (phase 1: 1,000 Nvidia B200s, scaling toward ~4,000 Blackwell-class GPUs)",
+          "location": "Israel",
+          "mw": 200,
+          "gpu": 100000,
+          "gpu_class": "target mix, scaling to Blackwell-class",
+          "counts_toward_total": true,
+          "source": "DataCenterDynamics / Let's Data Science",
+          "url": "https://www.datacenterdynamics.com/en/news/nebius-to-build-and-operate-140m-israeli-national-supercomputer/",
+          "note": "100,000-accelerator figure is the national 2027-2032 program target administered by the National AI Directorate; Nebius's $140M contract covers the interim national supercomputer only (a subset)."
+        }
+      ]
     },
     {
       "country": "EU supranational (unallocated)",
@@ -747,7 +1095,8 @@
           "gpu": 700000,
           "funding_type": "EU contribution up to EUR20bn, pending awards to up to 7 facilities",
           "source": "EuroHPC JU",
-          "url": "https://www.eurohpc-ju.europa.eu/eurohpc-joint-undertaking-launches-ai-gigafactories-call-2026-07-30_en"
+          "url": "https://www.eurohpc-ju.europa.eu/eurohpc-joint-undertaking-launches-ai-gigafactories-call-2026-07-30_en",
+          "operator": "Not yet awarded (sites TBD)"
         }
       ],
       "notes": "NOT allocated to any single country as of data collection -- kept as a separate supranational line. Distinct from (and not double-counted with) the pre-existing EUR7bn EuroHPC 2021-27 budget, whose national co-funding components are captured under Italy/Spain/Netherlands/Poland/Finland below.",
@@ -766,7 +1115,21 @@
       "budget_usd_m_by_2030": 21600,
       "mw_by_2030": 1400,
       "adjusted_for_2030": false,
-      "timeline_uncertain": true
+      "timeline_uncertain": true,
+      "capacity_items": [
+        {
+          "operator": "Not yet awarded (EuroHPC AI Gigafactories call)",
+          "facility": "Up to 7 AI Gigafactories, sites TBD across EU member states",
+          "location": "European Union",
+          "mw": 1400,
+          "gpu": 700000,
+          "gpu_class": "next-gen (2027+)",
+          "counts_toward_total": true,
+          "source": "EuroHPC Joint Undertaking",
+          "url": "https://www.eurohpc-ju.europa.eu/eurohpc-joint-undertaking-launches-ai-gigafactories-call-2026-07-30_en",
+          "note": "Pipeline ceiling if all 7 facilities are awarded and fully built; no disclosed completion date."
+        }
+      ]
     },
     {
       "country": "France",
@@ -788,7 +1151,8 @@
           "gpu": null,
           "funding_type": "state capex",
           "source": "OECD.AI / GENCI",
-          "url": "https://oecd.ai/en/dashboards/policy-initiatives/jean-zay-supercomputer-extension"
+          "url": "https://oecd.ai/en/dashboards/policy-initiatives/jean-zay-supercomputer-extension",
+          "operator": "GENCI / CNRS"
         }
       ],
       "notes": "France's much larger AION consortium bid for EU Gigafactory status (EUR10bn, 200MW) is majority-private (Capgemini/Orange/EDF/Iliad/Scaleway) and not yet confirmed awarded public funding -- excluded from the headline figure, noted for context only.",
@@ -829,7 +1193,8 @@
           "gpu": null,
           "funding_type": "policy framework, no isolated federal compute-specific euro figure disclosed",
           "source": "Morgan Lewis",
-          "url": "https://www.morganlewis.com/pubs/2026/04/german-government-adopts-national-data-center-strategy"
+          "url": "https://www.morganlewis.com/pubs/2026/04/german-government-adopts-national-data-center-strategy",
+          "operator": "Federal Government (policy framework, no named operator)"
         }
       ],
       "notes": "Targets quadrupling domestic AI/HPC capacity and backing >=1 AI gigafactory on German soil by 2030, but no discrete government budget or MW baseline was found; the cited EUR130bn figure is a broad public+private framing, not an appropriation.",
@@ -854,7 +1219,7 @@
       "country": "UK",
       "region": "Europe",
       "sovereignty_purity": "government-funded research compute (AIRR) + equity fund",
-      "budget_usd_m_identified": 2400,
+      "budget_usd_m_identified": 2413,
       "mw_announced_direct": null,
       "gpu_count_disclosed": 5448,
       "gpu_class": "Nvidia GH200 (Isambard-AI, current built floor only)",
@@ -870,7 +1235,8 @@
           "gpu": null,
           "funding_type": "multi-year budget commitment to 2030",
           "source": "RCR Wireless",
-          "url": "https://www.rcrwireless.com/20250722/ai-infrastructure/uk-6-gw-ai-dc"
+          "url": "https://www.rcrwireless.com/20250722/ai-infrastructure/uk-6-gw-ai-dc",
+          "operator": "University of Bristol / HPE (Isambard-AI); Edinburgh system planned"
         },
         {
           "name": "Sovereign AI Fund",
@@ -881,7 +1247,8 @@
           "gpu": null,
           "funding_type": "equity fund for domestic AI startups/infra",
           "source": "HPCwire/AIwire",
-          "url": "https://www.hpcwire.com/aiwire/2026/04/20/uk-launches-500m-sovereign-ai-unit-to-back-domestic-startups-and-infrastructure/"
+          "url": "https://www.hpcwire.com/aiwire/2026/04/20/uk-launches-500m-sovereign-ai-unit-to-back-domestic-startups-and-infrastructure/",
+          "operator": "DSIT (equity fund, recipients TBD)"
         },
         {
           "name": "AI chips procurement",
@@ -892,7 +1259,8 @@
           "gpu": null,
           "funding_type": "hardware procurement incl. inference chips",
           "source": "The Register",
-          "url": "https://www.theregister.com/2026/04/20/ukgov_kicks_off_500m_ai/"
+          "url": "https://www.theregister.com/2026/04/20/ukgov_kicks_off_500m_ai/",
+          "operator": "DSIT"
         }
       ],
       "notes": "Isambard-AI (5,448 GH200 chips, ~8MW) is the only currently-built floor; the GBP1bn AIRR expansion pledge targets a 20x increase by 2030, so the budget-based 120MW estimate should be read as the multi-year target, not today's built capacity. UK's separate 'AI Growth Zones' 6GW-by-2030 national target is EXCLUDED here since that capacity is predominantly private capital in government-designated zones, not government-funded -- it is a useful comparandum, not a sovereign-budget-linked figure.",
@@ -908,16 +1276,41 @@
         "end_year": 2030,
         "note": "Budget-derived estimate tracks the same 2030-dated AIRR pledge."
       },
-      "budget_usd_m_by_2030": 2400,
+      "budget_usd_m_by_2030": 2413,
       "mw_by_2030": 120,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "University of Bristol / HPE",
+          "facility": "Isambard-AI supercomputer",
+          "location": "Bristol, UK",
+          "mw": 8.2,
+          "gpu": 5448,
+          "gpu_class": "Nvidia GH200",
+          "counts_toward_total": false,
+          "source": "HPE",
+          "url": "https://www.hpe.com/us/en/newsroom/press-release/2023/11/uk-government-invests-225m-to-create-uks-most-powerful-ai-supercomputer-with-university-of-bristol-and-hewlett-packard-enterprise.html",
+          "note": "Today's actual built floor (already operational, Jul 2025). The country's 120MW mw_best_estimate is a budget-derived 2030 TARGET under the AIRR '20x expansion' pledge, not yet built -- shown as the separate row below."
+        },
+        {
+          "operator": "DSIT / AIRR network (sites TBD)",
+          "facility": "AI Research Resource, 20x expansion by 2030",
+          "location": "UK",
+          "mw": 120,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": "RCR Wireless",
+          "url": "https://www.rcrwireless.com/20250722/ai-infrastructure/uk-6-gw-ai-dc",
+          "note": "Budget-derived 2030 target (not yet built); drives the country total."
+        }
+      ]
     },
     {
       "country": "Italy",
       "region": "Europe",
       "sovereignty_purity": "EU AI Factory, national co-funding share",
-      "budget_usd_m_identified": 176,
+      "budget_usd_m_identified": 177,
       "mw_announced_direct": null,
       "gpu_count_disclosed": null,
       "gpu_class": null,
@@ -933,7 +1326,8 @@
           "gpu": null,
           "funding_type": "50% of EUR290m, 50% EuroHPC/Digital Europe Programme",
           "source": "Cineca",
-          "url": "https://www.cineca.it/en/press-area/press-releases/eurohpc-ju-signs-contract-boost-ai-capabilities-it4lia-ai-factory"
+          "url": "https://www.cineca.it/en/press-area/press-releases/eurohpc-ju-signs-contract-boost-ai-capabilities-it4lia-ai-factory",
+          "operator": "Cineca (Leonardo supercomputer, Bologna)"
         },
         {
           "name": "Leonardo LISA upgrade (national 65% share)",
@@ -944,7 +1338,8 @@
           "gpu": null,
           "funding_type": "65% of EUR28.2m, 35% EuroHPC",
           "source": "SDxCentral",
-          "url": "https://www.sdxcentral.com/news/italys-leonardo-supercomputer-to-get-28m-ai-upgrade/"
+          "url": "https://www.sdxcentral.com/news/italys-leonardo-supercomputer-to-get-28m-ai-upgrade/",
+          "operator": "Cineca (Leonardo supercomputer, Bologna)"
         }
       ],
       "notes": "Figures shown are Italy's national government SHARE only (EU co-funding excluded, to avoid double-counting with the EU-level EuroHPC EUR7bn budget). No new MW/GPU figure disclosed beyond upgrades to the existing Leonardo supercomputer.",
@@ -960,7 +1355,7 @@
         "end_year": 2025,
         "note": "No new MW figure attributable; mw_best_estimate is null regardless."
       },
-      "budget_usd_m_by_2030": 176,
+      "budget_usd_m_by_2030": 177,
       "mw_by_2030": null,
       "adjusted_for_2030": false,
       "timeline_uncertain": false
@@ -985,7 +1380,8 @@
           "gpu": null,
           "funding_type": "national (EUR62m) + Catalan (EUR14m) share of EUR200m package (EUR98m EU-funded excluded)",
           "source": "La Moncloa",
-          "url": "https://www.lamoncloa.gob.es/lang/en/gobierno/news/paginas/2024/20241210-ai-factory.aspx"
+          "url": "https://www.lamoncloa.gob.es/lang/en/gobierno/news/paginas/2024/20241210-ai-factory.aspx",
+          "operator": "Barcelona Supercomputing Center (MareNostrum 5)"
         }
       ],
       "notes": "A separately reported EUR90m MareNostrum5 figure may restate the same national contribution -- not added on top to avoid double-counting.",
@@ -1026,7 +1422,8 @@
           "gpu": null,
           "funding_type": "national (EUR70m) + regional (EUR60m) share of EUR200m package (EUR70m EU-funded excluded)",
           "source": "SURF.nl",
-          "url": "https://www.surf.nl/en/news/netherlands-gets-ai-factory-european-funding-awarded"
+          "url": "https://www.surf.nl/en/news/netherlands-gets-ai-factory-european-funding-awarded",
+          "operator": "SURF (Dutch AI Factory, Groningen)"
         },
         {
           "name": "GPT-NL sovereign LLM",
@@ -1037,7 +1434,8 @@
           "gpu": null,
           "funding_type": "model program, not compute infrastructure",
           "source": "NL Daily",
-          "url": "https://nldaily.com/tech/gpt-nl-netherlands-ai-model/"
+          "url": "https://nldaily.com/tech/gpt-nl-netherlands-ai-model/",
+          "operator": "TNO / NFI / SURF consortium"
         }
       ],
       "notes": "AiNed (EUR276m) and ROBUST AI (EUR84m) National Growth Fund programs are R&D grants, not compute infrastructure, and are excluded from the compute-specific figure.",
@@ -1078,7 +1476,8 @@
           "gpu": 1000,
           "funding_type": "Poland + EU co-funded (PLN300m total, national share estimated at ~50%)",
           "source": "HPCwire",
-          "url": "https://www.hpcwire.com/off-the-wire/polands-nask-unveils-ai-compute-cluster-to-support-government-and-research-workloads/"
+          "url": "https://www.hpcwire.com/off-the-wire/polands-nask-unveils-ai-compute-cluster-to-support-government-and-research-workloads/",
+          "operator": "ACK Cyfronet AGH"
         },
         {
           "name": "NASK AI compute cluster",
@@ -1089,7 +1488,8 @@
           "gpu": null,
           "funding_type": "fully national",
           "source": "HPCwire",
-          "url": "https://www.hpcwire.com/off-the-wire/polands-nask-unveils-ai-compute-cluster-to-support-government-and-research-workloads/"
+          "url": "https://www.hpcwire.com/off-the-wire/polands-nask-unveils-ai-compute-cluster-to-support-government-and-research-workloads/",
+          "operator": "NASK"
         }
       ],
       "notes": "Smallest identified European program; GPU-based MW estimate uses only the disclosed Gaia AI Factory 1,000+ GPU figure.",
@@ -1108,7 +1508,20 @@
       "budget_usd_m_by_2030": 49,
       "mw_by_2030": 1.5,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "ACK Cyfronet AGH",
+          "facility": "Gaia AI Factory",
+          "location": "Krakow, Poland",
+          "mw": 1.5,
+          "gpu": 1000,
+          "counts_toward_total": true,
+          "source": "HPCwire",
+          "url": "https://www.hpcwire.com/off-the-wire/polands-nask-unveils-ai-compute-cluster-to-support-government-and-research-workloads/",
+          "note": "1,000+ GPU figure is Gaia's disclosed spec."
+        }
+      ]
     },
     {
       "country": "Finland",
@@ -1130,7 +1543,8 @@
           "gpu": null,
           "funding_type": "national commitment within a 6-country consortium (Finland, Czech Republic, Denmark, Estonia, Norway, Poland)",
           "source": "Data Center Forum",
-          "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories"
+          "url": "https://www.datacenter-forum.com/csc-it-center-for-science/finland-and-sweden-will-host-new-ai-factories",
+          "operator": "CSC - IT Center for Science (LUMI, Kajaani)"
         }
       ],
       "notes": "Other consortium members' shares not disclosed; no MW figure available for the LUMI AI Factory specifically.",
@@ -1171,7 +1585,8 @@
           "gpu": 10000,
           "funding_type": "state capex (CHF100m) + opex (CHF37m/yr x 4yr)",
           "source": "SWI swissinfo / CSCS",
-          "url": "https://www.swissinfo.ch/eng/archive-science/how-switzerlands-alps-supercomputer-aims-to-advance-ai/87659724"
+          "url": "https://www.swissinfo.ch/eng/archive-science/how-switzerlands-alps-supercomputer-aims-to-advance-ai/87659724",
+          "operator": "CSCS - Swiss National Supercomputing Centre (Lugano)"
         }
       ],
       "notes": "10,000+ Grace-Hopper superchips is a well-documented figure; used directly for the MW estimate.",
@@ -1190,7 +1605,21 @@
       "budget_usd_m_by_2030": 294,
       "mw_by_2030": 15,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "CSCS (Swiss National Supercomputing Centre)",
+          "facility": "Alps supercomputer",
+          "location": "Lugano, Switzerland",
+          "mw": 15,
+          "gpu": 10000,
+          "gpu_class": "Grace-Hopper superchips",
+          "counts_toward_total": true,
+          "source": "SWI swissinfo / CSCS",
+          "url": "https://www.swissinfo.ch/eng/archive-science/how-switzerlands-alps-supercomputer-aims-to-advance-ai/87659724",
+          "note": "10,000+ Grace-Hopper superchips already procured under the initiative."
+        }
+      ]
     },
     {
       "country": "USA",
@@ -1212,7 +1641,8 @@
           "gpu": null,
           "funding_type": "$293M confirmed DOE appropriation + $5B committed across 15 federal agencies (+$800M private co-investment, not counted as govt spend)",
           "source": "whitehouse.gov / energy.gov",
-          "url": "https://www.energy.gov/articles/energy-department-announces-293-million-funding-support-genesis-mission-national-science"
+          "url": "https://www.energy.gov/articles/energy-department-announces-293-million-funding-support-genesis-mission-national-science",
+          "operator": "15 federal agencies (DOE-led); recipients TBD via RFA awards"
         },
         {
           "name": "DOE/Argonne Solstice + Equinox supercomputers",
@@ -1223,7 +1653,8 @@
           "gpu": 110000,
           "funding_type": "DOE public-private cost-share, hosted at a national lab",
           "source": "anl.gov / nvidianews.nvidia.com",
-          "url": "https://www.anl.gov/article/argonne-expands-nations-ai-infrastructure-with-powerful-new-supercomputers"
+          "url": "https://www.anl.gov/article/argonne-expands-nations-ai-infrastructure-with-powerful-new-supercomputers",
+          "operator": "Argonne National Laboratory (DOE) with NVIDIA/Oracle"
         }
       ],
       "notes": "The ~$500B private 'Stargate' JV (OpenAI/Oracle/SoftBank/MGX) is explicitly EXCLUDED -- it carries no direct federal funding and is politically endorsed only. DOE's exact funding share of the Solstice/Equinox systems (vs. NVIDIA/Oracle in-kind contribution) is not fully disclosed, so attributing the full 110,000-GPU/231MW figure to 'government' capacity may overstate the government-funded share.",
@@ -1242,7 +1673,32 @@
       "budget_usd_m_by_2030": 5000,
       "mw_by_2030": 231,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "Argonne National Laboratory (DOE) with NVIDIA/Oracle",
+          "facility": "Solstice (100,000 Blackwell GPUs) + Equinox (10,000 Blackwell GPUs)",
+          "location": "Argonne, Illinois, USA",
+          "mw": 231,
+          "gpu": 110000,
+          "gpu_class": "Blackwell",
+          "counts_toward_total": true,
+          "source": "anl.gov / nvidianews.nvidia.com",
+          "url": "https://www.anl.gov/article/argonne-expands-nations-ai-infrastructure-with-powerful-new-supercomputers",
+          "note": "DOE's exact funding share (vs. NVIDIA/Oracle in-kind contribution) is not fully disclosed."
+        },
+        {
+          "operator": "Oak Ridge National Laboratory (DOE) with AMD/HPE",
+          "facility": "Lux + Discovery supercomputers",
+          "location": "Oak Ridge, Tennessee, USA",
+          "mw": null,
+          "gpu": null,
+          "counts_toward_total": false,
+          "source": "ornl.gov / amd.com",
+          "url": "https://www.ornl.gov/news/ornl-amd-and-hpe-deliver-does-newest-ai-supercomputers-discovery-and-lux",
+          "note": "~$1B combined public-private cost-share; GPU count and DOE's specific funding share not disclosed -- not counted toward the MW total to avoid double-counting uncertainty."
+        }
+      ]
     },
     {
       "country": "Canada",
@@ -1264,7 +1720,8 @@
           "gpu": null,
           "funding_type": "CAD$2.0B over 5 years, direct federal capital + compute-access fund",
           "source": "canada.ca / ISED",
-          "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/04/canada-launches-national-initiative-to-build-large-scale-ai-supercomputing-capacity.html"
+          "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/04/canada-launches-national-initiative-to-build-large-scale-ai-supercomputing-capacity.html",
+          "operator": "Not yet awarded (RFP stage, ISED)"
         }
       ],
       "notes": "RFP targets data centres 'exceeding 100MW' each; treated as a conservative single-facility floor since the number of facilities to be awarded is not yet fixed (proposal stage) -- actual total capacity could be materially higher.",
@@ -1283,7 +1740,20 @@
       "budget_usd_m_by_2030": 1450,
       "mw_by_2030": 100,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "Not yet awarded (RFP stage, ISED)",
+          "facility": "Sovereign AI data centre(s), each targeted >100MW",
+          "location": "Canada",
+          "mw": 100,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": "canada.ca / ISED",
+          "url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/04/canada-launches-national-initiative-to-build-large-scale-ai-supercomputing-capacity.html",
+          "note": "Conservative single-facility floor; number of facilities to be awarded not yet fixed."
+        }
+      ]
     },
     {
       "country": "Brazil",
@@ -1305,7 +1775,8 @@
           "gpu": null,
           "funding_type": "direct government procurement, targeting a top-10-world AI supercomputer",
           "source": "DataCenterDynamics / Brasil de Fato",
-          "url": "https://www.datacenterdynamics.com/br/not%C3%ADcias/governo-lan%C3%A7a-pacote-de-soberania-tecnol%C3%B3gica-de-r-22-bilh%C3%B5es/"
+          "url": "https://www.datacenterdynamics.com/br/not%C3%ADcias/governo-lan%C3%A7a-pacote-de-soberania-tecnol%C3%B3gica-de-r-22-bilh%C3%B5es/",
+          "operator": "Government of Brazil (vendor/site TBD)"
         },
         {
           "name": "Nuvem Soberana de Governo (Serpro)",
@@ -1316,7 +1787,8 @@
           "gpu": null,
           "funding_type": "state-owned enterprise capex",
           "source": "Brasil247",
-          "url": "https://www.brasil247.com/blog/o-papel-das-estatais-brasileiras-na-corrida-por-uma-ia-soberana"
+          "url": "https://www.brasil247.com/blog/o-papel-das-estatais-brasileiras-na-corrida-por-uma-ia-soberana",
+          "operator": "Serpro (state-owned enterprise)"
         }
       ],
       "notes": "Brazil's much larger PBIA (Plano Brasileiro de Inteligencia Artificial 2024-2028, R$23.03bn / ~$4.3B) is a broad multi-purpose national AI plan covering workforce, regulation, and ethics as well as infrastructure -- it is noted for budget-side context but excluded from the compute-specific figure and MW conversion here to avoid overstating hardware spend.",
@@ -1335,7 +1807,31 @@
       "budget_usd_m_by_2030": 380,
       "mw_by_2030": 19,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "Government of Brazil (vendor/site TBD)",
+          "facility": "Top-10-world AI supercomputer",
+          "location": "Brazil",
+          "mw": null,
+          "gpu": null,
+          "counts_toward_total": false,
+          "source": "DataCenterDynamics / Brasil de Fato",
+          "url": "https://www.datacenterdynamics.com/br/not%C3%ADcias/governo-lan%C3%A7a-pacote-de-soberania-tecnol%C3%B3gica-de-r-22-bilh%C3%B5es/",
+          "note": "No MW/GPU spec disclosed for the supercomputer purchase or Nuvem Soberana."
+        },
+        {
+          "operator": "Budget-derived estimate (no capacity target disclosed)",
+          "facility": "N/A -- not tied to a named facility",
+          "location": "Brazil",
+          "mw": 19,
+          "gpu": null,
+          "counts_toward_total": true,
+          "source": null,
+          "url": null,
+          "note": "Converts the $380M compute-specific budget (supercomputer purchase + Nuvem Soberana) via the $/MW capex benchmark (see Method) as a rough order-of-magnitude proxy, not a disclosed fact."
+        }
+      ]
     },
     {
       "country": "Mexico",
@@ -1357,7 +1853,8 @@
           "gpu": 14480,
           "funding_type": "direct public financing",
           "source": "CNN Espanol / Xataka Mexico",
-          "url": "https://cnnespanol.cnn.com/2025/11/27/mexico/mexico-supercomputadora-publica-coatlicue-orix"
+          "url": "https://cnnespanol.cnn.com/2025/11/27/mexico/mexico-supercomputadora-publica-coatlicue-orix",
+          "operator": "Secihti / ATDT"
         }
       ],
       "notes": "Well-documented, government-confirmed figures; the government explicitly framed this as publicly financed.",
@@ -1376,7 +1873,20 @@
       "budget_usd_m_by_2030": 326,
       "mw_by_2030": 21.7,
       "adjusted_for_2030": false,
-      "timeline_uncertain": false
+      "timeline_uncertain": false,
+      "capacity_items": [
+        {
+          "operator": "Secihti / ATDT",
+          "facility": "Coatlicue national public supercomputer",
+          "location": "Mexico",
+          "mw": 21.7,
+          "gpu": 14480,
+          "counts_toward_total": true,
+          "source": "CNN Espanol / Xataka Mexico",
+          "url": "https://cnnespanol.cnn.com/2025/11/27/mexico/mexico-supercomputadora-publica-coatlicue-orix",
+          "note": "Explicitly publicly financed ('supercomputer of the Mexican people')."
+        }
+      ]
     },
     {
       "country": "Chile",
@@ -1398,7 +1908,8 @@
           "gpu": null,
           "funding_type": "decade-long research fund (~$116M) + grant calls of up to $7M/project",
           "source": "Minciencia",
-          "url": "https://www.minciencia.gob.cl/noticias/minciencia-y-corfo-anuncian-importante-inversion-estatal-en-capacidad-de-supercomputo-para-inteligencia-artificial/"
+          "url": "https://www.minciencia.gob.cl/noticias/minciencia-y-corfo-anuncian-importante-inversion-estatal-en-capacidad-de-supercomputo-para-inteligencia-artificial/",
+          "operator": "Minciencia/Corfo (grant pool, multiple recipients)"
         }
       ],
       "notes": "Chile's National Data Center Plan 2024-2030 targets ~$2.5B, but that is overwhelmingly private investment attracted via land/permitting/energy facilitation, not government spend -- excluded from the sovereign budget figure.",
@@ -1480,49 +1991,49 @@
     ],
     "scenarios": {
       "all__full": {
-        "global_budget_usd_m": 320480,
+        "global_budget_usd_m": 320493.1,
         "global_mw": 18589.5,
         "japan_pct_of_budget": 2.21,
         "japan_pct_of_mw": 1.61
       },
       "all__by_2030": {
-        "global_budget_usd_m": 260480,
+        "global_budget_usd_m": 260493.1,
         "global_mw": 15209.5,
         "japan_pct_of_budget": 2.72,
         "japan_pct_of_mw": 1.97
       },
       "excl_eu_uae__full": {
-        "global_budget_usd_m": 249880,
+        "global_budget_usd_m": 249893.1,
         "global_mw": 12189.5,
         "japan_pct_of_budget": 2.83,
         "japan_pct_of_mw": 2.46
       },
       "excl_eu_uae__by_2030": {
-        "global_budget_usd_m": 189880,
+        "global_budget_usd_m": 189893.1,
         "global_mw": 8809.5,
         "japan_pct_of_budget": 3.73,
         "japan_pct_of_mw": 3.41
       },
       "excl_gulf__full": {
-        "global_budget_usd_m": 132480,
+        "global_budget_usd_m": 132493.1,
         "global_mw": 5556.5,
         "japan_pct_of_budget": 5.34,
         "japan_pct_of_mw": 5.4
       },
       "excl_gulf__by_2030": {
-        "global_budget_usd_m": 122480,
+        "global_budget_usd_m": 122493.1,
         "global_mw": 5476.5,
         "japan_pct_of_budget": 5.78,
         "japan_pct_of_mw": 5.48
       },
       "excl_china__full": {
-        "global_budget_usd_m": 259480,
+        "global_budget_usd_m": 259493.1,
         "global_mw": 15753.5,
         "japan_pct_of_budget": 2.73,
         "japan_pct_of_mw": 1.9
       },
       "excl_china__by_2030": {
-        "global_budget_usd_m": 199480,
+        "global_budget_usd_m": 199493.1,
         "global_mw": 12373.5,
         "japan_pct_of_budget": 3.55,
         "japan_pct_of_mw": 2.42
@@ -1562,7 +2073,7 @@
       {
         "country": "Japan",
         "value": 300,
-        "budget_usd_m_identified": 7080
+        "budget_usd_m_identified": 7079.1
       },
       {
         "country": "USA",
@@ -1577,7 +2088,7 @@
       {
         "country": "UK",
         "value": 120,
-        "budget_usd_m_identified": 2400
+        "budget_usd_m_identified": 2413
       },
       {
         "country": "Canada",
@@ -1669,7 +2180,7 @@
       {
         "country": "Japan",
         "value": 300,
-        "budget_usd_m_identified": 7080
+        "budget_usd_m_identified": 7079.1
       },
       {
         "country": "USA",
@@ -1684,7 +2195,7 @@
       {
         "country": "UK",
         "value": 120,
-        "budget_usd_m_identified": 2400
+        "budget_usd_m_identified": 2413
       },
       {
         "country": "Canada",
@@ -1780,8 +2291,8 @@
       },
       {
         "country": "Japan",
-        "value": 7080,
-        "budget_usd_m_identified": 7080
+        "value": 7079.1,
+        "budget_usd_m_identified": 7079.1
       },
       {
         "country": "USA",
@@ -1795,8 +2306,8 @@
       },
       {
         "country": "UK",
-        "value": 2400,
-        "budget_usd_m_identified": 2400
+        "value": 2413,
+        "budget_usd_m_identified": 2413
       },
       {
         "country": "Singapore",
@@ -1850,8 +2361,8 @@
       },
       {
         "country": "Italy",
-        "value": 176,
-        "budget_usd_m_identified": 176
+        "value": 177,
+        "budget_usd_m_identified": 177
       },
       {
         "country": "Netherlands",
@@ -1922,8 +2433,8 @@
       },
       {
         "country": "Japan",
-        "value": 7080,
-        "budget_usd_m_identified": 7080
+        "value": 7079.1,
+        "budget_usd_m_identified": 7079.1
       },
       {
         "country": "USA",
@@ -1937,8 +2448,8 @@
       },
       {
         "country": "UK",
-        "value": 2400,
-        "budget_usd_m_identified": 2400
+        "value": 2413,
+        "budget_usd_m_identified": 2413
       },
       {
         "country": "Singapore",
@@ -1992,8 +2503,8 @@
       },
       {
         "country": "Italy",
-        "value": 176,
-        "budget_usd_m_identified": 176
+        "value": 177,
+        "budget_usd_m_identified": 177
       },
       {
         "country": "Netherlands",
