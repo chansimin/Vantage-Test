@@ -238,11 +238,11 @@
       "country": "Japan",
       "region": "East Asia",
       "sovereignty_purity": "government subsidy/grant co-funding of private cloud/DC operators",
-      "budget_usd_m_identified": 7079.1,
+      "budget_usd_m_identified": 7392.2,
       "mw_announced_direct": null,
       "gpu_count_disclosed": 10800,
       "gpu_class": "H100-class (Sakura Internet only; other co-funded firms undisclosed)",
-      "mw_best_estimate": 300,
+      "mw_best_estimate": 313.3,
       "confidence": "low-medium",
       "programs": [
         {
@@ -333,9 +333,35 @@
           "source": "Ubitus press release",
           "url": "https://ubitus.net/2025-meti-ai-gpu-investment-en/",
           "operator": "Ubitus"
+        },
+        {
+          "name": "METI Cloud Program initial approval -> SoftBank Corp",
+          "body": "METI",
+          "date": "2023-07-07",
+          "budget_usd_m": 37.9,
+          "mw": null,
+          "gpu": null,
+          "funding_type": "one-time capex subsidy (Economic Security Promotion Act Cloud Program, initial approval)",
+          "operator": "SoftBank Corp",
+          "source": "SoftBank IR",
+          "url": "https://www.softbank.jp/corp/news/press/sbkk/2023/20230707_01/",
+          "detail": "Funded SoftBank's base AI computing platform (SB Intuitions); amount is press-reported (~JPY5.3B), lower confidence than the 2024 tranche."
+        },
+        {
+          "name": "METI Cloud Program expansion approval -> SoftBank Corp",
+          "body": "METI",
+          "date": "2024-05-10",
+          "budget_usd_m": 275.2,
+          "mw": null,
+          "gpu": null,
+          "funding_type": "one-time capex subsidy (Economic Security Promotion Act Cloud Program, separate approval track from the April 2024 Round 1 five-company batch)",
+          "operator": "SoftBank Corp",
+          "source": "SoftBank IR / METI",
+          "url": "https://www.softbank.jp/corp/news/press/sbkk/2024/20240510_01/",
+          "detail": "JPY42.1B approved against ~JPY150B total FY2024-25 capex; funds a 37x compute expansion (target 25 exaflops) via the Hokkaido Tomakomai AI Data Center."
         }
       ],
-      "notes": "Excludes Japan's >=Y10T/7yr (~$65B) 'AI-semiconductor industry base reinforcement' umbrella and the FY2026 METI budget (Y3.07T total), since those are chip-fab (Rapidus/TSMC) industrial policy or broad ministry budgets, not compute/DC-specific -- including them would conflate semiconductor manufacturing subsidies with sovereign DC/compute workload and break comparability with other countries. GPU floor (10,800, Sakura only) is a small fraction of the ~$7.1B identified spend across 5 co-funded firms; budget-based MW estimate (range 186-472MW, using $15-38M/MW) is used as the primary signal, with the true figure plausibly at or above the upper end since these are partial subsidies (leverage effect) rather than full capex.",
+      "notes": "Excludes Japan's >=Y10T/7yr (~$65B) 'AI-semiconductor industry base reinforcement' umbrella and the FY2026 METI budget (Y3.07T total), since those are chip-fab (Rapidus/TSMC) industrial policy or broad ministry budgets, not compute/DC-specific -- including them would conflate semiconductor manufacturing subsidies with sovereign DC/compute workload and break comparability with other countries. Disclosed operator-level GPU counts (Sakura Internet 10,800 GPUs/16.2MW, SoftBank Corp target 10,000 GPUs/18MW at its Hokkaido Tomakomai AI Data Center) cover only a fraction of the ~$7.4B identified spend across 7 subsidized recipients; the budget-derived residual for the remaining recipients (KDDI, Highreso, GMO, RUTILEA-AI Fukushima, GENIAC-funded firms) is plausibly an underestimate, since these are partial subsidies (leverage effect) rather than full capex.",
       "budget_timeline": {
         "status": "bounded",
         "start_year": 2024,
@@ -348,8 +374,8 @@
         "end_year": 2029,
         "note": "Same basis as budget."
       },
-      "budget_usd_m_by_2030": 7079.1,
-      "mw_by_2030": 300,
+      "budget_usd_m_by_2030": 7392.2,
+      "mw_by_2030": 313.3,
       "adjusted_for_2030": false,
       "timeline_uncertain": false,
       "capacity_items": [
@@ -364,6 +390,18 @@
           "source": "METI press release",
           "url": "https://www.meti.go.jp/english/press/2024/0419_001.html",
           "note": "10,800 H100-class GPUs is the only per-operator GPU count disclosed; converted at 1.5kW/GPU. Drives the country's mw_best_estimate floor -- the remaining $7.1B budget likely funds materially more capacity across the other 4 recipients + GENIAC firms, whose GPU counts are undisclosed."
+        },
+        {
+          "operator": "SoftBank Corp",
+          "facility": "Hokkaido Tomakomai AI Data Center (SB Intuitions platform)",
+          "location": "Tomakomai, Hokkaido, Japan",
+          "mw": 18.0,
+          "gpu": 10000,
+          "gpu_class": "mixed Hopper->Blackwell (~4,000 Hopper GPUs installed as of Oct 2024; target ~10,000 GPUs / 25.7 exaflops)",
+          "counts_toward_total": true,
+          "source": "SoftBank IR",
+          "url": "https://www.softbank.jp/corp/news/press/sbkk/2024/20241031_03/",
+          "note": "JPY42.1B METI subsidy (May 2024) partially funds this buildout against ~JPY150B total capex; the 10,000-GPU figure is a build-out target, not yet fully installed as of the most recent disclosure (Oct 2024: ~4,000-6,000 GPUs)."
         },
         {
           "operator": "KDDI / Highreso / GMO / RUTILEA-AI Fukushima",
@@ -391,12 +429,12 @@
           "operator": "Budget-derived residual (not attributable to a named operator)",
           "facility": "KDDI / Highreso / GMO / RUTILEA-AI Fukushima + GENIAC-funded firms (aggregate)",
           "location": "Japan",
-          "mw": 283.8,
+          "mw": 279.1,
           "gpu": null,
           "counts_toward_total": true,
           "source": null,
           "url": null,
-          "note": "The only operator-level GPU count disclosed is Sakura Internet's (16.2MW). The remaining ~$6.9B across the other 4 subsidy recipients and GENIAC's compute-credit allocations has no published GPU/MW figure -- this residual (300MW total minus Sakura's 16.2MW) is a budget/$-per-MW estimate, not a disclosed capacity figure. Included so the operator rows above and the country total reconcile transparently rather than silently mismatch."
+          "note": "The only operator-level GPU counts disclosed are Sakura Internet's (16.2MW) and SoftBank's (18MW target). The remaining budget across KDDI, Highreso, GMO, RUTILEA-AI Fukushima, and GENIAC's compute-credit allocations has no published GPU/MW figure -- this residual is a budget/$-per-MW estimate, not a disclosed capacity figure. Included so the operator rows above and the country total reconcile transparently rather than silently mismatch."
         }
       ]
     },
@@ -1991,52 +2029,52 @@
     ],
     "scenarios": {
       "all__full": {
-        "global_budget_usd_m": 320493.1,
-        "global_mw": 18589.5,
-        "japan_pct_of_budget": 2.21,
-        "japan_pct_of_mw": 1.61
+        "global_budget_usd_m": 320806.2,
+        "global_mw": 18602.8,
+        "japan_pct_of_budget": 2.3,
+        "japan_pct_of_mw": 1.68
       },
       "all__by_2030": {
-        "global_budget_usd_m": 260493.1,
-        "global_mw": 15209.5,
-        "japan_pct_of_budget": 2.72,
-        "japan_pct_of_mw": 1.97
+        "global_budget_usd_m": 260806.2,
+        "global_mw": 15222.8,
+        "japan_pct_of_budget": 2.83,
+        "japan_pct_of_mw": 2.06
       },
       "excl_eu_uae__full": {
-        "global_budget_usd_m": 249893.1,
-        "global_mw": 12189.5,
-        "japan_pct_of_budget": 2.83,
-        "japan_pct_of_mw": 2.46
+        "global_budget_usd_m": 250206.2,
+        "global_mw": 12202.8,
+        "japan_pct_of_budget": 2.95,
+        "japan_pct_of_mw": 2.57
       },
       "excl_eu_uae__by_2030": {
-        "global_budget_usd_m": 189893.1,
-        "global_mw": 8809.5,
-        "japan_pct_of_budget": 3.73,
-        "japan_pct_of_mw": 3.41
+        "global_budget_usd_m": 190206.2,
+        "global_mw": 8822.8,
+        "japan_pct_of_budget": 3.89,
+        "japan_pct_of_mw": 3.55
       },
       "excl_gulf__full": {
-        "global_budget_usd_m": 132493.1,
-        "global_mw": 5556.5,
-        "japan_pct_of_budget": 5.34,
-        "japan_pct_of_mw": 5.4
+        "global_budget_usd_m": 132806.2,
+        "global_mw": 5569.8,
+        "japan_pct_of_budget": 5.57,
+        "japan_pct_of_mw": 5.62
       },
       "excl_gulf__by_2030": {
-        "global_budget_usd_m": 122493.1,
-        "global_mw": 5476.5,
-        "japan_pct_of_budget": 5.78,
-        "japan_pct_of_mw": 5.48
+        "global_budget_usd_m": 122806.2,
+        "global_mw": 5489.8,
+        "japan_pct_of_budget": 6.02,
+        "japan_pct_of_mw": 5.71
       },
       "excl_china__full": {
-        "global_budget_usd_m": 259493.1,
-        "global_mw": 15753.5,
-        "japan_pct_of_budget": 2.73,
-        "japan_pct_of_mw": 1.9
+        "global_budget_usd_m": 259806.2,
+        "global_mw": 15766.8,
+        "japan_pct_of_budget": 2.85,
+        "japan_pct_of_mw": 1.99
       },
       "excl_china__by_2030": {
-        "global_budget_usd_m": 199493.1,
-        "global_mw": 12373.5,
-        "japan_pct_of_budget": 3.55,
-        "japan_pct_of_mw": 2.42
+        "global_budget_usd_m": 199806.2,
+        "global_mw": 12386.8,
+        "japan_pct_of_budget": 3.7,
+        "japan_pct_of_mw": 2.53
       }
     },
     "ranked_by_mw_full": [
@@ -2072,8 +2110,8 @@
       },
       {
         "country": "Japan",
-        "value": 300,
-        "budget_usd_m_identified": 7079.1
+        "value": 313.3,
+        "budget_usd_m_identified": 7392.2
       },
       {
         "country": "USA",
@@ -2179,8 +2217,8 @@
       },
       {
         "country": "Japan",
-        "value": 300,
-        "budget_usd_m_identified": 7079.1
+        "value": 313.3,
+        "budget_usd_m_identified": 7392.2
       },
       {
         "country": "USA",
@@ -2291,8 +2329,8 @@
       },
       {
         "country": "Japan",
-        "value": 7079.1,
-        "budget_usd_m_identified": 7079.1
+        "value": 7392.2,
+        "budget_usd_m_identified": 7392.2
       },
       {
         "country": "USA",
@@ -2433,8 +2471,8 @@
       },
       {
         "country": "Japan",
-        "value": 7079.1,
-        "budget_usd_m_identified": 7079.1
+        "value": 7392.2,
+        "budget_usd_m_identified": 7392.2
       },
       {
         "country": "USA",
@@ -2538,5 +2576,187 @@
       }
     ],
     "headline_takeaway": "Japan's identified sovereign AI/DC commitments (~$7.1B budget, ~300MW) don't shift under a 2030 lens -- every Japanese program concludes at or before 2029. Saudi Arabia and Israel do shift: Saudi Arabia's 6.6GW/$100B is an explicit 2025-2035 decade plan (linear run-rate: ~3.3GW/$50B by 2030), and Israel's 100,000-GPU/$25-30B program is an explicit 2027-2032 window (linear run-rate: ~60,000 GPUs (~120MW)/~$15B by 2030). Since Japan's figure is fixed while the two largest 'far-future' commitments shrink under the 2030 lens, Japan's global share is slightly HIGHER by 2030 (~2.0% of MW) than on an all-time-horizon basis (~1.6%). Several Gulf-adjacent programs (UAE's Stargate campus, Qatar, Kuwait's Helix venture, the EU's pending Gigafactories) have no disclosed completion date at all -- their 'by 2030' figures are shown at full value but flagged UNCERTAIN, since real-world buildout could plausibly land short of that by 2030."
+  },
+  "_sense_check_gdp": {
+    "source": "IMF World Economic Outlook, April 2026 edition (nominal GDP, current prices, USD) -- Taiwan and EU-27 figures sourced from secondary compilations (statisticstimes.com, whatisgdp.com) since IMF WEO does not tabulate them directly; population from World Population Review 2026 / Eurostat.",
+    "world_gdp_usd_b": 126295,
+    "world_population_m": 8310,
+    "countries": {
+      "Saudi Arabia": {
+        "gdp_usd_b": 1388.7,
+        "gdp_pct_world": 1.1,
+        "population_m": 35.2,
+        "population_pct_world": 0.424
+      },
+      "UAE": {
+        "gdp_usd_b": 621.6,
+        "gdp_pct_world": 0.492,
+        "population_m": 11.6,
+        "population_pct_world": 0.14
+      },
+      "China": {
+        "gdp_usd_b": 20851.6,
+        "gdp_pct_world": 16.51,
+        "population_m": 1412.9,
+        "population_pct_world": 17.002
+      },
+      "Japan": {
+        "gdp_usd_b": 4379.3,
+        "gdp_pct_world": 3.468,
+        "population_m": 122.4,
+        "population_pct_world": 1.473
+      },
+      "South Korea": {
+        "gdp_usd_b": 1931.0,
+        "gdp_pct_world": 1.529,
+        "population_m": 51.6,
+        "population_pct_world": 0.621
+      },
+      "Taiwan": {
+        "gdp_usd_b": 976.7,
+        "gdp_pct_world": 0.773,
+        "population_m": 23.0,
+        "population_pct_world": 0.277
+      },
+      "India": {
+        "gdp_usd_b": 4153.2,
+        "gdp_pct_world": 3.288,
+        "population_m": 1476.6,
+        "population_pct_world": 17.769
+      },
+      "Singapore": {
+        "gdp_usd_b": 659.6,
+        "gdp_pct_world": 0.522,
+        "population_m": 5.9,
+        "population_pct_world": 0.071
+      },
+      "Malaysia": {
+        "gdp_usd_b": 516.4,
+        "gdp_pct_world": 0.409,
+        "population_m": 36.4,
+        "population_pct_world": 0.438
+      },
+      "Vietnam": {
+        "gdp_usd_b": 527.3,
+        "gdp_pct_world": 0.418,
+        "population_m": 102.2,
+        "population_pct_world": 1.23
+      },
+      "Thailand": {
+        "gdp_usd_b": 580.0,
+        "gdp_pct_world": 0.459,
+        "population_m": 71.6,
+        "population_pct_world": 0.862
+      },
+      "Philippines": {
+        "gdp_usd_b": 512.2,
+        "gdp_pct_world": 0.406,
+        "population_m": 117.7,
+        "population_pct_world": 1.416
+      },
+      "Qatar": {
+        "gdp_usd_b": 217.4,
+        "gdp_pct_world": 0.172,
+        "population_m": 3.2,
+        "population_pct_world": 0.039
+      },
+      "Kuwait": {
+        "gdp_usd_b": 172.9,
+        "gdp_pct_world": 0.137,
+        "population_m": 5.1,
+        "population_pct_world": 0.061
+      },
+      "Israel": {
+        "gdp_usd_b": 719.9,
+        "gdp_pct_world": 0.57,
+        "population_m": 9.6,
+        "population_pct_world": 0.116
+      },
+      "France": {
+        "gdp_usd_b": 3596.1,
+        "gdp_pct_world": 2.847,
+        "population_m": 66.7,
+        "population_pct_world": 0.803
+      },
+      "Germany": {
+        "gdp_usd_b": 5452.9,
+        "gdp_pct_world": 4.318,
+        "population_m": 83.6,
+        "population_pct_world": 1.006
+      },
+      "UK": {
+        "gdp_usd_b": 4264.8,
+        "gdp_pct_world": 3.377,
+        "population_m": 69.9,
+        "population_pct_world": 0.841
+      },
+      "Italy": {
+        "gdp_usd_b": 2738.2,
+        "gdp_pct_world": 2.168,
+        "population_m": 58.9,
+        "population_pct_world": 0.709
+      },
+      "Spain": {
+        "gdp_usd_b": 2091.2,
+        "gdp_pct_world": 1.656,
+        "population_m": 47.9,
+        "population_pct_world": 0.576
+      },
+      "Netherlands": {
+        "gdp_usd_b": 1449.7,
+        "gdp_pct_world": 1.148,
+        "population_m": 18.4,
+        "population_pct_world": 0.221
+      },
+      "Poland": {
+        "gdp_usd_b": 1134.3,
+        "gdp_pct_world": 0.898,
+        "population_m": 37.8,
+        "population_pct_world": 0.455
+      },
+      "Finland": {
+        "gdp_usd_b": 337.7,
+        "gdp_pct_world": 0.267,
+        "population_m": 5.6,
+        "population_pct_world": 0.067
+      },
+      "Switzerland": {
+        "gdp_usd_b": 1146.9,
+        "gdp_pct_world": 0.908,
+        "population_m": 9.0,
+        "population_pct_world": 0.108
+      },
+      "USA": {
+        "gdp_usd_b": 32383.9,
+        "gdp_pct_world": 25.641,
+        "population_m": 349.0,
+        "population_pct_world": 4.2
+      },
+      "Canada": {
+        "gdp_usd_b": 2507.3,
+        "gdp_pct_world": 1.985,
+        "population_m": 40.5,
+        "population_pct_world": 0.487
+      },
+      "Brazil": {
+        "gdp_usd_b": 2635.9,
+        "gdp_pct_world": 2.087,
+        "population_m": 213.6,
+        "population_pct_world": 2.57
+      },
+      "Mexico": {
+        "gdp_usd_b": 2120.9,
+        "gdp_pct_world": 1.679,
+        "population_m": 133.0,
+        "population_pct_world": 1.6
+      },
+      "Chile": {
+        "gdp_usd_b": 407.9,
+        "gdp_pct_world": 0.323,
+        "population_m": 19.9,
+        "population_pct_world": 0.239
+      }
+    },
+    "note": "\"EU supranational (unallocated)\" is excluded from this table -- it is a specific EU-level compute program, not the whole EU-27 economy, so comparing its budget/MW share against the EU's ~18% GDP share would conflate scopes."
   }
 }
